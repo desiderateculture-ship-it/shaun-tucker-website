@@ -93,16 +93,13 @@ export default function GuideSection() {
 
             <div className="space-y-5" style={{ fontFamily: "var(--font-body)", color: "#94A3B8", lineHeight: 1.75 }}>
               <p>
-                I trained harder than anyone I knew. Pushed through 75Hard. Chased mentors. Earned the credentials. And I was still snapping at the people I loved. Still lying awake at 2am. Still not fully present with my own daughter.
-              </p>
-              <p>
-                Two weeks ago I sent a message to my own father. I told him that by this time next year, I'd be working four days a week — because the fifth day belongs to Kelsey. That I'd be leading 50 dads a year to become the men their families need. That the gift I'm giving my kids is the one I felt I missed out on with him.
+                I trained harder than anyone I knew. Pushed through 75Hard. Chased mentors. Earned the credentials. And I was still snapping at the people I loved. Still not present. Still not enough.
               </p>
               <p style={{ color: "#E2E8F0", fontWeight: 600 }}>
-                That's not a business plan. That's a vow. And it's the same vow I'm asking you to make — to your kids, to your partner, to the version of yourself you haven't fully met yet.
+                The problem wasn't my effort. It was that nobody had ever taught me to regulate the man underneath the performance.
               </p>
               <p>
-                I built the system that got me there. I've used it with 100+ men. And I'm here to walk you through it — step by step, breath by breath, rep by rep.
+                I built the system that changed that. I've used it with 100+ men. I'm here to walk you through it.
               </p>
             </div>
 

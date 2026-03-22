@@ -11,7 +11,7 @@ const truths = [
     label: "The Truth About Your Body",
     icon: "⚡",
     headline: "You're not weak. You're wired wrong.",
-    body: "Your nervous system has been in survival mode for years. Cold showers and 5am alarms don't fix a dysregulated system. They just add more noise to the chaos. The answer isn't more effort — it's a completely different approach.",
+    body: "Cold showers and 5am alarms don't fix a dysregulated nervous system. They just add more noise. The answer isn't more effort.",
     color: "#6366F1",
     glow: "rgba(99,102,241,0.12)",
     border: "rgba(99,102,241,0.25)",
@@ -21,7 +21,7 @@ const truths = [
     label: "The Truth About Your Mind",
     icon: "🔥",
     headline: "You don't have an anger problem.",
-    body: "You have a man who was never taught to regulate himself. The snapping. The checking out. The guilt that follows. That's not your character — that's your nervous system screaming for help. And it's completely fixable.",
+    body: "The snapping. The checking out. The guilt. That's not your character. That's a nervous system that was never taught to regulate. It's fixable.",
     color: "#EC4899",
     glow: "rgba(236,72,153,0.12)",
     border: "rgba(236,72,153,0.25)",
@@ -31,7 +31,7 @@ const truths = [
     label: "The Truth About Fatherhood",
     icon: "⚔️",
     headline: "Your kids don't need a perfect dad.",
-    body: "They need a present one. One who puts the phone down. One they run to, not away from. One they will still talk about when they're 40. Your kids won't remember your salary. They will remember whether you were there.",
+    body: "They need a present one. One they run to, not away from. One they'll still talk about when they're 40.",
     color: "#F59E0B",
     glow: "rgba(245,158,11,0.12)",
     border: "rgba(245,158,11,0.25)",
@@ -106,7 +106,7 @@ export default function ProblemSection() {
               lineHeight: 1.75,
             }}
           >
-            I know because I felt it. Succeeding at everything on paper. Failing at the thing that matters most. There is no second chance at your child's childhood. The clock is running. And the man your family needs isn't somewhere in the future — he's locked inside the man you are right now.
+            There is no second chance at your child's childhood. The man your family needs isn't somewhere in the future — he's locked inside the man you are right now.
           </p>
         </div>
 
@@ -147,7 +147,7 @@ export default function ProblemSection() {
               lineHeight: 1.75,
             }}
           >
-            I sent a voice message to my own father two weeks ago. I told him that by next year, I'd be working four days a week — because the fifth day belongs to my daughter Kelsey. That I'd be earning $50k a month not by grinding harder, but by being the example. That the gift I'm giving my kids is the one I felt I missed out on with him. That's not a business goal. That's a vow. And it's the same vow I'm here to help you make.
+            Hustle culture sold you a lie. More discipline. More sacrifice. More proving yourself. But the men who are truly unforgettable aren't the ones who worked the hardest. They're the ones who were present when it counted.
           </p>
         </div>
 
@@ -234,15 +234,9 @@ export default function ProblemSection() {
               letterSpacing: "-0.01em",
             }}
           >
-            "I want to spend that time with you, Dad. I want to get to know how unforgettable you are. The gift I'm giving my kids is what I felt I missed out on with you."
-            <span style={{ color: "#818CF8" }}> — The message I sent my own father. This is why I do this.</span>
+            "The most dangerous thing a man can do is wait until he's ready."
+            <span style={{ color: "#818CF8" }}> Your kids can't wait that long.</span>
           </blockquote>
-          <cite
-            className="mt-4 block text-xs tracking-[0.3em] uppercase not-italic font-bold"
-            style={{ fontFamily: "var(--font-body)", color: "#6366F1" }}
-          >
-            — Shaun Tucker
-          </cite>
         </div>
 
       </div>

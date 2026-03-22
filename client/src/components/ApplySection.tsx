@@ -41,7 +41,7 @@ export default function ApplySection() {
           </h2>
 
           <p
-            className="mb-6 mx-auto"
+            className="mb-12 mx-auto"
             style={{
               fontFamily: "var(--font-body)",
               color: "#CBD5E1",
@@ -50,21 +50,8 @@ export default function ApplySection() {
               maxWidth: "50ch",
             }}
           >
-            I made a vow to my daughter Kelsey. To my own father. To every man who ever felt like he was running out of time to get this right. The clock doesn't pause while you think about it. Your kids are forming their memories of you right now — today, this week, this year.
-          </p>
-
-          <p
-            className="mb-12 mx-auto font-bold leading-relaxed"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(1.1rem, 2vw, 1.5rem)",
-              color: "#F1F5F9",
-              maxWidth: "48ch",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            "By this time next year, I will work four days a week. The fifth day belongs to Kelsey. I will lead 50 dads to become unforgettable. And I will take my whole family on a trip they'll never forget — because the gift I'm giving my kids is the one I felt I missed out on."
-            <span style={{ color: "#FCD34D" }}> That's the vow. Are you ready to make yours?</span>
+            Your kids are forming their memories of you right now.
+            <span style={{ color: "#FCD34D", fontWeight: 600 }}> The clock doesn't pause while you think about it.</span>
           </p>
 
           {/* CTAs */}
