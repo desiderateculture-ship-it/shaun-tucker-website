@@ -1,19 +1,18 @@
 /*
  * TRANSFORMATION WHEEL — Interactive Sales Tool
- * Design: Dark Masculine Minimalism — charcoal bg, amber/gold accents
- * Interaction: Auto-rotating outer nodes, click to reveal pain→transformation panel
- * Structure: Centre hub (The Unforgettable Man) → Inner ring (3 pillars) → Outer ring (10 transformation areas)
+ * HIGH CONTRAST VERSION — all nodes, labels, and rings clearly visible
+ * Design: Dark bg with bright amber/green/blue nodes and white text
  */
 
 import { useState, useEffect, useRef, useCallback } from "react";
 
 interface TransformationNode {
   id: string;
-  from: string;      // The pain
-  to: string;        // The transformation
+  from: string;
+  to: string;
   pillar: "body" | "system" | "mind";
-  pain: string;      // Detailed pain description
-  outcome: string;   // Detailed outcome description
+  pain: string;
+  outcome: string;
   icon: string;
 }
 
@@ -83,7 +82,7 @@ const NODES: TransformationNode[] = [
   },
   {
     id: "breath",
-    from: "Unaware",
+    from: "In Your Head",
     to: "Embodied",
     pillar: "system",
     pain: "You live entirely in your head. You've never been taught to use your breath, your body, or your nervous system as tools. You push through everything — and your body is keeping score in ways you can't see yet.",
@@ -93,7 +92,7 @@ const NODES: TransformationNode[] = [
   {
     id: "disconnected",
     from: "Disconnected",
-    to: "Deeply Connected",
+    to: "Connected",
     pillar: "system",
     pain: "Your relationship with your partner has become transactional. Your kids feel like obligations. You love them — but you can't feel it the way you want to. The connection you crave is right there and you can't reach it.",
     outcome: "You feel your love for your family in your body, not just your head. Your relationship deepens. Your kids feel chosen every single day. You become the emotional anchor your family has always needed.",
@@ -110,17 +109,24 @@ const NODES: TransformationNode[] = [
   },
 ];
 
-const PILLARS = [
-  { id: "body", label: "Strong Body", color: "oklch(0.65 0.14 145)", angle: 270 },
-  { id: "system", label: "Regulated System", color: "oklch(0.72 0.12 75)", angle: 30 },
-  { id: "mind", label: "Unstoppable Mind", color: "oklch(0.68 0.10 260)", angle: 150 },
-];
-
+// High-contrast pillar colours
 const PILLAR_COLORS: Record<string, string> = {
-  body: "oklch(0.65 0.14 145)",
-  system: "oklch(0.72 0.12 75)",
-  mind: "oklch(0.68 0.10 260)",
+  body: "#4ade80",    // bright green
+  system: "#fbbf24",  // bright amber
+  mind: "#818cf8",    // bright indigo
 };
+
+const PILLAR_BG: Record<string, string> = {
+  body: "rgba(74,222,128,0.18)",
+  system: "rgba(251,191,36,0.18)",
+  mind: "rgba(129,140,248,0.18)",
+};
+
+const PILLARS = [
+  { id: "body", label: "Strong Body", color: "#4ade80", angle: 270 },
+  { id: "system", label: "Regulated System", color: "#fbbf24", angle: 30 },
+  { id: "mind", label: "Unstoppable Mind", color: "#818cf8", angle: 150 },
+];
 
 export default function TransformationWheel() {
   const [activeNode, setActiveNode] = useState<TransformationNode | null>(null);
@@ -130,13 +136,12 @@ export default function TransformationWheel() {
   const animRef = useRef<number | null>(null);
   const lastTimeRef = useRef<number>(0);
 
-  // Auto-rotate
   useEffect(() => {
     if (isPaused) return;
     const animate = (time: number) => {
       if (lastTimeRef.current) {
         const delta = time - lastTimeRef.current;
-        setRotation((r) => (r + delta * 0.012) % 360);
+        setRotation((r) => (r + delta * 0.01) % 360);
       }
       lastTimeRef.current = time;
       animRef.current = requestAnimationFrame(animate);
@@ -158,309 +163,235 @@ export default function TransformationWheel() {
     setIsPaused(false);
   }, []);
 
-  // Wheel dimensions
   const cx = 300;
   const cy = 300;
-  const outerR = 230;
-  const innerR = 130;
-  const hubR = 72;
-  const nodeR = 44;
-  const pillarNodeR = 36;
+  const outerR = 228;
+  const innerR = 128;
+  const hubR = 70;
+  const nodeR = 46;
+  const pillarR = 38;
 
   return (
-    <section className="py-24 md:py-36 bg-[oklch(0.08_0.005_285)] overflow-hidden">
+    <section className="py-24 md:py-36 bg-[#0a0a0f] overflow-hidden">
       <div className="container">
         {/* Header */}
         <div className="max-w-2xl mb-16">
           <span className="amber-rule mb-6 block" />
-          <p className="text-[oklch(0.72_0.12_75)] text-xs tracking-[0.3em] uppercase font-body font-medium mb-4">
+          <p className="text-[#fbbf24] text-xs tracking-[0.3em] uppercase font-body font-medium mb-4">
             The Transformation
           </p>
           <h2
-            className="text-[oklch(0.95_0.01_75)] font-display font-semibold leading-tight mb-4"
+            className="text-white font-display font-semibold leading-tight mb-4"
             style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
             Everything that changes
             <br />
-            <em className="text-[oklch(0.72_0.12_75)]">when you do the work.</em>
+            <em className="text-[#fbbf24]">when you do the work.</em>
           </h2>
-          <p className="text-[oklch(0.55_0.01_75)] font-body font-light text-sm leading-relaxed">
-            Click any area to see where you are now — and where you're going.
+          <p className="text-gray-400 font-body font-light text-sm leading-relaxed">
+            Click any node on the wheel to see where you are now — and exactly where you're going.
           </p>
         </div>
 
         <div className="flex flex-col xl:flex-row gap-12 items-center xl:items-start">
-          {/* Wheel */}
+          {/* SVG Wheel */}
           <div
-            className="relative flex-shrink-0"
-            style={{ width: 600, height: 600 }}
+            className="relative flex-shrink-0 w-full max-w-[600px] mx-auto xl:mx-0"
+            style={{ aspectRatio: "1/1" }}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => { if (!activeNode) setIsPaused(false); }}
           >
             <svg
-              width={600}
-              height={600}
               viewBox="0 0 600 600"
               className="w-full h-full"
-              style={{ maxWidth: 600 }}
             >
-              {/* Ambient glow rings */}
               <defs>
-                <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="oklch(0.72 0.12 75)" stopOpacity="0.25" />
-                  <stop offset="100%" stopColor="oklch(0.72 0.12 75)" stopOpacity="0" />
-                </radialGradient>
-                <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="oklch(0.72 0.12 75)" stopOpacity="0.04" />
-                  <stop offset="100%" stopColor="oklch(0.72 0.12 75)" stopOpacity="0" />
+                <radialGradient id="hubGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="#fbbf24" stopOpacity="0" />
                 </radialGradient>
                 <filter id="glow">
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
-                <filter id="strongGlow">
-                  <feGaussianBlur stdDeviation="6" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
+                <filter id="softglow">
+                  <feGaussianBlur stdDeviation="2" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
               </defs>
 
-              {/* Background glow */}
-              <circle cx={cx} cy={cy} r={outerR + 40} fill="url(#bgGlow)" />
+              {/* Dark background circle */}
+              <circle cx={cx} cy={cy} r={outerR + 50} fill="#0d0d14" />
 
-              {/* Orbit rings */}
-              <circle cx={cx} cy={cy} r={outerR} fill="none" stroke="oklch(0.72 0.12 75 / 0.08)" strokeWidth="1" strokeDasharray="4 8" />
-              <circle cx={cx} cy={cy} r={innerR} fill="none" stroke="oklch(0.72 0.12 75 / 0.12)" strokeWidth="1" />
-              <circle cx={cx} cy={cy} r={hubR + 20} fill="none" stroke="oklch(0.72 0.12 75 / 0.06)" strokeWidth="1" />
+              {/* Orbit rings — clearly visible */}
+              <circle cx={cx} cy={cy} r={outerR} fill="none" stroke="#fbbf24" strokeWidth="0.75" strokeOpacity="0.25" strokeDasharray="6 10" />
+              <circle cx={cx} cy={cy} r={innerR} fill="none" stroke="#fbbf24" strokeWidth="0.75" strokeOpacity="0.35" />
+              <circle cx={cx} cy={cy} r={hubR + 18} fill="none" stroke="#fbbf24" strokeWidth="0.5" strokeOpacity="0.2" />
 
-              {/* Spoke lines from hub to outer nodes */}
+              {/* Hub ambient glow */}
+              <circle cx={cx} cy={cy} r={hubR + 30} fill="url(#hubGrad)" />
+
+              {/* Spoke lines */}
               {NODES.map((node, i) => {
                 const angle = ((i / NODES.length) * 360 + rotation) * (Math.PI / 180);
                 const nx = cx + outerR * Math.cos(angle);
                 const ny = cy + outerR * Math.sin(angle);
                 return (
-                  <line
-                    key={`spoke-${node.id}`}
-                    x1={cx} y1={cy}
-                    x2={nx} y2={ny}
-                    stroke="oklch(0.72 0.12 75 / 0.06)"
-                    strokeWidth="1"
+                  <line key={`spoke-${node.id}`}
+                    x1={cx} y1={cy} x2={nx} y2={ny}
+                    stroke="#fbbf24" strokeWidth="0.5" strokeOpacity="0.12"
                   />
                 );
               })}
 
-              {/* Pillar nodes (inner ring — static) */}
+              {/* Inner pillar nodes */}
               {PILLARS.map((pillar) => {
                 const angle = pillar.angle * (Math.PI / 180);
                 const px = cx + innerR * Math.cos(angle);
                 const py = cy + innerR * Math.sin(angle);
                 return (
                   <g key={pillar.id}>
-                    <circle
-                      cx={px} cy={py} r={pillarNodeR}
-                      fill={`${pillar.color.replace("oklch(", "oklch(").replace(")", " / 0.15)")}`}
+                    {/* Glow halo */}
+                    <circle cx={px} cy={py} r={pillarR + 8} fill={pillar.color} fillOpacity="0.12" />
+                    {/* Main circle */}
+                    <circle cx={px} cy={py} r={pillarR}
+                      fill="#1a1a2e"
                       stroke={pillar.color}
-                      strokeWidth="1.5"
-                      filter="url(#glow)"
+                      strokeWidth="2"
+                      filter="url(#softglow)"
                     />
-                    <text
-                      x={px} y={py - 6}
-                      textAnchor="middle"
-                      fill={pillar.color}
-                      fontSize="9"
-                      fontFamily="DM Sans, sans-serif"
-                      fontWeight="600"
-                      letterSpacing="0.05em"
-                    >
+                    {/* Label line 1 */}
+                    <text x={px} y={py - 7} textAnchor="middle"
+                      fill={pillar.color} fontSize="9.5"
+                      fontFamily="DM Sans, sans-serif" fontWeight="700"
+                      letterSpacing="0.04em">
                       {pillar.label.split(" ")[0].toUpperCase()}
                     </text>
-                    <text
-                      x={px} y={py + 7}
-                      textAnchor="middle"
-                      fill={pillar.color}
-                      fontSize="9"
-                      fontFamily="DM Sans, sans-serif"
-                      fontWeight="600"
-                      letterSpacing="0.05em"
-                    >
+                    {/* Label line 2 */}
+                    <text x={px} y={py + 7} textAnchor="middle"
+                      fill={pillar.color} fontSize="9.5"
+                      fontFamily="DM Sans, sans-serif" fontWeight="700"
+                      letterSpacing="0.04em">
                       {pillar.label.split(" ").slice(1).join(" ").toUpperCase()}
                     </text>
                   </g>
                 );
               })}
 
-              {/* Outer transformation nodes (rotating) */}
+              {/* Outer rotating nodes */}
               {NODES.map((node, i) => {
                 const angle = ((i / NODES.length) * 360 + rotation) * (Math.PI / 180);
                 const nx = cx + outerR * Math.cos(angle);
                 const ny = cy + outerR * Math.sin(angle);
                 const isActive = activeNode?.id === node.id;
                 const isHovered = hoveredNode === node.id;
-                const color = PILLAR_COLORS[node.pillar];
+                const col = PILLAR_COLORS[node.pillar];
+                const bg = PILLAR_BG[node.pillar];
 
                 return (
-                  <g
-                    key={node.id}
-                    style={{ cursor: "pointer" }}
+                  <g key={node.id} style={{ cursor: "pointer" }}
                     onClick={() => handleNodeClick(node)}
                     onMouseEnter={() => setHoveredNode(node.id)}
                     onMouseLeave={() => setHoveredNode(null)}
                   >
-                    {/* Outer glow when active */}
+                    {/* Active/hover outer ring */}
                     {(isActive || isHovered) && (
-                      <circle
-                        cx={nx} cy={ny} r={nodeR + 10}
-                        fill={color.replace(")", " / 0.15)")}
-                        filter="url(#strongGlow)"
+                      <circle cx={nx} cy={ny} r={nodeR + 12}
+                        fill={col} fillOpacity="0.15"
+                        filter="url(#glow)"
                       />
                     )}
-                    {/* Node circle */}
-                    <circle
-                      cx={nx} cy={ny} r={nodeR}
-                      fill={isActive
-                        ? color.replace(")", " / 0.3)")
-                        : "oklch(0.14 0.005 285)"}
-                      stroke={isActive || isHovered ? color : "oklch(0.28 0.005 285)"}
-                      strokeWidth={isActive ? "2" : "1.5"}
-                      filter={isActive ? "url(#glow)" : undefined}
+                    {/* Node background */}
+                    <circle cx={nx} cy={ny} r={nodeR}
+                      fill={isActive ? bg : "#1a1a2e"}
+                      stroke={col}
+                      strokeWidth={isActive || isHovered ? "2.5" : "1.8"}
+                      filter={isActive || isHovered ? "url(#softglow)" : undefined}
                     />
-                    {/* Icon */}
-                    <text
-                      x={nx} y={ny - 8}
-                      textAnchor="middle"
-                      fontSize="16"
-                      dominantBaseline="middle"
-                    >
+                    {/* Emoji icon */}
+                    <text x={nx} y={ny - 10} textAnchor="middle"
+                      fontSize="17" dominantBaseline="middle">
                       {node.icon}
                     </text>
-                    {/* "From" label */}
-                    <text
-                      x={nx} y={ny + 8}
-                      textAnchor="middle"
-                      fill="oklch(0.55 0.01 75)"
-                      fontSize="7.5"
-                      fontFamily="DM Sans, sans-serif"
-                      fontWeight="400"
-                      letterSpacing="0.03em"
-                    >
+                    {/* "From" — muted strikethrough-style */}
+                    <text x={nx} y={ny + 7} textAnchor="middle"
+                      fill="#888" fontSize="8"
+                      fontFamily="DM Sans, sans-serif" fontWeight="400">
                       {node.from}
                     </text>
                     {/* Arrow */}
-                    <text
-                      x={nx} y={ny + 18}
-                      textAnchor="middle"
-                      fill={color}
-                      fontSize="7"
-                      fontFamily="DM Sans, sans-serif"
-                    >
-                      →
+                    <text x={nx} y={ny + 18} textAnchor="middle"
+                      fill={col} fontSize="8"
+                      fontFamily="DM Sans, sans-serif">
+                      ↓
                     </text>
-                    {/* "To" label */}
-                    <text
-                      x={nx} y={ny + 28}
-                      textAnchor="middle"
-                      fill={color}
-                      fontSize="7.5"
-                      fontFamily="DM Sans, sans-serif"
-                      fontWeight="600"
-                      letterSpacing="0.03em"
-                    >
+                    {/* "To" — bright and bold */}
+                    <text x={nx} y={ny + 30} textAnchor="middle"
+                      fill={col} fontSize="9"
+                      fontFamily="DM Sans, sans-serif" fontWeight="700"
+                      letterSpacing="0.02em">
                       {node.to}
                     </text>
                   </g>
                 );
               })}
 
-              {/* Hub glow */}
-              <circle cx={cx} cy={cy} r={hubR + 16} fill="url(#hubGlow)" />
-
               {/* Centre hub */}
-              <circle
-                cx={cx} cy={cy} r={hubR}
-                fill="oklch(0.12 0.005 285)"
-                stroke="oklch(0.72 0.12 75)"
-                strokeWidth="2"
+              <circle cx={cx} cy={cy} r={hubR}
+                fill="#111118"
+                stroke="#fbbf24"
+                strokeWidth="2.5"
                 filter="url(#glow)"
               />
-              <text
-                x={cx} y={cy - 14}
-                textAnchor="middle"
-                fill="oklch(0.72 0.12 75)"
-                fontSize="11"
+              <text x={cx} y={cy - 16} textAnchor="middle"
+                fill="#fbbf24" fontSize="10"
                 fontFamily="Cormorant Garamond, Georgia, serif"
-                fontWeight="600"
-                letterSpacing="0.08em"
-              >
+                fontWeight="600" letterSpacing="0.12em">
                 THE
               </text>
-              <text
-                x={cx} y={cy + 4}
-                textAnchor="middle"
-                fill="oklch(0.95 0.01 75)"
-                fontSize="13"
+              <text x={cx} y={cy + 2} textAnchor="middle"
+                fill="white" fontSize="12.5"
                 fontFamily="Cormorant Garamond, Georgia, serif"
-                fontWeight="700"
-                letterSpacing="0.06em"
-              >
+                fontWeight="700" letterSpacing="0.07em">
                 UNFORGETTABLE
               </text>
-              <text
-                x={cx} y={cy + 20}
-                textAnchor="middle"
-                fill="oklch(0.72 0.12 75)"
-                fontSize="11"
+              <text x={cx} y={cy + 20} textAnchor="middle"
+                fill="#fbbf24" fontSize="10"
                 fontFamily="Cormorant Garamond, Georgia, serif"
-                fontWeight="600"
-                letterSpacing="0.08em"
-              >
+                fontWeight="600" letterSpacing="0.12em">
                 MAN
               </text>
             </svg>
           </div>
 
           {/* Detail panel */}
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 w-full">
             {activeNode ? (
-              <div className="bg-[oklch(0.13_0.005_285)] border border-[oklch(0.22_0.005_285)] p-8 md:p-10 relative">
-                {/* Close */}
-                <button
-                  onClick={handleClose}
-                  className="absolute top-5 right-5 text-[oklch(0.4_0.01_75)] hover:text-[oklch(0.72_0.12_75)] transition-colors duration-200 text-xl leading-none"
-                >
+              <div className="bg-[#13131e] border border-[#2a2a3e] p-8 md:p-10 relative">
+                <button onClick={handleClose}
+                  className="absolute top-5 right-5 text-gray-500 hover:text-[#fbbf24] transition-colors duration-200 text-2xl leading-none font-light">
                   ×
                 </button>
 
-                {/* Pillar tag */}
-                <span
-                  className="inline-block px-3 py-1 text-xs tracking-widest uppercase font-body font-medium mb-6"
+                {/* Pillar badge */}
+                <span className="inline-block px-3 py-1 text-xs tracking-widest uppercase font-body font-semibold mb-6 rounded-sm"
                   style={{
                     color: PILLAR_COLORS[activeNode.pillar],
-                    border: `1px solid ${PILLAR_COLORS[activeNode.pillar]}`,
-                    background: `${PILLAR_COLORS[activeNode.pillar].replace(")", " / 0.1)")}`,
-                  }}
-                >
+                    border: `1.5px solid ${PILLAR_COLORS[activeNode.pillar]}`,
+                    background: PILLAR_BG[activeNode.pillar],
+                  }}>
                   {PILLARS.find((p) => p.id === activeNode.pillar)?.label}
                 </span>
 
                 {/* Transformation headline */}
                 <div className="flex items-center gap-4 mb-8">
-                  <span className="text-4xl">{activeNode.icon}</span>
+                  <span className="text-5xl">{activeNode.icon}</span>
                   <div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-[oklch(0.5_0.01_75)] font-body text-sm line-through">{activeNode.from}</span>
-                      <span className="text-[oklch(0.72_0.12_75)] text-sm">→</span>
-                      <span
-                        className="font-display text-2xl font-semibold"
-                        style={{
-                          fontFamily: "var(--font-display)",
-                          color: PILLAR_COLORS[activeNode.pillar],
-                        }}
-                      >
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <span className="text-gray-500 font-body text-sm line-through">{activeNode.from}</span>
+                      <span className="text-gray-400 text-sm">→</span>
+                      <span className="font-display text-3xl font-semibold"
+                        style={{ fontFamily: "var(--font-display)", color: PILLAR_COLORS[activeNode.pillar] }}>
                         {activeNode.to}
                       </span>
                     </div>
@@ -469,74 +400,62 @@ export default function TransformationWheel() {
 
                 {/* Pain */}
                 <div className="mb-8">
-                  <p className="text-[oklch(0.72_0.12_75)] text-xs tracking-[0.25em] uppercase font-body font-medium mb-3">
+                  <p className="text-[#fbbf24] text-xs tracking-[0.25em] uppercase font-body font-semibold mb-3">
                     Where You Are Now
                   </p>
-                  <p className="text-[oklch(0.65_0.01_75)] font-body font-light leading-relaxed">
+                  <p className="text-gray-300 font-body font-light leading-relaxed">
                     {activeNode.pain}
                   </p>
                 </div>
 
-                {/* Divider */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="flex-1 h-px bg-[oklch(0.2_0.005_285)]" />
-                  <span className="text-[oklch(0.72_0.12_75)] text-lg">↓</span>
-                  <div className="flex-1 h-px bg-[oklch(0.2_0.005_285)]" />
+                  <div className="flex-1 h-px bg-[#2a2a3e]" />
+                  <span className="text-[#fbbf24] text-xl">↓</span>
+                  <div className="flex-1 h-px bg-[#2a2a3e]" />
                 </div>
 
                 {/* Outcome */}
                 <div className="mb-10">
-                  <p className="text-[oklch(0.72_0.12_75)] text-xs tracking-[0.25em] uppercase font-body font-medium mb-3">
+                  <p className="text-[#fbbf24] text-xs tracking-[0.25em] uppercase font-body font-semibold mb-3">
                     Where You're Going
                   </p>
-                  <p className="text-[oklch(0.82_0.01_75)] font-body font-light leading-relaxed">
+                  <p className="text-white font-body font-light leading-relaxed">
                     {activeNode.outcome}
                   </p>
                 </div>
 
-                {/* CTA */}
-                <a
-                  href="#apply"
-                  className="inline-flex items-center justify-center w-full px-8 py-4 bg-[oklch(0.72_0.12_75)] text-[oklch(0.1_0.005_285)] text-sm tracking-widest uppercase font-body font-semibold hover:bg-[oklch(0.78_0.12_75)] transition-all duration-300 group"
-                >
+                <a href="#apply"
+                  className="inline-flex items-center justify-center w-full px-8 py-4 bg-[#fbbf24] text-[#0a0a0f] text-sm tracking-widest uppercase font-body font-bold hover:bg-[#fcd34d] transition-all duration-300 group">
                   I Want This Transformation
                   <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </a>
               </div>
             ) : (
-              /* Default state — prompt to click */
               <div className="h-full flex flex-col justify-center">
                 <div className="space-y-6">
-                  <p className="text-[oklch(0.72_0.12_75)] text-xs tracking-[0.3em] uppercase font-body font-medium">
+                  <p className="text-[#fbbf24] text-xs tracking-[0.3em] uppercase font-body font-semibold">
                     10 Transformations Available
                   </p>
-                  <h3
-                    className="text-[oklch(0.95_0.01_75)] font-display text-3xl font-semibold leading-tight"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
+                  <h3 className="text-white font-display text-3xl font-semibold leading-tight"
+                    style={{ fontFamily: "var(--font-display)" }}>
                     Every node is a version of you
                     <br />
-                    <em className="text-[oklch(0.72_0.12_75)]">waiting to be unlocked.</em>
+                    <em className="text-[#fbbf24]">waiting to be unlocked.</em>
                   </h3>
-                  <p className="text-[oklch(0.55_0.01_75)] font-body font-light leading-relaxed">
+                  <p className="text-gray-400 font-body font-light leading-relaxed">
                     Click any area on the wheel to see where you are now, where you're going, and what becomes possible when you do the real work.
                   </p>
 
-                  {/* Node list preview */}
+                  {/* Node grid */}
                   <div className="grid grid-cols-2 gap-2 mt-4">
                     {NODES.map((node) => (
-                      <button
-                        key={node.id}
-                        onClick={() => handleNodeClick(node)}
-                        className="flex items-center gap-2 px-3 py-2 border border-[oklch(0.2_0.005_285)] hover:border-[oklch(0.72_0.12_75/0.4)] text-left transition-all duration-200 group"
-                      >
-                        <span className="text-base flex-shrink-0">{node.icon}</span>
+                      <button key={node.id} onClick={() => handleNodeClick(node)}
+                        className="flex items-center gap-3 px-3 py-3 border border-[#2a2a3e] hover:border-[#fbbf24] bg-[#13131e] hover:bg-[#1a1a2e] text-left transition-all duration-200 group">
+                        <span className="text-xl flex-shrink-0">{node.icon}</span>
                         <div className="min-w-0">
-                          <span className="text-[oklch(0.5_0.01_75)] text-xs font-body block leading-none mb-0.5 line-through">{node.from}</span>
-                          <span
-                            className="text-xs font-body font-medium block leading-none"
-                            style={{ color: PILLAR_COLORS[node.pillar] }}
-                          >
+                          <span className="text-gray-500 text-xs font-body block leading-none mb-1 line-through">{node.from}</span>
+                          <span className="text-xs font-body font-bold block leading-none"
+                            style={{ color: PILLAR_COLORS[node.pillar] }}>
                             {node.to}
                           </span>
                         </div>
@@ -547,6 +466,16 @@ export default function TransformationWheel() {
               </div>
             )}
           </div>
+        </div>
+
+        {/* Pillar legend */}
+        <div className="flex flex-wrap gap-6 mt-12 pt-8 border-t border-[#2a2a3e]">
+          {PILLARS.map((p) => (
+            <div key={p.id} className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: p.color }} />
+              <span className="text-xs font-body font-medium tracking-wide" style={{ color: p.color }}>{p.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
