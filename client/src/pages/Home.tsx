@@ -18,7 +18,7 @@
  */
 
 import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
+import KnightEvolution from "@/components/KnightEvolution";
 import ProblemSection from "@/components/ProblemSection";
 import TransformationWheel from "@/components/TransformationWheel";
 import GuideSection from "@/components/GuideSection";
@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[oklch(0.1_0.005_285)]">
       <Navigation />
-      <HeroSection />
+      <KnightEvolution />
       <ProblemSection />
       <TransformationWheel />
       <GuideSection />
