@@ -3,7 +3,7 @@
  * Navy bg, Syne headings, indigo accents, Plus Jakarta Sans body, high-contrast text
  */
 
-const SHAUN_BLAZER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/shaun-forest_c36e8f08.webp";
+const SHAUN_BLAZER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/shaun-forest-cropped_37a9c292.webp";
 
 const credentials = [
   "Health Scientist — BSc",
