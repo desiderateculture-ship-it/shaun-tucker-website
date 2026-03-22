@@ -1,3 +1,8 @@
+/*
+ * PODCAST SECTION — AItechadvisory style
+ * Navy bg, Syne headings, indigo/cyan accents, Plus Jakarta Sans body
+ */
+
 const PODCAST_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/podcast-bg-dY4uxkcUG22PH8KhztTvTf.webp";
 
 const recentEpisodes = [
@@ -8,36 +13,58 @@ const recentEpisodes = [
   { ep: "Ep 39", title: "The Identity Shift That Changes Everything" },
 ];
 
+const platforms = ["Spotify", "Apple Podcasts", "YouTube"];
+
 export default function PodcastSection() {
   return (
-    <section id="podcast" className="py-24 md:py-36 bg-[oklch(0.12_0.005_285)]">
+    <section id="podcast" className="py-24 md:py-32" style={{ background: "#0A0A20" }}>
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
           {/* Left — copy */}
           <div>
-            <span className="amber-rule mb-6 block" />
-            <p className="text-[oklch(0.72_0.12_75)] text-xs tracking-[0.3em] uppercase font-body font-medium mb-4">
+            <span className="section-tag mb-6 inline-flex">
+              <span style={{ color: "#06B6D4" }}>✦</span>
               The Reset Podcast
-            </p>
+            </span>
             <h2
-              className="text-[oklch(0.95_0.01_75)] font-display font-semibold leading-tight mb-6"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+              className="text-white font-bold leading-tight mb-5"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
+              }}
             >
               A daily episode
               <br />
-              <em className="text-[oklch(0.72_0.12_75)]">for the man who is ready to reset.</em>
+              <span style={{ color: "#22D3EE" }}>for the man who is ready to reset.</span>
             </h2>
-            <p className="text-[oklch(0.65_0.01_75)] font-body font-light leading-relaxed mb-8">
+            <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", lineHeight: 1.75, marginBottom: "2rem" }}>
               Every day, Shaun publishes a raw, unfiltered conversation about the things most men's coaches won't touch — nervous system regulation, emotional intelligence, presence, fatherhood, and the philosophy of becoming unforgettable. 43 episodes and counting.
             </p>
 
             {/* Platform links */}
             <div className="flex flex-wrap gap-3 mb-10">
-              {["Spotify", "Apple Podcasts", "YouTube"].map((platform) => (
+              {platforms.map((platform) => (
                 <a
                   key={platform}
                   href="#"
-                  className="px-4 py-2 border border-[oklch(0.22_0.005_285)] text-[oklch(0.6_0.01_75)] text-xs tracking-widest uppercase font-body hover:border-[oklch(0.72_0.12_75)] hover:text-[oklch(0.72_0.12_75)] transition-all duration-300"
+                  className="px-4 py-2 rounded-lg text-xs tracking-widest uppercase font-bold transition-all duration-200"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    background: "#0F0F2A",
+                    border: "1px solid rgba(6,182,212,0.25)",
+                    color: "#64748B",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.borderColor = "#06B6D4";
+                    (e.currentTarget as HTMLElement).style.color = "#22D3EE";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(6,182,212,0.25)";
+                    (e.currentTarget as HTMLElement).style.color = "#64748B";
+                  }}
                 >
                   {platform}
                 </a>
@@ -45,19 +72,34 @@ export default function PodcastSection() {
             </div>
 
             {/* Recent episodes */}
-            <div className="space-y-px">
-              {recentEpisodes.map((ep) => (
+            <div>
+              {recentEpisodes.map((ep, i) => (
                 <div
                   key={ep.ep}
-                  className="flex items-center gap-4 py-4 border-b border-[oklch(0.18_0.005_285)] group cursor-pointer hover:border-[oklch(0.72_0.12_75/0.3)] transition-all duration-300"
+                  className="flex items-center gap-4 py-4 cursor-pointer group transition-all duration-200"
+                  style={{ borderBottom: i < recentEpisodes.length - 1 ? "1px solid rgba(30,30,63,0.8)" : "none" }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.paddingLeft = "0.5rem";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.paddingLeft = "0";
+                  }}
                 >
-                  <span className="text-[oklch(0.4_0.01_75)] text-xs font-body tracking-widest uppercase w-12 flex-shrink-0">
+                  <span
+                    className="text-xs tracking-widest uppercase font-bold w-12 flex-shrink-0"
+                    style={{ fontFamily: "var(--font-body)", color: "#334155" }}
+                  >
                     {ep.ep}
                   </span>
-                  <span className="text-[oklch(0.75_0.01_75)] text-sm font-body group-hover:text-[oklch(0.72_0.12_75)] transition-colors duration-300 flex-1">
+                  <span
+                    className="text-sm flex-1 transition-colors duration-200"
+                    style={{ fontFamily: "var(--font-body)", color: "#CBD5E1" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#22D3EE")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "#CBD5E1")}
+                  >
                     {ep.title}
                   </span>
-                  <span className="text-[oklch(0.4_0.01_75)] group-hover:text-[oklch(0.72_0.12_75)] transition-colors duration-300">→</span>
+                  <span style={{ color: "#334155" }}>→</span>
                 </div>
               ))}
             </div>
@@ -68,22 +110,33 @@ export default function PodcastSection() {
             <img
               src={PODCAST_BG}
               alt="The Reset Podcast"
-              className="w-full object-cover"
+              className="w-full object-cover rounded-xl"
               style={{ aspectRatio: "4/3" }}
             />
-            {/* Overlay badge */}
-            <div className="absolute bottom-6 left-6 bg-[oklch(0.1_0.005_285/0.95)] border border-[oklch(0.72_0.12_75/0.3)] px-5 py-4">
-              <p className="text-[oklch(0.72_0.12_75)] text-xs tracking-[0.25em] uppercase font-body font-medium mb-1">
+            {/* Badge */}
+            <div
+              className="absolute bottom-5 left-5 px-5 py-4 rounded-xl"
+              style={{
+                background: "rgba(9,9,31,0.92)",
+                backdropFilter: "blur(8px)",
+                border: "1px solid rgba(6,182,212,0.3)",
+              }}
+            >
+              <p
+                className="text-xs tracking-[0.25em] uppercase font-bold mb-1"
+                style={{ fontFamily: "var(--font-body)", color: "#22D3EE" }}
+              >
                 Daily Episodes
               </p>
               <p
-                className="text-[oklch(0.95_0.01_75)] font-display text-2xl font-semibold"
-                style={{ fontFamily: "var(--font-display)" }}
+                className="font-bold"
+                style={{ fontFamily: "var(--font-display)", color: "#F1F5F9", fontSize: "1.5rem", letterSpacing: "-0.01em" }}
               >
                 The Reset
               </p>
             </div>
           </div>
+
         </div>
       </div>
     </section>

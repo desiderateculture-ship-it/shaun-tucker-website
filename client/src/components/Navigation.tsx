@@ -1,3 +1,8 @@
+/*
+ * NAVIGATION — AItechadvisory style
+ * Deep navy bg #09091F, Syne headings, Plus Jakarta Sans body, indigo gradient CTA
+ */
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -6,14 +11,14 @@ export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { label: "About", href: "#about" },
-    { label: "The Path", href: "#path" },
+    { label: "About", href: "#guide" },
+    { label: "The Path", href: "#plan" },
     { label: "The Retreat", href: "#retreat" },
     { label: "Podcast", href: "#podcast" },
     { label: "Community", href: "#community" },
@@ -21,74 +26,78 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-[oklch(0.1_0.005_285/0.95)] backdrop-blur-md border-b border-[oklch(0.22_0.005_285)]"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        background: scrolled ? "rgba(9,9,31,0.97)" : "rgba(9,9,31,0.75)",
+        backdropFilter: "blur(14px)",
+        borderBottom: scrolled ? "1px solid rgba(99,102,241,0.18)" : "1px solid transparent",
+      }}
     >
-      <div className="container flex items-center justify-between h-16 md:h-20">
+      <div className="container flex items-center justify-between h-16 md:h-18">
         {/* Logo */}
-        <a href="#" className="flex flex-col leading-none group">
+        <a href="#" className="flex flex-col leading-none">
           <span
-            className="text-[oklch(0.95_0.01_75)] font-display text-xl font-semibold tracking-wide group-hover:text-[oklch(0.72_0.12_75)] transition-colors duration-300"
-            style={{ fontFamily: "var(--font-display)" }}
+            className="text-white font-bold"
+            style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", letterSpacing: "-0.01em" }}
           >
             SHAUN TUCKER
           </span>
-          <span className="text-[oklch(0.72_0.12_75)] text-[0.6rem] tracking-[0.25em] uppercase font-body font-medium mt-0.5">
+          <span
+            className="text-xs tracking-[0.2em] uppercase"
+            style={{ color: "#818CF8", fontFamily: "var(--font-body)", fontSize: "0.6rem" }}
+          >
             The Unforgettable
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-[oklch(0.7_0.01_75)] hover:text-[oklch(0.72_0.12_75)] text-sm tracking-widest uppercase font-body font-medium transition-colors duration-300"
+              className="text-sm font-medium transition-colors duration-200"
+              style={{ fontFamily: "var(--font-body)", color: "#94A3B8" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#F1F5F9")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#94A3B8")}
             >
               {link.label}
             </a>
           ))}
-          <a
-            href="#apply"
-            className="ml-4 px-5 py-2.5 bg-[oklch(0.72_0.12_75)] text-[oklch(0.1_0.005_285)] text-sm tracking-widest uppercase font-body font-semibold hover:bg-[oklch(0.78_0.12_75)] transition-all duration-300"
-          >
-            Apply Now
+          <a href="#apply" className="btn-primary py-2.5 px-5 text-xs">
+            Apply Now →
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-[oklch(0.95_0.01_75)] p-2"
+          className="md:hidden text-white p-2"
           aria-label="Toggle menu"
         >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[oklch(0.12_0.005_285)] border-t border-[oklch(0.22_0.005_285)] px-6 py-6 flex flex-col gap-5">
+        <div
+          className="md:hidden px-6 py-5 flex flex-col gap-4"
+          style={{ background: "#09091F", borderTop: "1px solid rgba(99,102,241,0.18)" }}
+        >
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-[oklch(0.7_0.01_75)] hover:text-[oklch(0.72_0.12_75)] text-sm tracking-widest uppercase font-body font-medium transition-colors duration-300"
+              className="text-sm font-medium"
+              style={{ fontFamily: "var(--font-body)", color: "#94A3B8" }}
             >
               {link.label}
             </a>
           ))}
-          <a
-            href="#apply"
-            onClick={() => setMenuOpen(false)}
-            className="mt-2 px-5 py-3 bg-[oklch(0.72_0.12_75)] text-[oklch(0.1_0.005_285)] text-sm tracking-widest uppercase font-body font-semibold text-center hover:bg-[oklch(0.78_0.12_75)] transition-all duration-300"
-          >
-            Apply Now
+          <a href="#apply" onClick={() => setMenuOpen(false)} className="btn-primary mt-2 justify-center">
+            Apply Now →
           </a>
         </div>
       )}

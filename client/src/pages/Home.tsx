@@ -32,7 +32,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[oklch(0.1_0.005_285)]">
+    <div className="min-h-screen bg-[#09091F]">
       <Navigation />
       <KnightEvolution />
       <ProblemSection />

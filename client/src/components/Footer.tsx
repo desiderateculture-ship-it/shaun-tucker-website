@@ -1,30 +1,55 @@
+/*
+ * FOOTER — AItechadvisory style
+ * Deep navy bg, Syne brand name, indigo accent links, Plus Jakarta Sans body
+ */
+
+const navLinks = [
+  { label: "About Shaun", href: "#about" },
+  { label: "The Path", href: "#plan" },
+  { label: "The Retreat", href: "#retreat" },
+  { label: "The Podcast", href: "#podcast" },
+  { label: "Community", href: "#community" },
+];
+
+const socials = ["Instagram", "LinkedIn", "Spotify"];
+
 export default function Footer() {
   return (
-    <footer className="bg-[oklch(0.08_0.005_285)] border-t border-[oklch(0.18_0.005_285)] py-16">
+    <footer
+      className="py-16"
+      style={{ background: "#06061A", borderTop: "1px solid rgba(30,30,63,0.8)" }}
+    >
       <div className="container">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
+
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="mb-4">
+            <div className="mb-5">
               <span
-                className="text-[oklch(0.95_0.01_75)] font-display text-xl font-semibold tracking-wide block"
-                style={{ fontFamily: "var(--font-display)" }}
+                className="font-bold tracking-wide block"
+                style={{ fontFamily: "var(--font-display)", color: "#F1F5F9", fontSize: "1.25rem", letterSpacing: "-0.01em" }}
               >
                 SHAUN TUCKER
               </span>
-              <span className="text-[oklch(0.72_0.12_75)] text-[0.6rem] tracking-[0.25em] uppercase font-body font-medium">
+              <span
+                className="text-[0.6rem] tracking-[0.25em] uppercase font-bold"
+                style={{ fontFamily: "var(--font-body)", color: "#6366F1" }}
+              >
                 The Unforgettable
               </span>
             </div>
-            <p className="text-[oklch(0.5_0.01_75)] font-body font-light text-sm leading-relaxed max-w-xs">
+            <p style={{ fontFamily: "var(--font-body)", color: "#475569", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "30ch" }}>
               Health Scientist. Self-Mastery Coach. Breathwork Facilitator. Helping driven dads become the fathers their kids will never forget.
             </p>
-            <div className="flex gap-4 mt-6">
-              {["Instagram", "LinkedIn", "Spotify"].map((social) => (
+            <div className="flex gap-5 mt-6">
+              {socials.map((social) => (
                 <a
                   key={social}
                   href="#"
-                  className="text-[oklch(0.4_0.01_75)] text-xs tracking-widest uppercase font-body hover:text-[oklch(0.72_0.12_75)] transition-colors duration-300"
+                  className="text-xs tracking-widest uppercase font-bold transition-colors duration-200"
+                  style={{ fontFamily: "var(--font-body)", color: "#334155" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#818CF8")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#334155")}
                 >
                   {social}
                 </a>
@@ -32,23 +57,23 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
+          {/* Navigate */}
           <div>
-            <p className="text-[oklch(0.72_0.12_75)] text-xs tracking-[0.3em] uppercase font-body font-medium mb-5">
+            <p
+              className="text-xs font-bold tracking-[0.2em] uppercase mb-5"
+              style={{ fontFamily: "var(--font-body)", color: "#6366F1" }}
+            >
               Navigate
             </p>
             <div className="space-y-3">
-              {[
-                { label: "About Shaun", href: "#about" },
-                { label: "The Path", href: "#path" },
-                { label: "The Retreat", href: "#retreat" },
-                { label: "The Podcast", href: "#podcast" },
-                { label: "Community", href: "#community" },
-              ].map((link) => (
+              {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="block text-[oklch(0.5_0.01_75)] text-sm font-body hover:text-[oklch(0.72_0.12_75)] transition-colors duration-300"
+                  className="block text-sm transition-colors duration-200"
+                  style={{ fontFamily: "var(--font-body)", color: "#475569" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#818CF8")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#475569")}
                 >
                   {link.label}
                 </a>
@@ -58,38 +83,49 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-[oklch(0.72_0.12_75)] text-xs tracking-[0.3em] uppercase font-body font-medium mb-5">
+            <p
+              className="text-xs font-bold tracking-[0.2em] uppercase mb-5"
+              style={{ fontFamily: "var(--font-body)", color: "#6366F1" }}
+            >
               Get in Touch
             </p>
-            <div className="space-y-3">
+            <div className="space-y-3 mb-8">
               <a
                 href="mailto:shaun@shauntucker.com.au"
-                className="block text-[oklch(0.5_0.01_75)] text-sm font-body hover:text-[oklch(0.72_0.12_75)] transition-colors duration-300"
+                className="block text-sm transition-colors duration-200"
+                style={{ fontFamily: "var(--font-body)", color: "#475569" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#818CF8")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#475569")}
               >
                 shaun@shauntucker.com.au
               </a>
-              <p className="text-[oklch(0.4_0.01_75)] text-sm font-body">Melbourne, VIC, Australia</p>
+              <p style={{ fontFamily: "var(--font-body)", color: "#334155", fontSize: "0.9rem" }}>
+                Melbourne, VIC, Australia
+              </p>
             </div>
-            <div className="mt-8">
-              <a
-                href="#apply"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[oklch(0.72_0.12_75)] text-[oklch(0.1_0.005_285)] text-xs tracking-widest uppercase font-body font-semibold hover:bg-[oklch(0.78_0.12_75)] transition-all duration-300"
-              >
-                Apply Now
-              </a>
-            </div>
+            <a href="#apply" className="btn-primary text-xs px-5 py-2.5">
+              Apply Now
+            </a>
           </div>
+
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-[oklch(0.15_0.005_285)] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[oklch(0.35_0.01_75)] text-xs font-body">
+        <div
+          className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+          style={{ borderTop: "1px solid rgba(30,30,63,0.8)" }}
+        >
+          <p style={{ fontFamily: "var(--font-body)", color: "#1E1E3F", fontSize: "0.75rem" }}>
             © {new Date().getFullYear()} Shaun Tucker. All rights reserved.
           </p>
-          <p className="text-[oklch(0.35_0.01_75)] text-xs font-body italic" style={{ fontFamily: "var(--font-display)" }}>
+          <p
+            className="font-bold italic"
+            style={{ fontFamily: "var(--font-display)", color: "#1E293B", fontSize: "0.8rem" }}
+          >
             "Be the father they'll never forget."
           </p>
         </div>
+
       </div>
     </footer>
   );

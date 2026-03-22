@@ -180,9 +180,9 @@ export default function TransformationWheel() {
             style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.2rem, 4vw, 3.6rem)" }}>
             Everything that changes
             <br />
-            <em className="text-[#F5C842]">when you do the work.</em>
+            <span style={{ color: "#818CF8" }}>when you do the work.</span>
           </h2>
-          <p className="text-[#b0a090] font-body text-base leading-relaxed">
+          <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "1rem", lineHeight: 1.75 }}>
             Click any node on the wheel to see where you are now — and exactly where you're going.
           </p>
         </div>
@@ -433,9 +433,9 @@ export default function TransformationWheel() {
                   style={{ fontFamily: "var(--font-display)" }}>
                   Every node is a version of you
                   <br />
-                  <em className="text-[#F5C842]">waiting to be unlocked.</em>
+                  <span style={{ color: "#818CF8" }}>waiting to be unlocked.</span>
                 </h3>
-                <p className="text-[#b0a090] font-body text-base leading-relaxed">
+                <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "1rem", lineHeight: 1.75 }}>
                   Click any area on the wheel to see where you are now, where you're going, and what becomes possible when you do the real work.
                 </p>
 
