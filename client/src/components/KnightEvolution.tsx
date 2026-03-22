@@ -128,12 +128,12 @@ export default function KnightEvolution() {
               className="w-full h-full object-cover object-center"
               loading={i === 0 ? "eager" : "lazy"}
             />
-            {/* Strong overlay for readability */}
+            {/* Overlay — lightened so images are clearly visible */}
             <div className="absolute inset-0" style={{
-              background: "linear-gradient(to right, rgba(9,9,31,0.96) 0%, rgba(9,9,31,0.82) 45%, rgba(9,9,31,0.4) 70%, rgba(9,9,31,0.15) 100%)"
+              background: "linear-gradient(to right, rgba(9,9,31,0.82) 0%, rgba(9,9,31,0.55) 40%, rgba(9,9,31,0.15) 70%, rgba(9,9,31,0.05) 100%)"
             }} />
             <div className="absolute inset-0" style={{
-              background: "linear-gradient(to top, rgba(9,9,31,0.85) 0%, transparent 50%)"
+              background: "linear-gradient(to top, rgba(9,9,31,0.6) 0%, transparent 45%)"
             }} />
           </div>
         ))}
