@@ -35,9 +35,9 @@ export default function ApplySection() {
               lineHeight: 1.05,
             }}
           >
-            Your kids are growing up
+            There is no second chance
             <br />
-            <span style={{ color: "#FCD34D" }}>right now.</span>
+            <span style={{ color: "#FCD34D" }}>at their childhood.</span>
           </h2>
 
           <p
@@ -50,7 +50,7 @@ export default function ApplySection() {
               maxWidth: "50ch",
             }}
           >
-            Every year that passes running on fumes is a year they remember a dad who was there — but not really there. The window to become the father they'll never forget is open. But it won't stay open forever.
+            I made a vow to my daughter Kelsey. To my own father. To every man who ever felt like he was running out of time to get this right. The clock doesn't pause while you think about it. Your kids are forming their memories of you right now — today, this week, this year.
           </p>
 
           <p
@@ -63,8 +63,8 @@ export default function ApplySection() {
               letterSpacing: "-0.01em",
             }}
           >
-            "Imagine waking up calm. Training with purpose. Coming home and actually being present. Your kids running to you — not because you're performing fatherhood,{" "}
-            <span style={{ color: "#FCD34D" }}>but because they can feel you."</span>
+            "By this time next year, I will work four days a week. The fifth day belongs to Kelsey. I will lead 50 dads to become unforgettable. And I will take my whole family on a trip they'll never forget — because the gift I'm giving my kids is the one I felt I missed out on."
+            <span style={{ color: "#FCD34D" }}> That's the vow. Are you ready to make yours?</span>
           </p>
 
           {/* CTAs */}
@@ -88,7 +88,7 @@ export default function ApplySection() {
             className="mt-8 text-xs tracking-wide"
             style={{ fontFamily: "var(--font-body)", color: "#475569" }}
           >
-            Applications are reviewed personally by Shaun. Not everyone is accepted — this ensures every man in the room is ready.
+            Every application is reviewed personally by Shaun. This is not a course. This is a brotherhood. Not everyone is accepted — and that's exactly the point.
           </p>
 
         </div>

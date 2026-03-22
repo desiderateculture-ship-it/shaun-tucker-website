@@ -86,23 +86,23 @@ export default function GuideSection() {
                 lineHeight: 1.1,
               }}
             >
-              I was you.
+              I was the man you are right now.
               <br />
-              <span style={{ color: "#818CF8" }}>I know the exact way out.</span>
+              <span style={{ color: "#818CF8" }}>And I found the way through.</span>
             </h2>
 
             <div className="space-y-5" style={{ fontFamily: "var(--font-body)", color: "#94A3B8", lineHeight: 1.75 }}>
               <p>
-                I was the guy who trained harder when things got hard. Who pushed through every program, every challenge, every obstacle — because that's what strong men do. I had the discipline. I had the credentials. I had everything except what actually mattered: the ability to be present with the people I loved most.
+                I trained harder than anyone I knew. Pushed through 75Hard. Chased mentors. Earned the credentials. And I was still snapping at the people I loved. Still lying awake at 2am. Still not fully present with my own daughter.
               </p>
               <p>
-                The moment it broke me was on the floor with my newborn daughter. All that force, all that control — and I couldn't even be in the room without my mind racing. I realised I hadn't been building strength. I'd been building walls.
+                Two weeks ago I sent a message to my own father. I told him that by this time next year, I'd be working four days a week — because the fifth day belongs to Kelsey. That I'd be leading 50 dads a year to become the men their families need. That the gift I'm giving my kids is the one I felt I missed out on with him.
               </p>
               <p style={{ color: "#E2E8F0", fontWeight: 600 }}>
-                That's when I stopped performing and started doing the real work. The nervous system work. The identity work. The breathwork that unlocks what no gym session ever could.
+                That's not a business plan. That's a vow. And it's the same vow I'm asking you to make — to your kids, to your partner, to the version of yourself you haven't fully met yet.
               </p>
               <p>
-                What I found changed everything — not just for me, but for every man I've worked with since. And it will change everything for you.
+                I built the system that got me there. I've used it with 100+ men. And I'm here to walk you through it — step by step, breath by breath, rep by rep.
               </p>
             </div>
 
