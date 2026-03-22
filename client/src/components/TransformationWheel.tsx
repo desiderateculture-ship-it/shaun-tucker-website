@@ -1,7 +1,7 @@
 /*
  * TRANSFORMATION WHEEL — Interactive Sales Tool
- * HIGH CONTRAST VERSION — all nodes, labels, and rings clearly visible
- * Design: Dark bg with bright amber/green/blue nodes and white text
+ * Brand-aligned: amber/gold palette only — no green, no purple
+ * Larger nodes, larger text, fully readable
  */
 
 import { useState, useEffect, useRef, useCallback } from "react";
@@ -63,7 +63,7 @@ const NODES: TransformationNode[] = [
     icon: "🤝",
   },
   {
-    id: "weak",
+    id: "depleted",
     from: "Depleted",
     to: "Strong",
     pillar: "body",
@@ -109,23 +109,18 @@ const NODES: TransformationNode[] = [
   },
 ];
 
-// High-contrast pillar colours
-const PILLAR_COLORS: Record<string, string> = {
-  body: "#4ade80",    // bright green
-  system: "#fbbf24",  // bright amber
-  mind: "#818cf8",    // bright indigo
-};
-
-const PILLAR_BG: Record<string, string> = {
-  body: "rgba(74,222,128,0.18)",
-  system: "rgba(251,191,36,0.18)",
-  mind: "rgba(129,140,248,0.18)",
+// Brand-aligned colour tiers — all amber/gold/warm
+// Gold bright: #F5C842  Gold mid: #D4A017  Gold dim: #A07810  Cream: #F0E6C8  Warm white: #FFF8EC
+const PILLAR_COLORS: Record<string, { stroke: string; text: string; bg: string; dim: string }> = {
+  body:   { stroke: "#F5C842", text: "#F5C842", bg: "rgba(245,200,66,0.14)",  dim: "#A07810" },
+  system: { stroke: "#E8A020", text: "#E8A020", bg: "rgba(232,160,32,0.14)",  dim: "#8B5E10" },
+  mind:   { stroke: "#D4896A", text: "#D4896A", bg: "rgba(212,137,106,0.14)", dim: "#8B4A2A" },
 };
 
 const PILLARS = [
-  { id: "body", label: "Strong Body", color: "#4ade80", angle: 270 },
-  { id: "system", label: "Regulated System", color: "#fbbf24", angle: 30 },
-  { id: "mind", label: "Unstoppable Mind", color: "#818cf8", angle: 150 },
+  { id: "body",   label: "Strong Body",        angle: 270 },
+  { id: "system", label: "Regulated System",   angle: 30  },
+  { id: "mind",   label: "Unstoppable Mind",   angle: 150 },
 ];
 
 export default function TransformationWheel() {
@@ -141,7 +136,7 @@ export default function TransformationWheel() {
     const animate = (time: number) => {
       if (lastTimeRef.current) {
         const delta = time - lastTimeRef.current;
-        setRotation((r) => (r + delta * 0.01) % 360);
+        setRotation((r) => (r + delta * 0.009) % 360);
       }
       lastTimeRef.current = time;
       animRef.current = requestAnimationFrame(animate);
@@ -165,73 +160,70 @@ export default function TransformationWheel() {
 
   const cx = 300;
   const cy = 300;
-  const outerR = 228;
+  const outerR = 230;
   const innerR = 128;
-  const hubR = 70;
-  const nodeR = 46;
-  const pillarR = 38;
+  const hubR = 72;
+  const nodeR = 50;
+  const pillarR = 42;
 
   return (
-    <section className="py-24 md:py-36 bg-[#0a0a0f] overflow-hidden">
+    <section className="py-24 md:py-36 bg-[#0c0c10] overflow-hidden">
       <div className="container">
-        {/* Header */}
+
+        {/* Section header */}
         <div className="max-w-2xl mb-16">
-          <span className="amber-rule mb-6 block" />
-          <p className="text-[#fbbf24] text-xs tracking-[0.3em] uppercase font-body font-medium mb-4">
+          <div className="w-12 h-0.5 bg-[#F5C842] mb-6" />
+          <p className="text-[#F5C842] text-xs tracking-[0.3em] uppercase font-body font-semibold mb-4">
             The Transformation
           </p>
-          <h2
-            className="text-white font-display font-semibold leading-tight mb-4"
-            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
-          >
+          <h2 className="text-white font-display font-semibold leading-tight mb-4"
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.2rem, 4vw, 3.6rem)" }}>
             Everything that changes
             <br />
-            <em className="text-[#fbbf24]">when you do the work.</em>
+            <em className="text-[#F5C842]">when you do the work.</em>
           </h2>
-          <p className="text-gray-400 font-body font-light text-sm leading-relaxed">
+          <p className="text-[#b0a090] font-body text-base leading-relaxed">
             Click any node on the wheel to see where you are now — and exactly where you're going.
           </p>
         </div>
 
-        <div className="flex flex-col xl:flex-row gap-12 items-center xl:items-start">
+        <div className="flex flex-col xl:flex-row gap-12 items-start">
+
           {/* SVG Wheel */}
           <div
-            className="relative flex-shrink-0 w-full max-w-[600px] mx-auto xl:mx-0"
-            style={{ aspectRatio: "1/1" }}
+            className="relative flex-shrink-0 w-full xl:w-[600px]"
+            style={{ aspectRatio: "1/1", maxWidth: 600 }}
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => { if (!activeNode) setIsPaused(false); }}
           >
-            <svg
-              viewBox="0 0 600 600"
-              className="w-full h-full"
-            >
+            <svg viewBox="0 0 600 600" className="w-full h-full">
               <defs>
-                <radialGradient id="hubGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#fbbf24" stopOpacity="0" />
+                <radialGradient id="hubGrad2" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="#F5C842" stopOpacity="0.22" />
+                  <stop offset="100%" stopColor="#F5C842" stopOpacity="0" />
                 </radialGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="4" result="blur" />
+                <filter id="glow2">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
                   <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
-                <filter id="softglow">
-                  <feGaussianBlur stdDeviation="2" result="blur" />
+                <filter id="softglow2">
+                  <feGaussianBlur stdDeviation="2.5" result="blur" />
                   <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
               </defs>
 
-              {/* Dark background circle */}
-              <circle cx={cx} cy={cy} r={outerR + 50} fill="#0d0d14" />
+              {/* Background disc */}
+              <circle cx={cx} cy={cy} r={outerR + 55} fill="#0e0e14" />
 
-              {/* Orbit rings — clearly visible */}
-              <circle cx={cx} cy={cy} r={outerR} fill="none" stroke="#fbbf24" strokeWidth="0.75" strokeOpacity="0.25" strokeDasharray="6 10" />
-              <circle cx={cx} cy={cy} r={innerR} fill="none" stroke="#fbbf24" strokeWidth="0.75" strokeOpacity="0.35" />
-              <circle cx={cx} cy={cy} r={hubR + 18} fill="none" stroke="#fbbf24" strokeWidth="0.5" strokeOpacity="0.2" />
+              {/* Orbit rings */}
+              <circle cx={cx} cy={cy} r={outerR}  fill="none" stroke="#F5C842" strokeWidth="1"   strokeOpacity="0.22" strokeDasharray="5 9" />
+              <circle cx={cx} cy={cy} r={innerR}  fill="none" stroke="#F5C842" strokeWidth="1"   strokeOpacity="0.3" />
+              <circle cx={cx} cy={cy} r={hubR+20} fill="none" stroke="#F5C842" strokeWidth="0.5" strokeOpacity="0.15" />
 
               {/* Hub ambient glow */}
-              <circle cx={cx} cy={cy} r={hubR + 30} fill="url(#hubGrad)" />
+              <circle cx={cx} cy={cy} r={hubR + 35} fill="url(#hubGrad2)" />
 
-              {/* Spoke lines */}
+              {/* Spokes */}
               {NODES.map((node, i) => {
                 const angle = ((i / NODES.length) * 360 + rotation) * (Math.PI / 180);
                 const nx = cx + outerR * Math.cos(angle);
@@ -239,41 +231,53 @@ export default function TransformationWheel() {
                 return (
                   <line key={`spoke-${node.id}`}
                     x1={cx} y1={cy} x2={nx} y2={ny}
-                    stroke="#fbbf24" strokeWidth="0.5" strokeOpacity="0.12"
-                  />
+                    stroke="#F5C842" strokeWidth="0.5" strokeOpacity="0.1" />
                 );
               })}
 
               {/* Inner pillar nodes */}
               {PILLARS.map((pillar) => {
+                const pal = PILLAR_COLORS[pillar.id];
                 const angle = pillar.angle * (Math.PI / 180);
                 const px = cx + innerR * Math.cos(angle);
                 const py = cy + innerR * Math.sin(angle);
+                const words = pillar.label.split(" ");
                 return (
                   <g key={pillar.id}>
-                    {/* Glow halo */}
-                    <circle cx={px} cy={py} r={pillarR + 8} fill={pillar.color} fillOpacity="0.12" />
-                    {/* Main circle */}
+                    <circle cx={px} cy={py} r={pillarR + 10} fill={pal.stroke} fillOpacity="0.1" />
                     <circle cx={px} cy={py} r={pillarR}
-                      fill="#1a1a2e"
-                      stroke={pillar.color}
+                      fill="#1c1a14"
+                      stroke={pal.stroke}
                       strokeWidth="2"
-                      filter="url(#softglow)"
+                      filter="url(#softglow2)"
                     />
-                    {/* Label line 1 */}
-                    <text x={px} y={py - 7} textAnchor="middle"
-                      fill={pillar.color} fontSize="9.5"
-                      fontFamily="DM Sans, sans-serif" fontWeight="700"
-                      letterSpacing="0.04em">
-                      {pillar.label.split(" ")[0].toUpperCase()}
-                    </text>
-                    {/* Label line 2 */}
-                    <text x={px} y={py + 7} textAnchor="middle"
-                      fill={pillar.color} fontSize="9.5"
-                      fontFamily="DM Sans, sans-serif" fontWeight="700"
-                      letterSpacing="0.04em">
-                      {pillar.label.split(" ").slice(1).join(" ").toUpperCase()}
-                    </text>
+                    {words.length === 2 ? (
+                      <>
+                        <text x={px} y={py - 6} textAnchor="middle"
+                          fill={pal.text} fontSize="10" fontFamily="DM Sans, sans-serif" fontWeight="700" letterSpacing="0.05em">
+                          {words[0].toUpperCase()}
+                        </text>
+                        <text x={px} y={py + 8} textAnchor="middle"
+                          fill={pal.text} fontSize="10" fontFamily="DM Sans, sans-serif" fontWeight="700" letterSpacing="0.05em">
+                          {words[1].toUpperCase()}
+                        </text>
+                      </>
+                    ) : (
+                      <>
+                        <text x={px} y={py - 8} textAnchor="middle"
+                          fill={pal.text} fontSize="10" fontFamily="DM Sans, sans-serif" fontWeight="700" letterSpacing="0.05em">
+                          {words[0].toUpperCase()}
+                        </text>
+                        <text x={px} y={py + 4} textAnchor="middle"
+                          fill={pal.text} fontSize="10" fontFamily="DM Sans, sans-serif" fontWeight="700" letterSpacing="0.05em">
+                          {words[1].toUpperCase()}
+                        </text>
+                        <text x={px} y={py + 16} textAnchor="middle"
+                          fill={pal.text} fontSize="10" fontFamily="DM Sans, sans-serif" fontWeight="700" letterSpacing="0.05em">
+                          {words[2].toUpperCase()}
+                        </text>
+                      </>
+                    )}
                   </g>
                 );
               })}
@@ -285,8 +289,7 @@ export default function TransformationWheel() {
                 const ny = cy + outerR * Math.sin(angle);
                 const isActive = activeNode?.id === node.id;
                 const isHovered = hoveredNode === node.id;
-                const col = PILLAR_COLORS[node.pillar];
-                const bg = PILLAR_BG[node.pillar];
+                const pal = PILLAR_COLORS[node.pillar];
 
                 return (
                   <g key={node.id} style={{ cursor: "pointer" }}
@@ -294,41 +297,35 @@ export default function TransformationWheel() {
                     onMouseEnter={() => setHoveredNode(node.id)}
                     onMouseLeave={() => setHoveredNode(null)}
                   >
-                    {/* Active/hover outer ring */}
                     {(isActive || isHovered) && (
-                      <circle cx={nx} cy={ny} r={nodeR + 12}
-                        fill={col} fillOpacity="0.15"
-                        filter="url(#glow)"
-                      />
+                      <circle cx={nx} cy={ny} r={nodeR + 14}
+                        fill={pal.stroke} fillOpacity="0.18"
+                        filter="url(#glow2)" />
                     )}
-                    {/* Node background */}
                     <circle cx={nx} cy={ny} r={nodeR}
-                      fill={isActive ? bg : "#1a1a2e"}
-                      stroke={col}
+                      fill={isActive ? pal.bg : "#1a1810"}
+                      stroke={pal.stroke}
                       strokeWidth={isActive || isHovered ? "2.5" : "1.8"}
-                      filter={isActive || isHovered ? "url(#softglow)" : undefined}
+                      filter={isActive || isHovered ? "url(#softglow2)" : undefined}
                     />
-                    {/* Emoji icon */}
-                    <text x={nx} y={ny - 10} textAnchor="middle"
-                      fontSize="17" dominantBaseline="middle">
+                    {/* Emoji */}
+                    <text x={nx} y={ny - 12} textAnchor="middle"
+                      fontSize="18" dominantBaseline="middle">
                       {node.icon}
                     </text>
-                    {/* "From" — muted strikethrough-style */}
-                    <text x={nx} y={ny + 7} textAnchor="middle"
-                      fill="#888" fontSize="8"
-                      fontFamily="DM Sans, sans-serif" fontWeight="400">
+                    {/* From — muted */}
+                    <text x={nx} y={ny + 8} textAnchor="middle"
+                      fill="#6b5e4a" fontSize="9" fontFamily="DM Sans, sans-serif" fontWeight="400">
                       {node.from}
                     </text>
                     {/* Arrow */}
-                    <text x={nx} y={ny + 18} textAnchor="middle"
-                      fill={col} fontSize="8"
-                      fontFamily="DM Sans, sans-serif">
+                    <text x={nx} y={ny + 20} textAnchor="middle"
+                      fill={pal.stroke} fontSize="9" fontFamily="DM Sans, sans-serif">
                       ↓
                     </text>
-                    {/* "To" — bright and bold */}
-                    <text x={nx} y={ny + 30} textAnchor="middle"
-                      fill={col} fontSize="9"
-                      fontFamily="DM Sans, sans-serif" fontWeight="700"
+                    {/* To — bright and bold */}
+                    <text x={nx} y={ny + 33} textAnchor="middle"
+                      fill={pal.text} fontSize="10.5" fontFamily="DM Sans, sans-serif" fontWeight="800"
                       letterSpacing="0.02em">
                       {node.to}
                     </text>
@@ -338,130 +335,125 @@ export default function TransformationWheel() {
 
               {/* Centre hub */}
               <circle cx={cx} cy={cy} r={hubR}
-                fill="#111118"
-                stroke="#fbbf24"
+                fill="#131108"
+                stroke="#F5C842"
                 strokeWidth="2.5"
-                filter="url(#glow)"
+                filter="url(#glow2)"
               />
-              <text x={cx} y={cy - 16} textAnchor="middle"
-                fill="#fbbf24" fontSize="10"
+              <text x={cx} y={cy - 18} textAnchor="middle"
+                fill="#F5C842" fontSize="11"
                 fontFamily="Cormorant Garamond, Georgia, serif"
-                fontWeight="600" letterSpacing="0.12em">
+                fontWeight="600" letterSpacing="0.14em">
                 THE
               </text>
               <text x={cx} y={cy + 2} textAnchor="middle"
-                fill="white" fontSize="12.5"
+                fill="#FFF8EC" fontSize="13"
                 fontFamily="Cormorant Garamond, Georgia, serif"
                 fontWeight="700" letterSpacing="0.07em">
                 UNFORGETTABLE
               </text>
-              <text x={cx} y={cy + 20} textAnchor="middle"
-                fill="#fbbf24" fontSize="10"
+              <text x={cx} y={cy + 22} textAnchor="middle"
+                fill="#F5C842" fontSize="11"
                 fontFamily="Cormorant Garamond, Georgia, serif"
-                fontWeight="600" letterSpacing="0.12em">
+                fontWeight="600" letterSpacing="0.14em">
                 MAN
               </text>
             </svg>
           </div>
 
-          {/* Detail panel */}
-          <div className="flex-1 min-w-0 w-full">
+          {/* Detail / default panel */}
+          <div className="flex-1 min-w-0 w-full xl:pt-4">
             {activeNode ? (
-              <div className="bg-[#13131e] border border-[#2a2a3e] p-8 md:p-10 relative">
+              <div className="bg-[#141210] border border-[#2e2a20] p-8 md:p-10 relative">
                 <button onClick={handleClose}
-                  className="absolute top-5 right-5 text-gray-500 hover:text-[#fbbf24] transition-colors duration-200 text-2xl leading-none font-light">
+                  className="absolute top-5 right-5 text-[#5a5040] hover:text-[#F5C842] transition-colors duration-200 text-2xl leading-none font-light">
                   ×
                 </button>
 
                 {/* Pillar badge */}
-                <span className="inline-block px-3 py-1 text-xs tracking-widest uppercase font-body font-semibold mb-6 rounded-sm"
+                <span className="inline-block px-3 py-1.5 text-xs tracking-widest uppercase font-body font-bold mb-6"
                   style={{
-                    color: PILLAR_COLORS[activeNode.pillar],
-                    border: `1.5px solid ${PILLAR_COLORS[activeNode.pillar]}`,
-                    background: PILLAR_BG[activeNode.pillar],
+                    color: PILLAR_COLORS[activeNode.pillar].text,
+                    border: `1.5px solid ${PILLAR_COLORS[activeNode.pillar].stroke}`,
+                    background: PILLAR_COLORS[activeNode.pillar].bg,
                   }}>
                   {PILLARS.find((p) => p.id === activeNode.pillar)?.label}
                 </span>
 
-                {/* Transformation headline */}
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="text-5xl">{activeNode.icon}</span>
+                {/* Headline */}
+                <div className="flex items-center gap-5 mb-8">
+                  <span className="text-5xl flex-shrink-0">{activeNode.icon}</span>
                   <div>
-                    <div className="flex items-center gap-3 flex-wrap">
-                      <span className="text-gray-500 font-body text-sm line-through">{activeNode.from}</span>
-                      <span className="text-gray-400 text-sm">→</span>
-                      <span className="font-display text-3xl font-semibold"
-                        style={{ fontFamily: "var(--font-display)", color: PILLAR_COLORS[activeNode.pillar] }}>
-                        {activeNode.to}
-                      </span>
-                    </div>
+                    <span className="text-[#5a5040] font-body text-sm line-through block mb-1">{activeNode.from}</span>
+                    <span className="font-display text-3xl md:text-4xl font-semibold block"
+                      style={{ fontFamily: "var(--font-display)", color: PILLAR_COLORS[activeNode.pillar].text }}>
+                      {activeNode.to}
+                    </span>
                   </div>
                 </div>
 
                 {/* Pain */}
                 <div className="mb-8">
-                  <p className="text-[#fbbf24] text-xs tracking-[0.25em] uppercase font-body font-semibold mb-3">
+                  <p className="text-[#F5C842] text-xs tracking-[0.3em] uppercase font-body font-bold mb-3">
                     Where You Are Now
                   </p>
-                  <p className="text-gray-300 font-body font-light leading-relaxed">
+                  <p className="text-[#c0b09a] font-body text-base leading-relaxed">
                     {activeNode.pain}
                   </p>
                 </div>
 
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="flex-1 h-px bg-[#2a2a3e]" />
-                  <span className="text-[#fbbf24] text-xl">↓</span>
-                  <div className="flex-1 h-px bg-[#2a2a3e]" />
+                  <div className="flex-1 h-px bg-[#2e2a20]" />
+                  <span className="text-[#F5C842] text-xl">↓</span>
+                  <div className="flex-1 h-px bg-[#2e2a20]" />
                 </div>
 
                 {/* Outcome */}
                 <div className="mb-10">
-                  <p className="text-[#fbbf24] text-xs tracking-[0.25em] uppercase font-body font-semibold mb-3">
+                  <p className="text-[#F5C842] text-xs tracking-[0.3em] uppercase font-body font-bold mb-3">
                     Where You're Going
                   </p>
-                  <p className="text-white font-body font-light leading-relaxed">
+                  <p className="text-[#f0e8d8] font-body text-base leading-relaxed">
                     {activeNode.outcome}
                   </p>
                 </div>
 
                 <a href="#apply"
-                  className="inline-flex items-center justify-center w-full px-8 py-4 bg-[#fbbf24] text-[#0a0a0f] text-sm tracking-widest uppercase font-body font-bold hover:bg-[#fcd34d] transition-all duration-300 group">
+                  className="inline-flex items-center justify-center w-full px-8 py-4 bg-[#F5C842] text-[#0c0c10] text-sm tracking-widest uppercase font-body font-bold hover:bg-[#fcd96a] transition-all duration-300 group">
                   I Want This Transformation
                   <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </a>
               </div>
             ) : (
-              <div className="h-full flex flex-col justify-center">
-                <div className="space-y-6">
-                  <p className="text-[#fbbf24] text-xs tracking-[0.3em] uppercase font-body font-semibold">
-                    10 Transformations Available
-                  </p>
-                  <h3 className="text-white font-display text-3xl font-semibold leading-tight"
-                    style={{ fontFamily: "var(--font-display)" }}>
-                    Every node is a version of you
-                    <br />
-                    <em className="text-[#fbbf24]">waiting to be unlocked.</em>
-                  </h3>
-                  <p className="text-gray-400 font-body font-light leading-relaxed">
-                    Click any area on the wheel to see where you are now, where you're going, and what becomes possible when you do the real work.
-                  </p>
+              <div className="space-y-6">
+                <p className="text-[#F5C842] text-xs tracking-[0.3em] uppercase font-body font-bold">
+                  10 Transformations Available
+                </p>
+                <h3 className="text-white font-display text-3xl md:text-4xl font-semibold leading-tight"
+                  style={{ fontFamily: "var(--font-display)" }}>
+                  Every node is a version of you
+                  <br />
+                  <em className="text-[#F5C842]">waiting to be unlocked.</em>
+                </h3>
+                <p className="text-[#b0a090] font-body text-base leading-relaxed">
+                  Click any area on the wheel to see where you are now, where you're going, and what becomes possible when you do the real work.
+                </p>
 
-                  {/* Node grid */}
-                  <div className="grid grid-cols-2 gap-2 mt-4">
-                    {NODES.map((node) => (
-                      <button key={node.id} onClick={() => handleNodeClick(node)}
-                        className="flex items-center gap-3 px-3 py-3 border border-[#2a2a3e] hover:border-[#fbbf24] bg-[#13131e] hover:bg-[#1a1a2e] text-left transition-all duration-200 group">
-                        <span className="text-xl flex-shrink-0">{node.icon}</span>
-                        <div className="min-w-0">
-                          <span className="text-gray-500 text-xs font-body block leading-none mb-1 line-through">{node.from}</span>
-                          <span className="text-xs font-body font-bold block leading-none"
-                            style={{ color: PILLAR_COLORS[node.pillar] }}>
-                            {node.to}
-                          </span>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
+                {/* Node grid */}
+                <div className="grid grid-cols-2 gap-2 pt-2">
+                  {NODES.map((node) => (
+                    <button key={node.id} onClick={() => handleNodeClick(node)}
+                      className="flex items-center gap-3 px-4 py-3 border border-[#2e2a20] hover:border-[#F5C842] bg-[#141210] hover:bg-[#1c1a10] text-left transition-all duration-200">
+                      <span className="text-xl flex-shrink-0">{node.icon}</span>
+                      <div className="min-w-0">
+                        <span className="text-[#5a5040] text-xs font-body block leading-none mb-1 line-through">{node.from}</span>
+                        <span className="text-sm font-body font-bold block leading-none"
+                          style={{ color: PILLAR_COLORS[node.pillar].text }}>
+                          {node.to}
+                        </span>
+                      </div>
+                    </button>
+                  ))}
                 </div>
               </div>
             )}
@@ -469,11 +461,13 @@ export default function TransformationWheel() {
         </div>
 
         {/* Pillar legend */}
-        <div className="flex flex-wrap gap-6 mt-12 pt-8 border-t border-[#2a2a3e]">
+        <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-[#2e2a20]">
           {PILLARS.map((p) => (
-            <div key={p.id} className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: p.color }} />
-              <span className="text-xs font-body font-medium tracking-wide" style={{ color: p.color }}>{p.label}</span>
+            <div key={p.id} className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                style={{ background: PILLAR_COLORS[p.id].stroke }} />
+              <span className="text-sm font-body font-medium"
+                style={{ color: PILLAR_COLORS[p.id].text }}>{p.label}</span>
             </div>
           ))}
         </div>
