@@ -127,7 +127,10 @@ export default function KnightEvolution() {
               alt={s.label}
               className="w-full h-full object-cover object-center"
               loading={i === 0 ? "eager" : "lazy"}
-              style={{ filter: s.id === "squire" ? "brightness(1.55) contrast(1.05)" : "brightness(1.15)" }}
+              style={{
+                filter: s.id === "squire" ? "brightness(1.55) contrast(1.05)" : "brightness(1.15)",
+                transform: (s.id === "squire" || s.id === "rising") ? "scaleX(-1)" : "none"
+              }}
             />
             {/* Overlay — lightened so images are clearly visible */}
             <div className="absolute inset-0" style={{

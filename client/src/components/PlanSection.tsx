@@ -91,12 +91,12 @@ export default function PlanSection() {
               lineHeight: 1.1,
             }}
           >
-            Five steps.
+            Here is exactly
             <br />
-            <span style={{ color: "#818CF8" }}>One destination: unforgettable.</span>
+            <span style={{ color: "#818CF8" }}>how you get there.</span>
           </h2>
           <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", lineHeight: 1.75, fontSize: "1.05rem" }}>
-            You don't have to figure this out alone. There is a clear, proven path from where you are now to the father, partner, and man you know you're capable of being. Every step is designed to take you deeper.
+            Most men never change because they don't have a clear path — just more information and more guilt. This is the path. Five steps. Each one designed to take you deeper than the last. You don't have to figure it out alone. You just have to take the next step.
           </p>
         </div>
 

@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
             Transformation
           </span>
           <h2
-            className="text-white font-bold leading-tight"
+            className="text-white font-bold leading-tight mb-5"
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "clamp(2rem, 4vw, 3rem)",
@@ -54,6 +54,9 @@ export default function TestimonialsSection() {
             <br />
             <span style={{ color: "#818CF8" }}>unforgettable.</span>
           </h2>
+          <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "0.95rem", lineHeight: 1.75, maxWidth: "52ch" }}>
+            These are real men. Dads, partners, leaders. They came in running on fumes and left with something they hadn't felt in years — the certainty that they are exactly the man their family needs.
+          </p>
         </div>
 
         {/* Testimonials */}

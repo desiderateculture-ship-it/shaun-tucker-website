@@ -79,6 +79,9 @@ export default function RetreatSection() {
           <p style={{ fontFamily: "var(--font-body)", color: "#CBD5E1", fontSize: "1.1rem", lineHeight: 1.75, maxWidth: "52ch" }}>
             Two days. A small group of driven dads. The most concentrated transformation experience available. This is not a seminar. It is not a workshop. It is the moment everything changes.
           </p>
+          <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "0.95rem", lineHeight: 1.75, maxWidth: "52ch", marginTop: "1rem" }}>
+            The alternative is more of the same. More years of being physically present but emotionally absent. More nights where your kids go to bed without really seeing you. More time passing while you wait to feel ready. The men who come to the retreat stop waiting.
+          </p>
         </div>
 
         {/* Details grid */}
