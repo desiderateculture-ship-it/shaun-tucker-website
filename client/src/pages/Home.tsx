@@ -20,6 +20,7 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
+import TransformationWheel from "@/components/TransformationWheel";
 import GuideSection from "@/components/GuideSection";
 import PlanSection from "@/components/PlanSection";
 import RetreatSection from "@/components/RetreatSection";
@@ -35,6 +36,7 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <ProblemSection />
+      <TransformationWheel />
       <GuideSection />
       <PlanSection />
       <RetreatSection />
