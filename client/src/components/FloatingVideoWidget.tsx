@@ -1,7 +1,7 @@
 /*
  * FLOATING VIDEO WIDGET — Fat to Fit Journey Story
- * - Circular muted autoplay preview bubble, bottom-right corner
- * - Click to expand into full modal with sound
+ * - 9:16 vertical rounded-rectangle preview bubble, bottom-right corner
+ * - Click to expand into full 9:16 modal with sound (object-fit: contain)
  * - 3 CTA buttons: Join Sunday Workout · Book a Session · Apply for The Retreat
  * - Brand: dark premium, The Unforgettable aesthetic
  */
@@ -10,6 +10,10 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const VIDEO_SRC = "/shaun-story.mp4";
+
+// Bubble dimensions — strict 9:16 ratio
+const BUBBLE_W = 120;
+const BUBBLE_H = Math.round(BUBBLE_W * (16 / 9)); // 213px
 
 export default function FloatingVideoWidget() {
   const [expanded, setExpanded] = useState(false);
@@ -72,13 +76,15 @@ export default function FloatingVideoWidget() {
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide cursor-pointer select-none max-w-[220px] text-center leading-snug"
+              className="flex items-center gap-2 rounded-2xl px-4 py-2.5 text-xs font-semibold tracking-wide cursor-pointer select-none leading-snug"
               style={{
                 background: "rgba(14,14,20,0.95)",
                 border: "1px solid rgba(34,211,238,0.4)",
                 color: "#E2E8F0",
                 fontFamily: "var(--font-body)",
                 backdropFilter: "blur(12px)",
+                maxWidth: "200px",
+                textAlign: "center",
               }}
               onClick={() => setExpanded(true)}
             >
@@ -86,7 +92,7 @@ export default function FloatingVideoWidget() {
               I was unhealthy in both of these photos. Click to hear why.
             </motion.div>
 
-            {/* Video bubble */}
+            {/* Video bubble — strict 9:16 */}
             <div className="relative self-end">
               {/* Dismiss button */}
               <button
@@ -102,13 +108,13 @@ export default function FloatingVideoWidget() {
                 ✕
               </button>
 
-              {/* Circular video preview */}
+              {/* 9:16 vertical video preview */}
               <div
                 className="relative cursor-pointer overflow-hidden"
                 style={{
-                  width: 240,
-                  height: 320,
-                  borderRadius: "20px",
+                  width: BUBBLE_W,
+                  height: BUBBLE_H,
+                  borderRadius: "16px",
                   border: "3px solid #22D3EE",
                   boxShadow: "0 0 0 4px rgba(34,211,238,0.15), 0 8px 32px rgba(0,0,0,0.6)",
                 }}
@@ -123,19 +129,19 @@ export default function FloatingVideoWidget() {
                   loop
                   playsInline
                   preload="metadata"
-                  className="w-full h-full object-cover"
-                  style={{ borderRadius: "18px" }}
+                  className="w-full h-full"
+                  style={{ objectFit: "cover", borderRadius: "13px" }}
                 />
                 {/* Play overlay */}
                 <div
                   className="absolute inset-0 flex items-center justify-center"
-                  style={{ background: "rgba(0,0,0,0.28)", borderRadius: "18px" }}
+                  style={{ background: "rgba(0,0,0,0.28)", borderRadius: "13px" }}
                 >
                   <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center"
+                    className="w-10 h-10 rounded-full flex items-center justify-center"
                     style={{ background: "rgba(34,211,238,0.9)" }}
                   >
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
                       <path d="M3 2L11 7L3 12V2Z" fill="#09091F" />
                     </svg>
                   </div>
@@ -163,7 +169,7 @@ export default function FloatingVideoWidget() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 24 }}
               transition={{ type: "spring", stiffness: 280, damping: 26 }}
-              className="relative rounded-2xl overflow-hidden"
+              className="relative rounded-2xl overflow-hidden w-full"
               style={{
                 maxWidth: 420,
                 background: "#09091F",
@@ -185,14 +191,25 @@ export default function FloatingVideoWidget() {
                 ✕
               </button>
 
-              {/* Video player */}
-              <div className="relative w-full" style={{ aspectRatio: "9/16", maxHeight: "70vh", background: "#000" }}>
+              {/* Video player — 9:16, object-fit: contain so full frame is visible */}
+              <div
+                className="relative w-full"
+                style={{
+                  aspectRatio: "9/16",
+                  maxHeight: "65vh",
+                  background: "#000",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
                 <video
                   ref={modalRef}
                   src={VIDEO_SRC}
                   controls
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full"
+                  style={{ objectFit: "contain" }}
                 />
               </div>
 
@@ -213,7 +230,7 @@ export default function FloatingVideoWidget() {
                   className="text-white font-bold mb-3"
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: "clamp(1.25rem, 2.5vw, 1.7rem)",
+                    fontSize: "clamp(1.15rem, 2.5vw, 1.5rem)",
                     lineHeight: 1.3,
                   }}
                 >
@@ -226,7 +243,7 @@ export default function FloatingVideoWidget() {
                   style={{
                     color: "#CBD5E1",
                     fontFamily: "var(--font-body)",
-                    fontSize: "0.97rem",
+                    fontSize: "0.92rem",
                     lineHeight: 1.75,
                   }}
                 >
@@ -234,12 +251,12 @@ export default function FloatingVideoWidget() {
                 </p>
 
                 {/* CTA buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col gap-3">
                   {/* Primary: Join Sunday Workout */}
                   <a
                     href="/#community"
                     onClick={() => setExpanded(false)}
-                    className="flex-1 flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
+                    className="flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
                     style={{
                       background: "linear-gradient(135deg, #22D3EE, #06B6D4)",
                       color: "#09091F",
@@ -257,9 +274,9 @@ export default function FloatingVideoWidget() {
 
                   {/* Secondary: Book a Session */}
                   <a
-                    href="/#plan"
+                    href="/#path"
                     onClick={() => setExpanded(false)}
-                    className="flex-1 flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
+                    className="flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
                     style={{
                       background: "linear-gradient(135deg, #6366F1, #7C3AED)",
                       color: "#fff",
@@ -279,7 +296,7 @@ export default function FloatingVideoWidget() {
                   <a
                     href="/#retreat"
                     onClick={() => setExpanded(false)}
-                    className="flex-1 flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
+                    className="flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
                     style={{
                       background: "transparent",
                       color: "#E2E8F0",
