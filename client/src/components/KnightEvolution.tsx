@@ -9,14 +9,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const STAGES = [
   {
-    id: "squire",
+    id: "kosho",
     number: "01",
-    label: "The Squire",
-    headline: "You're winning at everything.",
-    subheadline: "And losing what matters most.",
-    body: "On paper, you've got it together. But your kids are growing up. And somewhere deep down, you know — the man you are right now is not the man they'll remember.",
+    label: "The Koshō (小姓)",
+    headline: "You're performing.",
+    subheadline: "But you haven't begun.",
+    body: "You work hard. You provide. You show up. But somewhere beneath the performance, you sense it — the man you are right now is not the man you were meant to become.",
     tag: "WHERE YOU ARE NOW",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/stage1-squire-R8Pk2cgFfAeQXjE4Eakxg3.webp",
+    image: "/hero-01.jpg",
     accentColor: "#6366F1",
     glowColor: "rgba(99,102,241,0.35)",
     tagBg: "rgba(99,102,241,0.12)",
@@ -24,14 +24,14 @@ const STAGES = [
     tagText: "#A5B4FC",
   },
   {
-    id: "rising",
+    id: "awakening",
     number: "02",
     label: "The Awakening",
-    headline: "You've tried harder.",
-    subheadline: "Harder isn't the answer.",
-    body: "You're not broken. You're unregulated. Nobody taught you to calm the man underneath the performance. That changes here.",
+    headline: "You feel the call.",
+    subheadline: "The way of the warrior begins within.",
+    body: "You're not broken. You're untempered. The samurai didn't become great through effort alone — he became great through discipline, breath, and the courage to face himself.",
     tag: "THE TURNING POINT",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/stage2-rising-HthhsqhXL8kNAYnsiWoM6p.webp",
+    image: "/hero-02.jpg",
     accentColor: "#F59E0B",
     glowColor: "rgba(245,158,11,0.35)",
     tagBg: "rgba(245,158,11,0.12)",
@@ -39,14 +39,14 @@ const STAGES = [
     tagText: "#FCD34D",
   },
   {
-    id: "warrior",
+    id: "bushi",
     number: "03",
-    label: "The Warrior",
+    label: "The Bushi (武士)",
     headline: "You stop reacting.",
-    subheadline: "You start leading.",
-    body: "Calm. Strong. Present. Your family feels the shift before you can even name it.",
+    subheadline: "You start leading with honour.",
+    body: "Regulated. Grounded. Unshakeable. The warrior who has mastered himself needs no armour. Your family feels the shift before you can even name it.",
     tag: "THE TRANSFORMATION",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/stage3-warrior-fGrtpESPXFbrTgmPnid44u.webp",
+    image: "/hero-03.jpg",
     accentColor: "#10B981",
     glowColor: "rgba(16,185,129,0.35)",
     tagBg: "rgba(16,185,129,0.12)",
@@ -54,14 +54,14 @@ const STAGES = [
     tagText: "#6EE7B7",
   },
   {
-    id: "knight",
+    id: "samurai",
     number: "04",
     label: "The Unforgettable Man",
     headline: "Present. Powerful. Unforgettable.",
-    subheadline: "The dad they'll never forget.",
-    body: "Your kids won't remember your salary. They'll remember whether you were there. This is where that changes.",
+    subheadline: "The man they will never forget.",
+    body: "This is the Samurai. Not a fighter — a force of presence. Your children won't remember your salary. They'll remember the man who stood before them, fully alive.",
     tag: "YOUR DESTINY",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/stage4-knight-hprXh4M85J8ikEue5FyRDW.webp",
+    image: "/hero-04.jpg",
     accentColor: "#F59E0B",
     glowColor: "rgba(245,158,11,0.4)",
     tagBg: "rgba(245,158,11,0.15)",
@@ -122,14 +122,15 @@ export default function KnightEvolution() {
             className="absolute inset-0 transition-opacity duration-1000"
             style={{ opacity: i === activeIndex ? 1 : 0 }}
           >
-            <img
+              <img
               src={s.image}
               alt={s.label}
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover"
               loading={i === 0 ? "eager" : "lazy"}
               style={{
-                filter: s.id === "squire" ? "brightness(1.55) contrast(1.05)" : "brightness(1.15)",
-                transform: (s.id === "squire" || s.id === "rising") ? "scaleX(-1)" : "none"
+                filter: s.id === "kosho" ? "brightness(1.4) contrast(1.05)" : "brightness(1.15)",
+                transform: "none",
+                objectPosition: s.id === "bushi" ? "center 35%" : s.id === "awakening" ? "center 25%" : "center center"
               }}
             />
             {/* Overlay — lightened so images are clearly visible */}

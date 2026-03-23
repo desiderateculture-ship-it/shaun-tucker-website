@@ -5,12 +5,8 @@
 
 const SHAUN_BLAZER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/shaun-forest-cropped_37a9c292.webp";
 
-const credentials = [
-  "Health Scientist — BSc",
-  "Certified Breathwork Facilitator",
-  "Self-Mastery & Nervous System Coach",
-  "Father. Husband. The man who did the work.",
-];
+const PRIMARY_TITLE = "Human Performance Scientist";
+const CREDENTIAL_STRING = ["MMA Fighter", "BSc Health Science", "Breathwork Facilitator"];
 
 const stats = [
   { stat: "100+", label: "Men coached and transformed" },
@@ -47,26 +43,41 @@ export default function GuideSection() {
               style={{ background: "#0F0F2A", border: "1px solid rgba(99,102,241,0.2)" }}
             >
               <p
-                className="text-xs font-bold tracking-[0.2em] uppercase mb-4"
+                className="text-xs font-bold tracking-[0.2em] uppercase mb-3"
                 style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}
               >
                 Who Shaun Is
               </p>
-              {credentials.map((cred) => (
-                <div
-                  key={cred}
-                  className="flex items-center gap-3 py-2.5"
-                  style={{ borderBottom: "1px solid rgba(30,30,63,0.8)" }}
-                >
-                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#6366F1" }} />
-                  <span
-                    className="text-sm"
-                    style={{ fontFamily: "var(--font-body)", color: "#CBD5E1" }}
-                  >
-                    {cred}
+              {/* Primary title */}
+              <p
+                className="font-bold mb-4"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "1.15rem",
+                  color: "#F1F5F9",
+                  letterSpacing: "-0.01em",
+                  borderBottom: "1px solid rgba(30,30,63,0.8)",
+                  paddingBottom: "0.75rem",
+                }}
+              >
+                {PRIMARY_TITLE}
+              </p>
+              {/* Credential string */}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                {CREDENTIAL_STRING.map((cred, i) => (
+                  <span key={cred} className="flex items-center gap-3">
+                    <span
+                      className="text-sm font-medium"
+                      style={{ fontFamily: "var(--font-body)", color: "#94A3B8" }}
+                    >
+                      {cred}
+                    </span>
+                    {i < CREDENTIAL_STRING.length - 1 && (
+                      <span style={{ color: "#334155", fontSize: "0.75rem" }}>|</span>
+                    )}
                   </span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 

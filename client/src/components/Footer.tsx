@@ -39,7 +39,7 @@ export default function Footer() {
               </span>
             </div>
             <p style={{ fontFamily: "var(--font-body)", color: "#475569", fontSize: "0.9rem", lineHeight: 1.7, maxWidth: "30ch" }}>
-              Health Scientist. Self-Mastery Coach. Breathwork Facilitator. Helping driven dads become the fathers their kids will never forget.
+              Human Performance Scientist. MMA Fighter | BSc Health Science | Breathwork Facilitator. Helping driven dads become the fathers their kids will never forget.
             </p>
             <div className="flex gap-5 mt-6">
               {socials.map((social) => (

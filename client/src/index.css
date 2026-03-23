@@ -60,7 +60,7 @@
   --secondary-foreground: oklch(0.75 0.01 220);
 
   --muted: oklch(0.16 0.02 264);
-  --muted-foreground: oklch(0.62 0.015 220);   /* #94A3B8 slate */
+  --muted-foreground: oklch(0.72 0.015 220);   /* brighter slate for legibility */
 
   /* Accent: Amber #F59E0B */
   --accent: oklch(0.72 0.18 75);
@@ -83,7 +83,7 @@
   --violet: #7C3AED;
   --amber: #F59E0B;
   --amber-bright: #FBB924;
-  --slate-text: #94A3B8;
+  --slate-text: #CBD5E1;
   --white-text: #F1F5F9;
   --pink: #EC4899;
   --emerald: #10B981;
@@ -106,6 +106,8 @@
     color: var(--white-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    line-height: 1.75;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);

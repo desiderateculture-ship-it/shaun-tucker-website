@@ -20,7 +20,7 @@
 import Navigation from "@/components/Navigation";
 import KnightEvolution from "@/components/KnightEvolution";
 import ProblemSection from "@/components/ProblemSection";
-import TransformationWheel from "@/components/TransformationWheel";
+import TriangleModel from "@/components/TriangleModel";
 import GuideSection from "@/components/GuideSection";
 import PlanSection from "@/components/PlanSection";
 import RetreatSection from "@/components/RetreatSection";
@@ -29,6 +29,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import CommunitySection from "@/components/CommunitySection";
 import ApplySection from "@/components/ApplySection";
 import Footer from "@/components/Footer";
+import FloatingVideoWidget from "@/components/FloatingVideoWidget";
 
 export default function Home() {
   return (
@@ -36,7 +37,7 @@ export default function Home() {
       <Navigation />
       <KnightEvolution />
       <ProblemSection />
-      <TransformationWheel />
+      <TriangleModel />
       <GuideSection />
       <PlanSection />
       <RetreatSection />
@@ -45,6 +46,7 @@ export default function Home() {
       <CommunitySection />
       <ApplySection />
       <Footer />
+      <FloatingVideoWidget />
     </div>
   );
 }
