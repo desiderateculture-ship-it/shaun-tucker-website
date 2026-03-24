@@ -42,7 +42,7 @@ const included = [
 ];
 
 const details = [
-  { label: "Duration", value: "2 Days" },
+  { label: "Duration", value: "3 Days, 2 Nights" },
   { label: "Group Size", value: "20–25 Men Max" },
   { label: "Location", value: "Melbourne, VIC" },
   { label: "Investment", value: "From $1,500" },
@@ -77,7 +77,7 @@ export default function RetreatSection() {
             The Unforgettable Retreat
           </h2>
           <p style={{ fontFamily: "var(--font-body)", color: "#CBD5E1", fontSize: "1.1rem", lineHeight: 1.75, maxWidth: "52ch" }}>
-            Two days. A small group of men who are done waiting. The moment everything changes.
+            Three days, two nights. A small group of men who are done waiting. The moment everything changes.
           </p>
           <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "0.95rem", lineHeight: 1.75, maxWidth: "52ch", marginTop: "1rem" }}>
             The alternative is more of the same. The men who come stop waiting.
@@ -93,7 +93,7 @@ export default function RetreatSection() {
             style={{ background: "rgba(15,15,42,0.85)", backdropFilter: "blur(8px)", border: "1px solid rgba(99,102,241,0.2)" }}
           >
             <p className="text-xs font-bold tracking-[0.2em] uppercase mb-6" style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}>
-              What Happens Over Two Days
+              What Happens Over Three Days, Two Nights
             </p>
             <div className="space-y-4">
               {included.map((item) => (

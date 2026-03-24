@@ -34,7 +34,7 @@ const steps = [
     number: "03",
     label: "The Turning Point",
     title: "Apply for The Retreat.",
-    description: "Two days. A small group of serious men. Men leave this retreat different. Their families feel it before they walk through the door.",
+    description: "Three days, two nights. A small group of serious men. Men leave this retreat different. Their families feel it before they walk through the door.",
     action: "Apply for The Retreat →",
     href: "#retreat",
     tag: "From $1,500",

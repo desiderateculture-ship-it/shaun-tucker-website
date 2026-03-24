@@ -51,7 +51,7 @@ const included = [
 ];
 
 const details = [
-  { label: "Duration", value: "2 Days" },
+  { label: "Duration", value: "3 Days, 2 Nights" },
   { label: "Group Size", value: "20–25 Men Max" },
   { label: "Location", value: "Melbourne, VIC" },
   { label: "Investment", value: "From $1,500" },
@@ -143,7 +143,7 @@ export default function Retreat() {
                 lineHeight: 1.0,
               }}
             >
-              Two days.<br />
+              Three days, two nights.<br />
               <span style={{ color: "#F59E0B" }}>Everything changes.</span>
             </h1>
 
@@ -351,7 +351,7 @@ export default function Retreat() {
               className="text-white font-bold leading-tight mb-5"
               style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
             >
-              Two days. A small group of men<br />
+              Three days, two nights. A small group of men<br />
               <span style={{ color: "#F59E0B" }}>who are done waiting.</span>
             </h2>
             <p style={{ fontFamily: "var(--font-body)", color: "#CBD5E1", fontSize: "1.1rem", lineHeight: 1.75, maxWidth: "52ch" }}>
@@ -370,7 +370,7 @@ export default function Retreat() {
               style={{ background: "rgba(15,15,42,0.85)", backdropFilter: "blur(8px)", border: "1px solid rgba(99,102,241,0.2)" }}
             >
               <p className="text-xs font-bold tracking-[0.2em] uppercase mb-6" style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}>
-                What Happens Over Two Days
+                What Happens Over Three Days, Two Nights
               </p>
               <div className="space-y-4">
                 {included.map((item) => (
@@ -513,7 +513,7 @@ export default function Retreat() {
                   The problem wasn't my effort. It was that nobody had ever taught me to regulate the man underneath the performance.
                 </p>
                 <p>
-                  I built the system that changed that. I've used it with 100+ men. I'm here to walk you through it — in person, over two days, with a group of men who are exactly where you are right now.
+                  I built the system that changed that. I've used it with 100+ men. I'm here to walk you through it — in person, over three days and two nights, with a group of men who are exactly where you are right now.
                 </p>
               </div>
 
@@ -521,7 +521,7 @@ export default function Retreat() {
               <div className="mt-10 grid grid-cols-2 gap-4">
                 {[
                   { stat: "100+", label: "Men coached and transformed" },
-                  { stat: "2", label: "Days that change everything" },
+                  { stat: "3", label: "Days, 2 nights that change everything" },
                   { stat: "3", label: "Pillars that change everything" },
                   { stat: "0", label: "Shortcuts. This is the real work." },
                 ].map((item) => (
