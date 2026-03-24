@@ -20,7 +20,7 @@ export default function Navigation() {
     { label: "About", href: "#guide" },
     { label: "The Path", href: "#plan" },
     { label: "The Retreat", href: "#retreat" },
-    { label: "Podcast", href: "#podcast" },
+    { label: "Podcast", href: "/podcast" },
     { label: "Community", href: "#community" },
   ];
 

@@ -10,11 +10,10 @@
  * 3. Guide — Shaun's empathy + authority
  * 4. Plan — The 5-step value ladder
  * 5. Retreat — Core offer detail
- * 6. Podcast — Lead generation / trust builder
- * 7. Testimonials — Social proof / success stories
- * 8. Community — Free entry point
- * 9. Apply CTA — Direct + transitional CTA, avoid failure + success vision
- * 10. Footer
+ * 6. Testimonials — Social proof / success stories
+ * 7. Community — Free entry point
+ * 8. Apply CTA — Direct + transitional CTA, avoid failure + success vision
+ * 9. Footer
  */
 
 import Navigation from "@/components/Navigation";
@@ -24,7 +23,6 @@ import TriangleModel from "@/components/TriangleModel";
 import GuideSection from "@/components/GuideSection";
 import PlanSection from "@/components/PlanSection";
 import RetreatSection from "@/components/RetreatSection";
-import PodcastSection from "@/components/PodcastSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CommunitySection from "@/components/CommunitySection";
 import ApplySection from "@/components/ApplySection";
@@ -41,7 +39,6 @@ export default function Home() {
       <GuideSection />
       <PlanSection />
       <RetreatSection />
-      <PodcastSection />
       <TestimonialsSection />
       <CommunitySection />
       <ApplySection />
