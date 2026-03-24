@@ -1,226 +1,704 @@
-import { ArrowRight, CheckCircle2, Shield, Flame, Anchor } from "lucide-react";
+/*
+ * THE UNFORGETTABLE RETREAT — Dedicated Landing Page
+ * Fully aligned with homepage brand voice, SB7 structure, and customer journey
+ * Colors: #09091F bg, #818CF8 indigo accent, #F59E0B amber CTA, #CBD5E1 body text
+ * Fonts: var(--font-display) Syne, var(--font-body) Plus Jakarta Sans
+ */
+
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
+const RETREAT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/retreat-bg-ecNELaii4HhNHzbKbXo6uC.webp";
+const SHAUN_BLAZER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/shaun-forest-cropped_37a9c292.webp";
+
+const pillars = [
+  {
+    number: "01",
+    icon: "💪",
+    title: "Strong Body",
+    body: "Physical training that builds real strength — not just aesthetics. Movement that regulates your nervous system rather than depleting it.",
+    color: "#6366F1",
+    glow: "rgba(99,102,241,0.12)",
+    border: "rgba(99,102,241,0.25)",
+  },
+  {
+    number: "02",
+    icon: "🌬️",
+    title: "Regulated System",
+    body: "Breathwork, nervous system protocols, and somatic practices that move you out of survival mode and into genuine presence.",
+    color: "#06B6D4",
+    glow: "rgba(6,182,212,0.12)",
+    border: "rgba(6,182,212,0.25)",
+  },
+  {
+    number: "03",
+    icon: "🧠",
+    title: "Unstoppable Mind",
+    body: "Identity work, mindset tools, and the philosophical framework to become the man your family needs — without burning yourself out to get there.",
+    color: "#10B981",
+    glow: "rgba(16,185,129,0.12)",
+    border: "rgba(16,185,129,0.25)",
+  },
+];
+
+const included = [
+  "Deep nervous system regulation and breathwork sessions",
+  "Identity and self-mastery workshops",
+  "Physical training designed for presence, not performance",
+  "Brotherhood circles — raw, real, no performance required",
+  "The Unforgettable Dad framework delivered in full",
+  "Post-retreat integration plan and ongoing support",
+];
+
+const details = [
+  { label: "Duration", value: "2 Days" },
+  { label: "Group Size", value: "20–25 Men Max" },
+  { label: "Location", value: "Melbourne, VIC" },
+  { label: "Investment", value: "From $1,500" },
+  { label: "Frequency", value: "Quarterly" },
+  { label: "Entry", value: "Application Required" },
+];
+
+const testimonials = [
+  {
+    quote: "I came in thinking I needed a better training program. I left understanding that I needed to regulate my nervous system first. The retreat changed the way I show up for my kids every single day.",
+    name: "Rama",
+    role: "Father of 2 · Melbourne",
+    color: "#6366F1",
+    glow: "rgba(99,102,241,0.12)",
+    border: "rgba(99,102,241,0.25)",
+  },
+  {
+    quote: "I've done 75 Hard. I've done every program. Nothing came close to what happened in those two days. Shaun doesn't just coach you — he shows you who you actually are.",
+    name: "Paul",
+    role: "Father of 3 · Sydney",
+    color: "#F59E0B",
+    glow: "rgba(245,158,11,0.12)",
+    border: "rgba(245,158,11,0.25)",
+  },
+  {
+    quote: "My wife noticed the change before I did. I was calmer, more present, less reactive. The breathwork alone was worth every cent. This is the work I didn't know I needed.",
+    name: "Sridhar",
+    role: "Father of 1 · Melbourne",
+    color: "#10B981",
+    glow: "rgba(16,185,129,0.12)",
+    border: "rgba(16,185,129,0.25)",
+  },
+];
+
+const forYou = [
+  "You are a founder, business owner, or leader with young kids.",
+  "You train hard but still feel like you're running on empty.",
+  "You snap at the people you love and hate yourself for it.",
+  "You're physically present at home but mentally somewhere else.",
+  "You're done with programs that add more pressure to an already overloaded system.",
+  "You want a brotherhood of men who hold you to a higher standard.",
+];
+
+const notForYou = [
+  "You want a quick-fix weight loss program.",
+  "You want an alpha male chest-beating bootcamp.",
+  "You blame your wife, your kids, or the market for where you are.",
+  "You aren't willing to be honest in a group setting.",
+  "You're looking for motivation, not transformation.",
+];
+
 export default function Retreat() {
   return (
-    <div className="min-h-screen bg-[#0A0A20] text-slate-200 selection:bg-cyan-500/30">
+    <div className="min-h-screen" style={{ background: "#09091F" }}>
       <Navigation />
-      
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+
+      {/* ─── HERO ─────────────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden" style={{ minHeight: "100svh" }}>
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.08)_0%,transparent_60%)]" />
-          <div className="absolute inset-0 bg-[#0A0A20]/80" />
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${RETREAT_BG})` }}
+          />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(9,9,31,0.97) 0%, rgba(9,9,31,0.80) 50%, rgba(9,9,31,0.60) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(9,9,31,0.9) 0%, transparent 50%)" }} />
         </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-950/30 border border-cyan-500/20 text-cyan-400 text-sm font-medium tracking-wide uppercase mb-8">
-              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              Strictly for Founder-Dads & Leaders
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Stop Being the Ghost in the Room. <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                Become Unforgettable.
-              </span>
+
+        <div className="relative z-10 container flex flex-col justify-center" style={{ minHeight: "100svh", paddingTop: "7rem", paddingBottom: "5rem" }}>
+          <div className="max-w-3xl">
+            <span
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-8"
+              style={{
+                fontFamily: "var(--font-body)",
+                background: "rgba(245,158,11,0.12)",
+                border: "1px solid rgba(245,158,11,0.35)",
+                color: "#FCD34D",
+              }}
+            >
+              <span style={{ color: "#F59E0B" }}>✦</span>
+              The Core Experience · Melbourne, VIC
+            </span>
+
+            <h1
+              className="text-white font-bold leading-none mb-6"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(3rem, 7vw, 5.5rem)",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.0,
+              }}
+            >
+              Two days.<br />
+              <span style={{ color: "#F59E0B" }}>Everything changes.</span>
             </h1>
-            
-            <p className="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              A 2-Day immersive crucible to release your compression, regulate your nervous system, and reclaim your presence—so you can lead your family and your business without burning out.
+
+            <p
+              className="mb-4 leading-relaxed"
+              style={{
+                fontFamily: "var(--font-body)",
+                color: "#CBD5E1",
+                fontSize: "clamp(1.05rem, 1.6vw, 1.2rem)",
+                maxWidth: "52ch",
+                lineHeight: 1.75,
+              }}
+            >
+              Your kids are growing up right now. And if you're honest with yourself — you're not fully there.
             </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="#apply" className="w-full sm:w-auto px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-[#0A0A20] font-bold rounded-lg transition-all flex items-center justify-center gap-2 text-lg">
-                Apply for The Retreat
-                <ArrowRight className="w-5 h-5" />
+            <p
+              className="mb-10 font-semibold"
+              style={{
+                fontFamily: "var(--font-body)",
+                color: "#E2E8F0",
+                fontSize: "clamp(1rem, 1.4vw, 1.1rem)",
+                maxWidth: "48ch",
+                lineHeight: 1.75,
+              }}
+            >
+              The Unforgettable Retreat is the moment that changes that. A small group of serious men. No performance. No posturing. Just the work that actually moves the needle.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="mailto:shaun@shauntucker.com.au?subject=Retreat Application"
+                className="btn-amber"
+              >
+                Apply for The Retreat →
               </a>
-              <p className="text-sm text-slate-400 sm:ml-4">Takes 3 minutes • Invite Only</p>
+              <a href="#what-happens" className="btn-ghost">
+                See What Happens
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* THE PAIN / THE PROBLEM */}
-      <section className="py-24 bg-[#0A0A20] relative border-t border-slate-800/50">
-        <div className="container mx-auto px-4">
+      {/* ─── THE REAL PROBLEM ─────────────────────────────────────────────── */}
+      <section className="py-24 md:py-32" style={{ background: "#09091F" }}>
+        <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 text-center">
-              You’re winning in business, but you're losing at home.
+
+            <div className="flex justify-center mb-8">
+              <span className="section-tag">
+                <span style={{ color: "#6366F1" }}>✦</span>
+                The Real Problem
+              </span>
+            </div>
+
+            <h2
+              className="text-white font-bold leading-tight mb-6 text-center"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
+              }}
+            >
+              You're succeeding at everything<br />
+              <span style={{ color: "#818CF8" }}>except being present.</span>
             </h2>
-            
-            <div className="space-y-6 text-lg text-slate-300">
+
+            <div
+              className="space-y-5 text-base leading-relaxed"
+              style={{ fontFamily: "var(--font-body)", color: "#94A3B8", lineHeight: 1.8 }}
+            >
               <p>
-                Let’s cut the shit. You’ve built the business. You provide for the family. From the outside, you have it all figured out. 
-              </p>
-              <p>
-                But on the inside? You’re carrying the weight of the world alone. You're sleeping 4 to 6 hours a night, waking up with racing thoughts. You’ve gained 10 kilos since the kids were born. 
-              </p>
-              <p className="text-white font-medium border-l-4 border-cyan-500 pl-6 py-2 bg-slate-900/30">
-                And worst of all—when you're finally sitting in the living room with your kids, you aren't really there. You're a ghost in the room. Physically present, mentally a million miles away.
+                You train. You provide. You show up. From the outside, you have it together. But on the inside, you're running on empty. You're sleeping 4–6 hours. You've gained weight you can't shift. You snap at the people you love most and feel guilty about it for days.
               </p>
               <p>
-                You snap at the people you love most. You rely on caffeine to wake up and alcohol or mindless scrolling to shut down. You’ve tried the "beast mode" gym routines and the extreme diets, but they just add more stress to an already overloaded system.
-              </p>
-              <p className="text-xl text-white font-semibold text-center mt-12">
-                It’s not a discipline problem. It’s a compression problem.
+                You've tried the programs. 75Hard. The 5am routines. The extreme diets. And they worked — for a while. But they didn't fix the thing underneath. Because you can't discipline your way out of a dysregulated nervous system.
               </p>
             </div>
+
+            {/* Three truths */}
+            <div className="grid md:grid-cols-3 gap-5 mt-12">
+              {[
+                {
+                  icon: "⚡",
+                  label: "The Truth About Your Body",
+                  headline: "You're not weak. You're wired wrong.",
+                  body: "Cold showers and 5am alarms don't fix a dysregulated nervous system. They just add more noise. The answer isn't more effort.",
+                  color: "#6366F1",
+                  glow: "rgba(99,102,241,0.12)",
+                  border: "rgba(99,102,241,0.25)",
+                },
+                {
+                  icon: "🔥",
+                  label: "The Truth About Your Mind",
+                  headline: "You don't have an anger problem.",
+                  body: "The snapping. The checking out. The guilt. That's not your character. That's a nervous system that was never taught to regulate. It's fixable.",
+                  color: "#EC4899",
+                  glow: "rgba(236,72,153,0.12)",
+                  border: "rgba(236,72,153,0.25)",
+                },
+                {
+                  icon: "⚔️",
+                  label: "The Truth About Fatherhood",
+                  headline: "Your kids don't need a perfect dad.",
+                  body: "They need a present one. One they run to, not away from. One they'll still talk about when they're 40.",
+                  color: "#F59E0B",
+                  glow: "rgba(245,158,11,0.12)",
+                  border: "rgba(245,158,11,0.25)",
+                },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-xl p-7 flex flex-col gap-4 transition-all duration-300"
+                  style={{
+                    background: "#0F0F2A",
+                    border: `1px solid ${item.border}`,
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.boxShadow = `0 0 36px ${item.glow}`;
+                    (e.currentTarget as HTMLElement).style.borderColor = item.color;
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                    (e.currentTarget as HTMLElement).style.borderColor = item.border;
+                  }}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{item.icon}</span>
+                    <span
+                      className="text-xs font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-full"
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        background: item.glow,
+                        border: `1px solid ${item.border}`,
+                        color: item.color,
+                      }}
+                    >
+                      {item.label}
+                    </span>
+                  </div>
+                  <h3
+                    className="font-bold leading-snug"
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#F1F5F9", letterSpacing: "-0.01em" }}
+                  >
+                    {item.headline}
+                  </h3>
+                  <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "0.93rem", lineHeight: 1.7 }}>
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Villain callout */}
+            <div
+              className="rounded-xl p-8 md:p-10 mt-10"
+              style={{
+                background: "linear-gradient(135deg, rgba(99,102,241,0.1), rgba(124,58,237,0.08))",
+                border: "1px solid rgba(99,102,241,0.25)",
+              }}
+            >
+              <h3
+                className="text-white font-bold leading-tight mb-4"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)", letterSpacing: "-0.02em" }}
+              >
+                The world told you to grind harder.<br />
+                <span style={{ color: "#818CF8" }}>Your family needed you to show up softer.</span>
+              </h3>
+              <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "1rem", lineHeight: 1.8, maxWidth: "58ch" }}>
+                Hustle culture sold you a lie. More discipline. More sacrifice. More proving yourself. But the men who are truly unforgettable aren't the ones who worked the hardest. They're the ones who were present when it counted.
+              </p>
+            </div>
+
+            {/* Pivot quote */}
+            <div
+              className="rounded-xl p-8 mt-8"
+              style={{ background: "#0F0F2A", borderLeft: "3px solid #6366F1", paddingLeft: "2.5rem" }}
+            >
+              <blockquote
+                className="font-bold leading-relaxed"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.2rem, 2.2vw, 1.6rem)", color: "#F1F5F9", letterSpacing: "-0.01em" }}
+              >
+                "The most dangerous thing a man can do is wait until he's ready."
+                <span style={{ color: "#818CF8" }}> Your kids can't wait that long.</span>
+              </blockquote>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* THE SOLUTION / THE RETREAT */}
-      <section className="py-24 bg-slate-900/50 relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+      {/* ─── THE RETREAT ──────────────────────────────────────────────────── */}
+      <section id="what-happens" className="relative py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${RETREAT_BG})` }} />
+        <div className="absolute inset-0" style={{ background: "rgba(9,9,31,0.95)" }} />
+
+        <div className="relative z-10 container">
+          <div className="max-w-3xl mb-14">
+            <span className="section-tag-amber section-tag mb-6 inline-flex">
+              <span style={{ color: "#F59E0B" }}>✦</span>
               The Unforgettable Retreat
+            </span>
+            <h2
+              className="text-white font-bold leading-tight mb-5"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
+            >
+              Two days. A small group of men<br />
+              <span style={{ color: "#F59E0B" }}>who are done waiting.</span>
             </h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              This isn't a ra-ra motivation seminar. This is a nervous-system reset designed specifically for men who have spent years performing, providing, and suppressing.
+            <p style={{ fontFamily: "var(--font-body)", color: "#CBD5E1", fontSize: "1.1rem", lineHeight: 1.75, maxWidth: "52ch" }}>
+              The moment everything changes.
+            </p>
+            <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "0.95rem", lineHeight: 1.75, maxWidth: "52ch", marginTop: "1rem" }}>
+              Men leave this retreat different. Their families feel it before they walk through the door.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-[#0A0A20] p-8 rounded-2xl border border-slate-800">
-              <Anchor className="w-12 h-12 text-cyan-500 mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">Regulate Your System</h3>
-              <p className="text-slate-400">
-                Learn advanced breathwork and somatic practices to discharge years of stored stress. Shift from a constant state of fight-or-flight back into deep, restorative safety.
+          {/* Details grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+            {/* What's included */}
+            <div
+              className="lg:col-span-2 p-8 rounded-xl"
+              style={{ background: "rgba(15,15,42,0.85)", backdropFilter: "blur(8px)", border: "1px solid rgba(99,102,241,0.2)" }}
+            >
+              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-6" style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}>
+                What Happens Over Two Days
               </p>
+              <div className="space-y-4">
+                {included.map((item) => (
+                  <div key={item} className="flex items-start gap-4">
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2" style={{ background: "#6366F1" }} />
+                    <span style={{ fontFamily: "var(--font-body)", color: "#CBD5E1", fontSize: "0.95rem", lineHeight: 1.7 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            
-            <div className="bg-[#0A0A20] p-8 rounded-2xl border border-slate-800">
-              <Flame className="w-12 h-12 text-cyan-500 mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">Reclaim Your Fire</h3>
-              <p className="text-slate-400">
-                Drop the "fake calm" and the people-pleasing. We'll strip away the performative layers and rebuild your physical and mental capacity from a place of truth, not force.
+
+            {/* Logistics */}
+            <div
+              className="p-8 rounded-xl"
+              style={{ background: "rgba(15,15,42,0.85)", backdropFilter: "blur(8px)", border: "1px solid rgba(245,158,11,0.3)" }}
+            >
+              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-6" style={{ fontFamily: "var(--font-body)", color: "#FCD34D" }}>
+                Details
               </p>
+              <div className="space-y-4">
+                {details.map((detail) => (
+                  <div key={detail.label} className="flex justify-between items-center pb-3" style={{ borderBottom: "1px solid rgba(30,30,63,0.8)" }}>
+                    <span className="text-xs uppercase tracking-widest" style={{ fontFamily: "var(--font-body)", color: "#64748B" }}>{detail.label}</span>
+                    <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-body)", color: "#E2E8F0" }}>{detail.value}</span>
+                  </div>
+                ))}
+              </div>
+              <a href="mailto:shaun@shauntucker.com.au?subject=Retreat Application" className="btn-amber mt-8 w-full justify-center">
+                Apply for The Retreat
+              </a>
             </div>
-            
-            <div className="bg-[#0A0A20] p-8 rounded-2xl border border-slate-800">
-              <Shield className="w-12 h-12 text-cyan-500 mb-6" />
-              <h3 className="text-2xl font-bold text-white mb-4">Enter the Brotherhood</h3>
-              <p className="text-slate-400">
-                Growth is not a solo act. Step into a room of men who actually "get it." No judgment, no posturing. Just raw honesty, accountability, and lifelong connection.
-              </p>
+          </div>
+
+          {/* Three Pillars */}
+          <div>
+            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-7" style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}>
+              Built on Three Pillars
+            </p>
+            <div className="grid md:grid-cols-3 gap-5">
+              {pillars.map((pillar) => (
+                <div
+                  key={pillar.title}
+                  className="p-7 rounded-xl transition-all duration-300"
+                  style={{ background: "rgba(15,15,42,0.7)", backdropFilter: "blur(8px)", border: `1px solid ${pillar.border}` }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.boxShadow = `0 0 32px ${pillar.glow}`;
+                    (e.currentTarget as HTMLElement).style.borderColor = pillar.color;
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                    (e.currentTarget as HTMLElement).style.borderColor = pillar.border;
+                  }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-2xl">{pillar.icon}</span>
+                    <span
+                      className="font-bold"
+                      style={{ fontFamily: "var(--font-display)", fontSize: "3rem", color: "rgba(30,30,63,0.9)", letterSpacing: "-0.02em" }}
+                    >
+                      {pillar.number}
+                    </span>
+                  </div>
+                  <h3
+                    className="font-bold mb-3"
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", color: "#F1F5F9", letterSpacing: "-0.01em" }}
+                  >
+                    {pillar.title}
+                  </h3>
+                  <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "0.9rem", lineHeight: 1.7 }}>
+                    {pillar.body}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHAT TO EXPECT */}
-      <section className="py-24 bg-[#0A0A20]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-              What Happens Over The 2 Days
+      {/* ─── YOUR GUIDE ───────────────────────────────────────────────────── */}
+      <section className="py-24 md:py-32 overflow-hidden" style={{ background: "#0A0A20" }}>
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+            {/* Image */}
+            <div className="relative order-2 lg:order-1">
+              <div className="relative">
+                <div className="absolute -top-4 -left-4 w-20 h-20 pointer-events-none"
+                  style={{ borderTop: "2px solid #6366F1", borderLeft: "2px solid #6366F1" }} />
+                <img
+                  src={SHAUN_BLAZER}
+                  alt="Shaun Tucker"
+                  className="w-full max-w-md mx-auto lg:mx-0 object-cover"
+                  style={{ aspectRatio: "3/4", objectPosition: "top", borderRadius: "12px" }}
+                />
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 pointer-events-none"
+                  style={{ borderBottom: "2px solid rgba(99,102,241,0.4)", borderRight: "2px solid rgba(99,102,241,0.4)" }} />
+              </div>
+              <div
+                className="mt-6 p-6 max-w-md mx-auto lg:mx-0 rounded-xl"
+                style={{ background: "#0F0F2A", border: "1px solid rgba(99,102,241,0.2)" }}
+              >
+                <p className="text-xs font-bold tracking-[0.2em] uppercase mb-3" style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}>
+                  Who Shaun Is
+                </p>
+                <p
+                  className="font-bold mb-4"
+                  style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#F1F5F9", letterSpacing: "-0.01em", borderBottom: "1px solid rgba(30,30,63,0.8)", paddingBottom: "0.75rem" }}
+                >
+                  Human Performance Scientist
+                </p>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                  {["MMA Fighter", "BSc Health Science", "Breathwork Facilitator"].map((cred, i, arr) => (
+                    <span key={cred} className="flex items-center gap-3">
+                      <span className="text-sm font-medium" style={{ fontFamily: "var(--font-body)", color: "#94A3B8" }}>{cred}</span>
+                      {i < arr.length - 1 && <span style={{ color: "#334155", fontSize: "0.75rem" }}>|</span>}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Copy */}
+            <div className="order-1 lg:order-2">
+              <span className="section-tag mb-6 inline-flex">
+                <span style={{ color: "#6366F1" }}>✦</span>
+                Your Guide
+              </span>
+              <h2
+                className="text-white font-bold leading-tight mb-8"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.2rem)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
+              >
+                I was the man you are right now.<br />
+                <span style={{ color: "#818CF8" }}>And I found the way through.</span>
+              </h2>
+              <div className="space-y-5" style={{ fontFamily: "var(--font-body)", color: "#94A3B8", lineHeight: 1.75 }}>
+                <p>
+                  I trained harder than anyone I knew. Pushed through 75Hard. Chased mentors. Earned the credentials. And I was still snapping at the people I loved. Still not present. Still not enough.
+                </p>
+                <p style={{ color: "#E2E8F0", fontWeight: 600 }}>
+                  The problem wasn't my effort. It was that nobody had ever taught me to regulate the man underneath the performance.
+                </p>
+                <p>
+                  I built the system that changed that. I've used it with 100+ men. I'm here to walk you through it — in person, over two days, with a group of men who are exactly where you are right now.
+                </p>
+              </div>
+
+              {/* Stats */}
+              <div className="mt-10 grid grid-cols-2 gap-4">
+                {[
+                  { stat: "100+", label: "Men coached and transformed" },
+                  { stat: "2", label: "Days that change everything" },
+                  { stat: "3", label: "Pillars that change everything" },
+                  { stat: "0", label: "Shortcuts. This is the real work." },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="p-5 rounded-xl transition-all duration-300"
+                    style={{ background: "#0F0F2A", border: "1px solid rgba(99,102,241,0.2)" }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = "rgba(99,102,241,0.5)";
+                      (e.currentTarget as HTMLElement).style.boxShadow = "0 0 24px rgba(99,102,241,0.12)";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = "rgba(99,102,241,0.2)";
+                      (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                    }}
+                  >
+                    <span className="font-bold block mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "2rem", color: "#818CF8", letterSpacing: "-0.02em" }}>
+                      {item.stat}
+                    </span>
+                    <span className="text-xs leading-snug" style={{ fontFamily: "var(--font-body)", color: "#64748B" }}>
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─── TESTIMONIALS ─────────────────────────────────────────────────── */}
+      <section className="py-24 md:py-32" style={{ background: "#09091F" }}>
+        <div className="container">
+          <div className="max-w-xl mb-14">
+            <span className="section-tag mb-6 inline-flex">
+              <span style={{ color: "#6366F1" }}>✦</span>
+              Transformation
+            </span>
+            <h2
+              className="text-white font-bold leading-tight mb-5"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
+            >
+              Men who became<br />
+              <span style={{ color: "#818CF8" }}>unforgettable.</span>
             </h2>
-            
-            <div className="space-y-8">
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-900/50 flex items-center justify-center text-cyan-400 font-bold border border-cyan-500/30">
-                  01
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-2">The Decompression</h4>
-                  <p className="text-slate-400">We start by getting you out of your head and into your body. Through deep breathwork and physical exertion, we bleed off the accumulated stress of your daily life.</p>
+            <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "0.95rem", lineHeight: 1.75, maxWidth: "52ch" }}>
+              These are real men. Dads, partners, leaders. They came in running on fumes and left with something they hadn't felt in years — the certainty that they are exactly the man their family needs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {testimonials.map((t) => (
+              <div
+                key={t.name}
+                className="p-8 rounded-xl flex flex-col transition-all duration-300"
+                style={{ background: "#0F0F2A", border: `1px solid ${t.border}` }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = `0 0 36px ${t.glow}`;
+                  (e.currentTarget as HTMLElement).style.borderColor = t.color;
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                  (e.currentTarget as HTMLElement).style.borderColor = t.border;
+                }}
+              >
+                <span className="font-bold leading-none mb-4 block" style={{ fontFamily: "var(--font-display)", fontSize: "4rem", color: t.color, lineHeight: 1 }}>"</span>
+                <blockquote className="flex-1 mb-8 leading-relaxed" style={{ fontFamily: "var(--font-body)", color: "#CBD5E1", fontSize: "0.95rem", lineHeight: 1.75 }}>
+                  {t.quote}
+                </blockquote>
+                <div className="pt-5" style={{ borderTop: `1px solid ${t.border}` }}>
+                  <p className="font-bold" style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#F1F5F9", letterSpacing: "-0.01em" }}>{t.name}</p>
+                  <p className="text-xs tracking-wide mt-1" style={{ fontFamily: "var(--font-body)", color: "#64748B" }}>{t.role}</p>
                 </div>
               </div>
-              
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-900/50 flex items-center justify-center text-cyan-400 font-bold border border-cyan-500/30">
-                  02
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-2">The Mirror</h4>
-                  <p className="text-slate-400">Honest, confronting, but compassionate group work. We identify where you are self-sabotaging, where you are hiding, and what stories are keeping you trapped in the loop.</p>
-                </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── IS THIS FOR YOU? ─────────────────────────────────────────────── */}
+      <section className="py-24 md:py-32" style={{ background: "#0A0A20" }}>
+        <div className="container">
+          <div className="text-center mb-14">
+            <span className="section-tag mb-6 inline-flex">
+              <span style={{ color: "#6366F1" }}>✦</span>
+              Who This Is For
+            </span>
+            <h2
+              className="text-white font-bold leading-tight"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
+            >
+              Not for everyone.<br />
+              <span style={{ color: "#818CF8" }}>Exactly for someone.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* For you */}
+            <div className="p-8 rounded-xl" style={{ background: "#0F0F2A", border: "1px solid rgba(16,185,129,0.25)" }}>
+              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-6" style={{ fontFamily: "var(--font-body)", color: "#6EE7B7" }}>
+                This IS For You
+              </p>
+              <div className="space-y-4">
+                {forYou.map((item) => (
+                  <div key={item} className="flex items-start gap-4">
+                    <span className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center" style={{ background: "rgba(16,185,129,0.15)", border: "1px solid rgba(16,185,129,0.4)" }}>
+                      <span style={{ color: "#10B981", fontSize: "0.65rem" }}>✓</span>
+                    </span>
+                    <span style={{ fontFamily: "var(--font-body)", color: "#CBD5E1", fontSize: "0.95rem", lineHeight: 1.7 }}>{item}</span>
+                  </div>
+                ))}
               </div>
-              
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-900/50 flex items-center justify-center text-cyan-400 font-bold border border-cyan-500/30">
-                  03
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-2">The Integration</h4>
-                  <p className="text-slate-400">You don't leave with just a "high." You leave with a concrete, identity-based system. You will know exactly how to train, how to breathe, and how to communicate when you return home to your family.</p>
-                </div>
+            </div>
+
+            {/* Not for you */}
+            <div className="p-8 rounded-xl" style={{ background: "#0F0F2A", border: "1px solid rgba(239,68,68,0.2)" }}>
+              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-6" style={{ fontFamily: "var(--font-body)", color: "#FCA5A5" }}>
+                This is NOT For You
+              </p>
+              <div className="space-y-4">
+                {notForYou.map((item) => (
+                  <div key={item} className="flex items-start gap-4">
+                    <span className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 flex items-center justify-center" style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)" }}>
+                      <span style={{ color: "#EF4444", fontSize: "0.65rem" }}>✕</span>
+                    </span>
+                    <span style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "0.95rem", lineHeight: 1.7 }}>{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* IS THIS FOR YOU? */}
-      <section className="py-24 bg-slate-900/30 border-y border-slate-800/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">This IS For You If:</h3>
-              <ul className="space-y-4">
-                {[
-                  "You are a founder, business owner, or leader.",
-                  "You are a father who wants to be truly present.",
-                  "You are tired of the 'hustle at all costs' culture.",
-                  "You are ready to do the deep internal work.",
-                  "You want a brotherhood of men holding you to a higher standard."
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-cyan-500 flex-shrink-0" />
-                    <span className="text-slate-300">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6">This is NOT For You If:</h3>
-              <ul className="space-y-4">
-                {[
-                  "You want a quick-fix weight loss magic pill.",
-                  "You want an 'alpha male' chest-beating bootcamp.",
-                  "You are unwilling to be vulnerable in a group setting.",
-                  "You blame your wife, your kids, or the market for your problems.",
-                  "You aren't willing to invest in yourself."
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-2 h-2 rounded-full bg-red-500" />
-                    </div>
-                    <span className="text-slate-300">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+      {/* ─── FINAL CTA ────────────────────────────────────────────────────── */}
+      <section className="relative py-32 overflow-hidden" style={{ background: "#09091F" }}>
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px]"
+            style={{ background: "radial-gradient(ellipse, rgba(245,158,11,0.07) 0%, transparent 70%)" }} />
         </div>
-      </section>
 
-      {/* FINAL CTA */}
-      <section id="apply" className="py-32 bg-[#0A0A20] relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.05)_0%,transparent_70%)]" />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Your Family Deserves the Best Version of You.
+            <span className="section-tag-amber section-tag mb-8 inline-flex">
+              <span style={{ color: "#F59E0B" }}>✦</span>
+              The Stakes
+            </span>
+            <h2
+              className="text-white font-bold leading-tight mb-6"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.02em", lineHeight: 1.05 }}
+            >
+              There is no second chance<br />
+              <span style={{ color: "#F59E0B" }}>at their childhood.</span>
             </h2>
-            <p className="text-xl text-slate-400 mb-10">
-              Spots are strictly limited to ensure intimacy and impact. Submit your application below, and I will personally review it to see if you are a fit for the brotherhood.
+            <p
+              className="mb-4"
+              style={{ fontFamily: "var(--font-body)", color: "#CBD5E1", fontSize: "1.1rem", lineHeight: 1.8, maxWidth: "52ch", margin: "0 auto 1.5rem" }}
+            >
+              Your kids are forming their memories of you right now. The clock doesn't pause while you think about it.
             </p>
-            
-            <a href="mailto:shaun@shauntucker.com.au?subject=Retreat Application" className="inline-flex px-10 py-5 bg-cyan-500 hover:bg-cyan-400 text-[#0A0A20] font-bold rounded-lg transition-all items-center justify-center gap-3 text-xl w-full sm:w-auto shadow-[0_0_30px_rgba(34,211,238,0.3)] hover:shadow-[0_0_40px_rgba(34,211,238,0.5)]">
-              Apply For The Retreat Now
-              <ArrowRight className="w-6 h-6" />
+            <p
+              className="mb-12"
+              style={{ fontFamily: "var(--font-body)", color: "#64748B", fontSize: "0.95rem", lineHeight: 1.75, maxWidth: "48ch", margin: "0 auto 3rem" }}
+            >
+              This is not a course. This is a brotherhood. Not everyone is accepted — and that's exactly the point.
+            </p>
+
+            <a
+              href="mailto:shaun@shauntucker.com.au?subject=Retreat Application"
+              className="btn-amber text-lg px-10 py-5"
+            >
+              Apply for The Retreat →
             </a>
-            <p className="mt-6 text-sm text-slate-500">
-              Clicking this will open your email client. Send me a message and we'll start the conversation.
+
+            <p className="mt-6 text-sm" style={{ fontFamily: "var(--font-body)", color: "#475569" }}>
+              Every application is personally reviewed by Shaun. Spots are strictly limited.
             </p>
           </div>
         </div>
