@@ -7,39 +7,12 @@
 
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import TriangleModel from "../components/TriangleModel";
 
 const RETREAT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/retreat-bg-ecNELaii4HhNHzbKbXo6uC.webp";
 const SHAUN_BLAZER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/shaun-forest-cropped_37a9c292.webp";
 
-const pillars = [
-  {
-    number: "01",
-    icon: "💪",
-    title: "Strong Body",
-    body: "Physical training that builds real strength — not just aesthetics. Movement that regulates your nervous system rather than depleting it.",
-    color: "#6366F1",
-    glow: "rgba(99,102,241,0.12)",
-    border: "rgba(99,102,241,0.25)",
-  },
-  {
-    number: "02",
-    icon: "🌬️",
-    title: "Regulated System",
-    body: "Breathwork, nervous system protocols, and somatic practices that move you out of survival mode and into genuine presence.",
-    color: "#06B6D4",
-    glow: "rgba(6,182,212,0.12)",
-    border: "rgba(6,182,212,0.25)",
-  },
-  {
-    number: "03",
-    icon: "🧠",
-    title: "Unstoppable Mind",
-    body: "Identity work, mindset tools, and the philosophical framework to become the man your family needs — without burning yourself out to get there.",
-    color: "#10B981",
-    glow: "rgba(16,185,129,0.12)",
-    border: "rgba(16,185,129,0.25)",
-  },
-];
+
 
 const included = [
   "Deep nervous system regulation and breathwork sessions",
@@ -404,48 +377,8 @@ export default function Retreat() {
             </div>
           </div>
 
-          {/* Three Pillars */}
-          <div>
-            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-7" style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}>
-              Built on Three Pillars
-            </p>
-            <div className="grid md:grid-cols-3 gap-5">
-              {pillars.map((pillar) => (
-                <div
-                  key={pillar.title}
-                  className="p-7 rounded-xl transition-all duration-300"
-                  style={{ background: "rgba(15,15,42,0.7)", backdropFilter: "blur(8px)", border: `1px solid ${pillar.border}` }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.boxShadow = `0 0 32px ${pillar.glow}`;
-                    (e.currentTarget as HTMLElement).style.borderColor = pillar.color;
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                    (e.currentTarget as HTMLElement).style.borderColor = pillar.border;
-                  }}
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-2xl">{pillar.icon}</span>
-                    <span
-                      className="font-bold"
-                      style={{ fontFamily: "var(--font-display)", fontSize: "3rem", color: "rgba(30,30,63,0.9)", letterSpacing: "-0.02em" }}
-                    >
-                      {pillar.number}
-                    </span>
-                  </div>
-                  <h3
-                    className="font-bold mb-3"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", color: "#F1F5F9", letterSpacing: "-0.01em" }}
-                  >
-                    {pillar.title}
-                  </h3>
-                  <p style={{ fontFamily: "var(--font-body)", color: "#94A3B8", fontSize: "0.9rem", lineHeight: 1.7 }}>
-                    {pillar.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* Three Pillars — Interactive Triangle */}
+          <TriangleModel />
         </div>
       </section>
 
