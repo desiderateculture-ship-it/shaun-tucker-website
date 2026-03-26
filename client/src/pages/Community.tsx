@@ -2,7 +2,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { CheckCircle, Coffee, Dumbbell, Home } from "lucide-react";
 
-const COMMUNITY_HERO_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/bjdjBnBXDobZOhfo.jpg";
+const COMMUNITY_HERO_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/cCXnfZpEXLUBuEkq.jpg";
 
 const howItWorks = [
   {
@@ -68,7 +68,7 @@ export default function Community() {
           minHeight: "70vh",
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 container max-w-3xl text-white">
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}>
             EVERY SUNDAY · 6:00AM · MULGRAVE
