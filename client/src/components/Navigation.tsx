@@ -21,7 +21,7 @@ export default function Navigation() {
     { label: "The Path", href: "#plan" },
     { label: "The Retreat", href: "/retreat" },
     { label: "Podcast", href: "/podcast" },
-    { label: "Community", href: "#community" },
+    { label: "Community", href: "/community" },
   ];
 
   return (
