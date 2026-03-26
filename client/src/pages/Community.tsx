@@ -2,7 +2,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { CheckCircle, Coffee, Dumbbell, Home } from "lucide-react";
 
-const COMMUNITY_HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/community-hero-bg-ecNELaii4HhNHzbKbXo6uC.webp";
+const COMMUNITY_HERO_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/bjdjBnBXDobZOhfo.jpg";
 
 const howItWorks = [
   {
@@ -92,7 +92,7 @@ export default function Community() {
             Get fitter, clear your head, and show up as a more present dad — then grab coffee with other dads who actually get it.
           </p>
           <a
-            href="https://chat.whatsapp.com/your-whatsapp-group-link"
+            href="https://chat.whatsapp.com/LUBiaJvKTEc26n9cdwW2cb"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary py-3 px-8 text-base"
@@ -266,7 +266,7 @@ export default function Community() {
             <span style={{ color: "#F59E0B" }}>Join the crew.</span>
           </h2>
           <a
-            href="https://chat.whatsapp.com/your-whatsapp-group-link"
+            href="https://chat.whatsapp.com/LUBiaJvKTEc26n9cdwW2cb"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary py-3 px-8 text-base"
