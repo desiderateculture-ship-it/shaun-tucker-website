@@ -4,7 +4,7 @@ import { CheckCircle, Coffee, Dumbbell, Home, Volume2, VolumeX } from "lucide-re
 import { useState, useRef } from "react";
 
 const COMMUNITY_HERO_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/cCXnfZpEXLUBuEkq.jpg";
-const COMMUNITY_HERO_VIDEO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/dmyTOEzDgWcddyqg.mp4";
+const COMMUNITY_HERO_VIDEO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/txgMeLIbTKgwYlpT.mp4";
 
 const howItWorks = [
   {
@@ -72,15 +72,17 @@ export default function Community() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden" style={{ background: "#09091F" }}>
-        {/* Background Image (Fallback) */}
+        {/* Background Image */}
         <div 
-          className="absolute inset-0 z-0 opacity-30 blur-sm"
+          className="absolute inset-0 z-0"
           style={{
             backgroundImage: `url(${COMMUNITY_HERO_BG})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 z-0 bg-black/40"></div>
         
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
