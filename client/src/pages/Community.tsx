@@ -1,8 +1,10 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import { CheckCircle, Coffee, Dumbbell, Home } from "lucide-react";
+import { CheckCircle, Coffee, Dumbbell, Home, Volume2, VolumeX } from "lucide-react";
+import { useState, useRef } from "react";
 
 const COMMUNITY_HERO_BG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/cCXnfZpEXLUBuEkq.jpg";
+const COMMUNITY_HERO_VIDEO = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/dmyTOEzDgWcddyqg.mp4";
 
 const howItWorks = [
   {
@@ -54,22 +56,110 @@ const testimonials = [
 ];
 
 export default function Community() {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col" style={{ background: "#09091F" }}>
       <Navigation />
 
       {/* Hero Section */}
-      <section
-        className="relative py-24 md:py-32 flex items-center justify-center text-center"
-        style={{
-          backgroundImage: `url(${COMMUNITY_HERO_BG})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          minHeight: "70vh",
-        }}
-      >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 container max-w-3xl text-white">
+      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden" style={{ background: "#09091F" }}>
+        {/* Background Image (Fallback) */}
+        <div 
+          className="absolute inset-0 z-0 opacity-30 blur-sm"
+          style={{
+            backgroundImage: `url(${COMMUNITY_HERO_BG})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-left">
+              <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}>
+                EVERY SUNDAY · 6:00AM · MULGRAVE
+              </p>
+              <h1
+                className="font-bold leading-tight mb-6"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1.0,
+                }}
+              >
+                Free 6am Sunday Workouts for Dads in
+                <br />
+                <span style={{ color: "#F59E0B" }}>South East Melbourne</span>
+              </h1>
+              <p className="mb-8 leading-relaxed"
+                style={{ fontFamily: "var(--font-body)", color: "#CBD5E1", fontSize: "1.15rem", maxWidth: "50ch" }}
+              >
+                Get fitter, clear your head, and show up as a more present dad — then grab coffee with other dads who actually get it.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://chat.whatsapp.com/LUBiaJvKTEc26n9cdwW2cb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary py-3.5 px-8 text-base"
+                >
+                  Join the WhatsApp crew →
+                </a>
+              </div>
+              <p className="mt-4 text-sm" style={{ fontFamily: "var(--font-body)", color: "#94A3B8" }}>
+                Reminders and location pin inside the group.
+              </p>
+            </div>
+
+            {/* Video Player */}
+            <div className="relative mx-auto lg:ml-auto lg:mr-0 max-w-[320px] w-full group">
+              <div 
+                className="relative rounded-2xl overflow-hidden shadow-2xl shadow-indigo-500/20 border border-white/10"
+                style={{ aspectRatio: "9/16" }}
+              >
+                <video
+                  ref={videoRef}
+                  src={COMMUNITY_HERO_VIDEO}
+                  autoPlay
+                  loop
+                  muted={isMuted}
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Mute/Unmute Toggle */}
+                <button
+                  onClick={toggleMute}
+                  className="absolute bottom-4 right-4 z-20 p-3 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white hover:bg-black/60 transition-all duration-300"
+                  aria-label={isMuted ? "Unmute video" : "Mute video"}
+                >
+                  {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                </button>
+
+                {/* Video Overlay Gradient */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-indigo-500/30 rounded-tr-2xl pointer-events-none"></div>
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-amber-500/30 rounded-bl-2xl pointer-events-none"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How Sunday Mornings Work */}
           <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}>
             EVERY SUNDAY · 6:00AM · MULGRAVE
           </p>
