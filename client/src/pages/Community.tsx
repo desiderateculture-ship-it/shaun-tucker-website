@@ -160,42 +160,6 @@ export default function Community() {
       </section>
 
       {/* How Sunday Mornings Work */}
-          <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}>
-            EVERY SUNDAY · 6:00AM · MULGRAVE
-          </p>
-          <h1
-            className="font-bold leading-tight mb-6"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-              letterSpacing: "-0.03em",
-              lineHeight: 1.0,
-            }}
-          >
-            Free 6am Sunday Workouts for Dads in
-            <br />
-            <span style={{ color: "#F59E0B" }}>South East Melbourne</span>
-          </h1>
-          <p className="mb-8 leading-relaxed"
-            style={{ fontFamily: "var(--font-body)", color: "#CBD5E1", fontSize: "1.15rem", maxWidth: "60ch", margin: "0 auto" }}
-          >
-            Get fitter, clear your head, and show up as a more present dad — then grab coffee with other dads who actually get it.
-          </p>
-          <a
-            href="https://chat.whatsapp.com/LUBiaJvKTEc26n9cdwW2cb"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary py-3 px-8 text-base"
-          >
-            Join the WhatsApp crew →
-          </a>
-          <p className="mt-4 text-sm" style={{ fontFamily: "var(--font-body)", color: "#94A3B8" }}>
-            You'll get all the details, reminders, and location pin inside the WhatsApp group.
-          </p>
-        </div>
-      </section>
-
-      {/* How Sunday Mornings Work */}
       <section className="py-24 md:py-32" style={{ background: "#0A0A20" }}>
         <div className="container max-w-4xl">
           <span className="section-tag mb-6 inline-flex">
