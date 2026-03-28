@@ -5,9 +5,11 @@
  * Fonts: var(--font-display) Syne, var(--font-body) Plus Jakarta Sans
  */
 
+import { useState } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import TriangleModel from "../components/TriangleModel";
+import RetreatApplicationForm from "../components/RetreatApplicationForm";
 
 const RETREAT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/retreat-bg-ecNELaii4HhNHzbKbXo6uC.webp";
 const SHAUN_BLAZER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/shaun-forest-cropped_37a9c292.webp";
@@ -77,6 +79,8 @@ const notForYou = [
 ];
 
 export default function Retreat() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <div className="min-h-screen" style={{ background: "#09091F" }}>
       <Navigation />
@@ -623,12 +627,12 @@ export default function Retreat() {
               This is not a course. This is a brotherhood. Not everyone is accepted — and that's exactly the point.
             </p>
 
-            <a
-              href="mailto:shaun@shauntucker.com.au?subject=Retreat Application"
+            <button
+              onClick={() => setShowForm(true)}
               className="btn-amber text-lg px-10 py-5"
             >
               Apply for The Retreat →
-            </a>
+            </button>
 
             <p className="mt-6 text-sm" style={{ fontFamily: "var(--font-body)", color: "#475569" }}>
               Every application is personally reviewed by Shaun. Spots are strictly limited.
@@ -636,6 +640,30 @@ export default function Retreat() {
           </div>
         </div>
       </section>
+
+      {/* Application Form Modal */}
+      {showForm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+          <div className="bg-gray-900 rounded-2xl max-w-2xl w-full my-8 p-8 border border-gray-800">
+            <div className="flex justify-between items-center mb-8">
+              <h2 className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
+                Apply for The Retreat
+              </h2>
+              <button
+                onClick={() => setShowForm(false)}
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Close form"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+            <RetreatApplicationForm />
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
