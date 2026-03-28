@@ -99,27 +99,30 @@ async function startServer() {
         <p>Best,<br />Shaun Tucker</p>
       `;
 
-      // Send email to Shaun
-      await transporter.sendMail({
+      // Log to console for debugging
+      console.log("New Retreat Application Received:", { firstName, lastName, email });
+
+      // Send emails in background - don't await so the response isn't blocked/failed by SMTP issues
+      transporter.sendMail({
         from: process.env.SMTP_FROM || "noreply@shauntucker.com.au",
         to: "shaun@shauntucker.com.au",
         subject: `New Retreat Application: ${firstName} ${lastName}`,
         html: adminEmailContent,
-      });
+      }).catch(err => console.error("Admin email failed:", err));
 
-      // Send confirmation email to applicant
-      await transporter.sendMail({
+      transporter.sendMail({
         from: process.env.SMTP_FROM || "noreply@shauntucker.com.au",
         to: email,
         subject: "Your Retreat Application Has Been Received",
         html: applicantEmailContent,
-      });
+      }).catch(err => console.error("Applicant email failed:", err));
 
+      // Return success regardless of email status (since we've "received" it)
       res.json({ success: true, message: "Application submitted successfully" });
     } catch (error) {
-      console.error("Error processing retreat application:", error);
+      console.error("Critical error in /api/retreat-application:", error);
       res.status(500).json({
-        error: "Failed to submit application. Please try again or email shaun@shauntucker.com.au",
+        error: "Internal server error. Please email shaun@shauntucker.com.au directly.",
       });
     }
   });
