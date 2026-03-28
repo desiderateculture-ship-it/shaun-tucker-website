@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import { CheckCircle, Wind, Brain, Heart, Sparkles, MapPin, Calendar, Clock, Info } from "lucide-react";
 
 const STRIPE_LINK = "https://buy.stripe.com/14AfZhaTv5I6aeK2kE18c01";
+const FACILITATOR_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/wZOYNMaxlEsvVphU.JPG";
 
 const painPoints = [
   {
@@ -189,6 +190,65 @@ export default function Breathwork() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet Your Facilitator */}
+      <section className="py-24 md:py-32" style={{ background: "#09091F" }}>
+        <div className="container max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                <img 
+                  src={FACILITATOR_IMG} 
+                  alt="Shaun Tucker" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl -z-10 blur-2xl"></div>
+            </div>
+            <div>
+              <span className="section-tag mb-6 inline-flex">
+                <span style={{ color: "#06B6D4" }}>✦</span>
+                Meet Your Facilitator
+              </span>
+              <h2
+                className="text-white font-bold leading-tight mb-6"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2rem, 4vw, 3rem)",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.1,
+                }}
+              >
+                Shaun Tucker
+              </h2>
+              <p className="text-cyan-400 font-bold mb-6 tracking-wider uppercase text-sm" style={{ fontFamily: "var(--font-body)" }}>
+                Human Performance Scientist & Breathwork Facilitator
+              </p>
+              <div className="space-y-4 text-gray-300 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+                <p>
+                  With over a decade of experience in high-performance coaching and a background in Health Science, Shaun specializes in nervous system regulation as the foundation for all meaningful change.
+                </p>
+                <p>
+                  He doesn't just teach breathwork; he uses it as a precise tool to help high-achievers bypass the noise of the analytical mind and reconnect with their innate clarity and presence.
+                </p>
+                <p>
+                  Shaun's approach is grounded in science, filtered through real-world experience, and delivered with the directness and empathy of someone who has walked the path from burnout to genuine regulation.
+                </p>
+              </div>
+              <div className="mt-8 pt-8 border-t border-white/5 grid grid-cols-2 gap-6">
+                <div>
+                  <p className="text-white font-bold text-xl mb-1">9+ Years</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-widest">Coaching Experience</p>
+                </div>
+                <div>
+                  <p className="text-white font-bold text-xl mb-1">BSc</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-widest">Health Science</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
