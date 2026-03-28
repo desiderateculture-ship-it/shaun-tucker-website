@@ -11,7 +11,11 @@ const navLinks = [
   { label: "Community", href: "/community" },
 ];
 
-const socials = ["Instagram", "LinkedIn", "Spotify"];
+const socials = [
+  { label: "Instagram", href: "https://www.instagram.com/theshauntucker/", icon: "📷" },
+  { label: "Facebook", href: "https://www.facebook.com/theshauntucker/", icon: "f" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/theshauntucker/", icon: "in" },
+];
 
 export default function Footer() {
   return (
@@ -44,14 +48,16 @@ export default function Footer() {
             <div className="flex gap-5 mt-6">
               {socials.map((social) => (
                 <a
-                  key={social}
-                  href="#"
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-xs tracking-widest uppercase font-bold transition-colors duration-200"
                   style={{ fontFamily: "var(--font-body)", color: "#334155" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "#818CF8")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "#334155")}
                 >
-                  {social}
+                  {social.label}
                 </a>
               ))}
             </div>
@@ -103,7 +109,24 @@ export default function Footer() {
                 Melbourne, VIC, Australia
               </p>
             </div>
-            <a href="/#apply" className="btn-primary text-xs px-5 py-2.5">
+            <div className="flex gap-4 mb-6">
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 border border-gray-700 hover:border-amber-500 hover:bg-amber-500/10"
+                  style={{ fontFamily: "var(--font-body)" }}
+                  title={social.label}
+                >
+                  <span style={{ color: "#818CF8", fontSize: "1.1rem", fontWeight: "bold" }}>
+                    {social.icon}
+                  </span>
+                </a>
+              ))}
+            </div>
+            <a href="/#apply" className="btn-primary text-xs px-5 py-2.5" style={{ display: "inline-block" }}>
               Apply Now
             </a>
           </div>
