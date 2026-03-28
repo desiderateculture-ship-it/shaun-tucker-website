@@ -19,6 +19,7 @@ export default function FloatingVideoWidget() {
   const [expanded, setExpanded] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [showBubble, setShowBubble] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const previewRef = useRef<HTMLVideoElement>(null);
   const modalRef = useRef<HTMLVideoElement>(null);
 
@@ -31,9 +32,17 @@ export default function FloatingVideoWidget() {
   // Autoplay muted preview when bubble appears
   useEffect(() => {
     if (showBubble && previewRef.current) {
+      previewRef.current.muted = isMuted;
       previewRef.current.play().catch(() => {});
     }
-  }, [showBubble]);
+  }, [showBubble, isMuted]);
+
+  // Update preview video mute state
+  useEffect(() => {
+    if (previewRef.current) {
+      previewRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
 
   // When modal opens, play full video with sound from start
   useEffect(() => {
@@ -125,7 +134,7 @@ export default function FloatingVideoWidget() {
                 <video
                   ref={previewRef}
                   src={VIDEO_SRC}
-                  muted
+                  muted={isMuted}
                   loop
                   playsInline
                   preload="metadata"
@@ -146,6 +155,34 @@ export default function FloatingVideoWidget() {
                     </svg>
                   </div>
                 </div>
+
+                {/* Mute/Unmute button */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsMuted(!isMuted);
+                  }}
+                  className="absolute bottom-2 right-2 z-10 w-7 h-7 rounded-full flex items-center justify-center transition-all"
+                  style={{
+                    background: "rgba(34,211,238,0.9)",
+                    color: "#09091F",
+                  }}
+                  aria-label={isMuted ? "Unmute video" : "Mute video"}
+                >
+                  {isMuted ? (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                      <line x1="23" y1="9" x2="17" y2="15"></line>
+                      <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                  ) : (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                    </svg>
+                  )}
+                </button>
               </div>
             </div>
           </motion.div>
@@ -210,6 +247,7 @@ export default function FloatingVideoWidget() {
                   playsInline
                   className="w-full h-full"
                   style={{ objectFit: "contain" }}
+                  defaultMuted={false}
                 />
               </div>
 
