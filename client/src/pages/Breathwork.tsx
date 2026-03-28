@@ -4,6 +4,7 @@ import { CheckCircle, Wind, Brain, Heart, Sparkles, MapPin, Calendar, Clock, Inf
 
 const STRIPE_LINK = "https://buy.stripe.com/14AfZhaTv5I6aeK2kE18c01";
 const FACILITATOR_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/wZOYNMaxlEsvVphU.JPG";
+const STUDIO_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663465823708/QQWqTFnlaXVJkZdP.jpeg";
 
 const painPoints = [
   {
@@ -251,6 +252,39 @@ export default function Breathwork() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Studio Space */}
+      <section className="py-24 md:py-32" style={{ background: "#09091F" }}>
+        <div className="container max-w-5xl">
+          <div className="text-center mb-16">
+            <span className="section-tag mb-6 inline-flex">
+              <span style={{ color: "#06B6D4" }}>✦</span>
+              Your Space
+            </span>
+            <h2
+              className="text-white font-bold leading-tight mb-6"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
+              }}
+            >
+              A Beautiful, Intentional Space
+            </h2>
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-cyan-500/20 shadow-2xl shadow-cyan-500/10 mb-8">
+            <img 
+              src={STUDIO_IMG} 
+              alt="Holistic Yoga Studio" 
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <p className="text-center text-gray-300 leading-relaxed" style={{ fontFamily: "var(--font-body)", fontSize: "1.1rem" }}>
+            The Holistic Yoga Studio at Jells Road is designed for deep work. Clean lines, natural light, and a calm atmosphere create the perfect container for your breathwork journey. You'll feel the difference the moment you walk in.
+          </p>
         </div>
       </section>
 
