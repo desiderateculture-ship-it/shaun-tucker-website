@@ -23,7 +23,7 @@ const steps = [
     title: "Experience Breathwork.",
     description: "In 2 hours, you will feel more regulated and more present than you have in years. Most men leave having experienced more in one session than in years of conventional training.",
     action: "Book a Session →",
-    href: "#breathwork",
+    href: "/breathwork",
     tag: "From $100",
     color: "#06B6D4",
     glow: "rgba(6,182,212,0.12)",

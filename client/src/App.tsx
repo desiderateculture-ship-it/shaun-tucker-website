@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Podcast from "./pages/Podcast";
 import Retreat from "./pages/Retreat";
 import Community from "./pages/Community";
+import Breathwork from "./pages/Breathwork";
 
 // Strip trailing slash so wouter base matching works correctly
 const BASE = (import.meta.env.BASE_URL ?? "/").replace(/\/$/, "");
@@ -20,6 +21,7 @@ function Router() {
         <Route path={"/podcast"} component={Podcast} />
         <Route path={"/retreat"} component={Retreat} />
         <Route path={"/community"} component={Community} />
+        <Route path={"/breathwork"} component={Breathwork} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>
