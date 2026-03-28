@@ -283,7 +283,8 @@ export default function KnightEvolution() {
         {/* Stage navigation bar at bottom */}
         <div className="relative z-10 pb-8 md:pb-10">
           <div className="container">
-            <div className="flex items-end gap-0 mb-6 overflow-x-auto">
+            {/* Desktop: Horizontal layout */}
+            <div className="hidden md:flex items-end gap-0 mb-6 overflow-x-auto">
               {STAGES.map((s, i) => (
                 <button
                   key={s.id}
@@ -314,6 +315,48 @@ export default function KnightEvolution() {
                   </span>
                   {i === activeIndex && (
                     <div className="mt-2 h-0.5 w-full overflow-hidden" style={{ background: "rgba(30,30,63,0.6)" }}>
+                      <div
+                        className="h-full"
+                        style={{ width: `${progress}%`, background: s.accentColor, transition: "width 50ms linear" }}
+                      />
+                    </div>
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile: Vertical layout */}
+            <div className="md:hidden flex flex-col gap-2 mb-6">
+              {STAGES.map((s, i) => (
+                <button
+                  key={s.id}
+                  onClick={() => goTo(i)}
+                  className="text-left px-4 py-3 transition-all duration-300 rounded-lg"
+                  style={{
+                    borderLeft: `3px solid ${i === activeIndex ? s.accentColor : "rgba(30,30,63,0.8)"}`,
+                    background: i === activeIndex ? `${s.tagBg}` : "transparent",
+                  }}
+                >
+                  <span
+                    className="block text-xs font-bold tracking-[0.2em] uppercase mb-1"
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      color: i === activeIndex ? s.accentColor : "#334155",
+                    }}
+                  >
+                    {s.number}
+                  </span>
+                  <span
+                    className="block text-sm font-semibold"
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      color: i === activeIndex ? "#F1F5F9" : "#475569",
+                    }}
+                  >
+                    {s.label}
+                  </span>
+                  {i === activeIndex && (
+                    <div className="mt-2 h-1 w-full overflow-hidden rounded" style={{ background: "rgba(30,30,63,0.6)" }}>
                       <div
                         className="h-full"
                         style={{ width: `${progress}%`, background: s.accentColor, transition: "width 50ms linear" }}
