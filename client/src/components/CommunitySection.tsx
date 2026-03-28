@@ -106,15 +106,15 @@ export default function CommunitySection() {
               <p className="text-xs mb-2" style={{ fontFamily: "var(--font-body)", color: "#64748B" }}>
                 Available to retreat graduates only
               </p>
-              <a
-                href="#apply"
-                className="text-sm font-semibold transition-opacity duration-200"
-                style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-              >
-                Start with the retreat →
-              </a>
+                <a
+                  href="/#apply"
+                  className="text-sm font-semibold transition-opacity duration-200"
+                  style={{ fontFamily: "var(--font-body)", color: "#818CF8" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.7")}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+                >
+                  Start with the retreat →
+                </a>
             </div>
           </div>
 

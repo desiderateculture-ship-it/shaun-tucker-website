@@ -312,7 +312,7 @@ export default function FloatingVideoWidget() {
 
                   {/* Secondary: Book a Session */}
                   <a
-                    href="/#path"
+                    href="/#plan"
                     onClick={() => setExpanded(false)}
                     className="flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-200"
                     style={{

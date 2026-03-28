@@ -17,8 +17,8 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { label: "About", href: "#guide" },
-    { label: "The Path", href: "#plan" },
+    { label: "About", href: "/#guide" },
+    { label: "The Path", href: "/#plan" },
     { label: "The Retreat", href: "/retreat" },
     { label: "Podcast", href: "/podcast" },
     { label: "Community", href: "/community" },
@@ -64,7 +64,7 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
-          <a href="#apply" className="btn-primary py-2.5 px-5 text-xs">
+          <a href="/#apply" className="btn-primary py-2.5 px-5 text-xs">
             Apply Now →
           </a>
         </div>
@@ -96,7 +96,7 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
-          <a href="#apply" onClick={() => setMenuOpen(false)} className="btn-primary mt-2 justify-center">
+          <a href="/#apply" onClick={() => setMenuOpen(false)} className="btn-primary mt-2 justify-center">
             Apply Now →
           </a>
         </div>

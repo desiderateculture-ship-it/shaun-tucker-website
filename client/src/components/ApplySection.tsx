@@ -64,7 +64,7 @@ export default function ApplySection() {
               <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
             </a>
             <a
-              href="#community"
+              href="/#community"
               className="btn-ghost"
             >
               Join the Free Community

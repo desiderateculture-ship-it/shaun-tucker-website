@@ -121,7 +121,7 @@ export default function RetreatSection() {
                 </div>
               ))}
             </div>
-            <a href="#apply" className="btn-amber mt-8 w-full justify-center">
+            <a href="/#apply" className="btn-amber mt-8 w-full justify-center">
               Apply for The Retreat
             </a>
           </div>

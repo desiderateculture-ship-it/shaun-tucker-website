@@ -4,11 +4,11 @@
  */
 
 const navLinks = [
-  { label: "About Shaun", href: "#about" },
-  { label: "The Path", href: "#plan" },
-  { label: "The Retreat", href: "#retreat" },
-  { label: "The Podcast", href: "#podcast" },
-  { label: "Community", href: "#community" },
+  { label: "About Shaun", href: "/#guide" },
+  { label: "The Path", href: "/#plan" },
+  { label: "The Retreat", href: "/retreat" },
+  { label: "The Podcast", href: "/podcast" },
+  { label: "Community", href: "/community" },
 ];
 
 const socials = ["Instagram", "LinkedIn", "Spotify"];
@@ -103,7 +103,7 @@ export default function Footer() {
                 Melbourne, VIC, Australia
               </p>
             </div>
-            <a href="#apply" className="btn-primary text-xs px-5 py-2.5">
+            <a href="/#apply" className="btn-primary text-xs px-5 py-2.5">
               Apply Now
             </a>
           </div>
