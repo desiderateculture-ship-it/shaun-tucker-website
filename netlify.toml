@@ -1,6 +1,13 @@
 [build]
   publish = "dist/public"
   functions = "netlify/functions"
+  command = "pnpm build"
+
+[[redirects]]
+  from = "/api/retreat-application"
+  to = "/.netlify/functions/retreat-application"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/*"
