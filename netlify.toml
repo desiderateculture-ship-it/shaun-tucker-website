@@ -3,6 +3,12 @@
   functions = "netlify/functions"
   command = "pnpm build"
 
+# Exclude SMTP_USER and SMTP_HOST from secrets scanning.
+# SMTP_USER (shaun@shauntucker.com.au) appears in normal mailto: links throughout
+# the site source code and is not a secret — it is the public contact email.
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "SMTP_USER,SMTP_HOST"
+
 [[redirects]]
   from = "/api/retreat-application"
   to = "/.netlify/functions/retreat-application"
