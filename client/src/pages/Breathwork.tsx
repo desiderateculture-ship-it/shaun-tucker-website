@@ -1,5 +1,6 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { CheckCircle, Wind, Brain, Heart, Sparkles, MapPin, Calendar, Clock, Info } from "lucide-react";
 
 const STRIPE_LINK = "https://buy.stripe.com/14AfZhaTv5I6aeK2kE18c01";
@@ -54,6 +55,12 @@ const schedule = [
 
 export default function Breathwork() {
   return (
+    <>
+      <SEO
+        title="Breathwork Sessions Melbourne — Nervous System Reset with Shaun Tucker"
+        description="Join Shaun Tucker's guided breathwork sessions in Melbourne. In 2 hours, experience more clarity, calm, and presence than years of conventional training. Book your spot from $100."
+        canonical="https://www.shauntucker.com.au/breathwork"
+      />
     <div className="min-h-screen flex flex-col" style={{ background: "#09091F" }}>
       <Navigation />
 
@@ -412,5 +419,6 @@ export default function Breathwork() {
 
       <Footer />
     </div>
+    </>
   );
 }

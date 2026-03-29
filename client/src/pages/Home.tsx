@@ -28,22 +28,81 @@ import CommunitySection from "@/components/CommunitySection";
 import ApplySection from "@/components/ApplySection";
 import Footer from "@/components/Footer";
 import FloatingVideoWidget from "@/components/FloatingVideoWidget";
+import SEO from "@/components/SEO";
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Shaun Tucker",
+  url: "https://www.shauntucker.com.au",
+  image: "https://www.shauntucker.com.au/hero-01.jpg",
+  sameAs: [
+    "https://www.instagram.com/shauntucker_",
+    "https://www.facebook.com/shauntucker",
+    "https://www.linkedin.com/in/shauntucker",
+    "https://www.youtube.com/@shauntucker",
+  ],
+  jobTitle: "Men's Performance Coach & Breathwork Facilitator",
+  description:
+    "Human Performance Scientist, MMA Fighter, BSc Health Science, and Breathwork Facilitator helping driven dads build a strong body, regulated nervous system, and unstoppable mind.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Melbourne",
+    addressRegion: "VIC",
+    addressCountry: "AU",
+  },
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Shaun Tucker — The Unforgettable",
+  url: "https://www.shauntucker.com.au",
+  image: "https://www.shauntucker.com.au/hero-01.jpg",
+  description:
+    "Men's performance coaching, breathwork facilitation, and retreat experiences for driven dads in Melbourne, VIC. Helping men build a strong body, regulated nervous system, and unstoppable mind.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Melbourne",
+    addressRegion: "VIC",
+    addressCountry: "AU",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -37.8136,
+    longitude: 144.9631,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Melbourne",
+  },
+  priceRange: "$$",
+  email: "shaun@shauntucker.com.au",
+};
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#09091F]">
-      <Navigation />
-      <KnightEvolution />
-      <ProblemSection />
-      <TriangleModel />
-      <GuideSection />
-      <PlanSection />
-      <RetreatSection />
-      <TestimonialsSection />
-      <CommunitySection />
-      <ApplySection />
-      <Footer />
-      <FloatingVideoWidget />
-    </div>
+    <>
+      <SEO
+        title="Shaun Tucker — The Unforgettable"
+        description="Human Performance Scientist & Breathwork Facilitator helping driven dads in Melbourne build a strong body, regulated nervous system, and unstoppable mind. Men's retreats, group coaching, and breathwork sessions."
+        canonical="https://www.shauntucker.com.au/"
+        jsonLd={[personJsonLd, localBusinessJsonLd]}
+      />
+      <div className="min-h-screen bg-[#09091F]">
+        <Navigation />
+        <KnightEvolution />
+        <ProblemSection />
+        <TriangleModel />
+        <GuideSection />
+        <PlanSection />
+        <RetreatSection />
+        <TestimonialsSection />
+        <CommunitySection />
+        <ApplySection />
+        <Footer />
+        <FloatingVideoWidget />
+      </div>
+    </>
   );
 }

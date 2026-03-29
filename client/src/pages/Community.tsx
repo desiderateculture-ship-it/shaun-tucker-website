@@ -1,5 +1,6 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { CheckCircle, Coffee, Dumbbell, Home, Volume2, VolumeX } from "lucide-react";
 import { useState, useRef } from "react";
 
@@ -67,6 +68,12 @@ export default function Community() {
   };
 
   return (
+    <>
+      <SEO
+        title="Free Sunday Workout Group Mulgrave Melbourne — The Unforgettable Community"
+        description="Join Shaun Tucker's free Sunday morning workout group in Mulgrave, Melbourne. Outdoor training for driven dads followed by coffee. Every Sunday from 6:00am. No ego. No cost."
+        canonical="https://www.shauntucker.com.au/community"
+      />
     <div className="min-h-screen flex flex-col" style={{ background: "#09091F" }}>
       <Navigation />
 
@@ -337,5 +344,6 @@ export default function Community() {
 
       <Footer />
     </div>
+    </>
   );
 }

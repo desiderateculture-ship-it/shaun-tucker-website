@@ -10,6 +10,41 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import TriangleModel from "../components/TriangleModel";
 import RetreatApplicationForm from "../components/RetreatApplicationForm";
+import SEO from "../components/SEO";
+
+const retreatEventJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "The Unforgettable Retreat — Men's Transformation Retreat Melbourne",
+  description:
+    "A 3-day, 2-night men's retreat in Melbourne featuring nervous system regulation, breathwork, identity workshops, and brotherhood circles for driven dads ready to transform.",
+  url: "https://www.shauntucker.com.au/retreat",
+  image: "https://www.shauntucker.com.au/hero-01.jpg",
+  organizer: {
+    "@type": "Person",
+    name: "Shaun Tucker",
+    url: "https://www.shauntucker.com.au",
+  },
+  location: {
+    "@type": "Place",
+    name: "Melbourne, VIC",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Melbourne",
+      addressRegion: "VIC",
+      addressCountry: "AU",
+    },
+  },
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  eventStatus: "https://schema.org/EventScheduled",
+  offers: {
+    "@type": "Offer",
+    price: "1500",
+    priceCurrency: "AUD",
+    availability: "https://schema.org/LimitedAvailability",
+    url: "https://www.shauntucker.com.au/retreat",
+  },
+};
 
 const RETREAT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/retreat-bg-ecNELaii4HhNHzbKbXo6uC.webp";
 const SHAUN_BLAZER = "https://d2xsxph8kpxj0f.cloudfront.net/310519663461331538/b29hYSJqcf6yhKscd9tQK3/shaun-forest-cropped_37a9c292.webp";
@@ -82,6 +117,13 @@ export default function Retreat() {
   const [showForm, setShowForm] = useState(false);
 
   return (
+    <>
+      <SEO
+        title="The Unforgettable Retreat — Men's Transformation Retreat Melbourne"
+        description="A 3-day, 2-night men's retreat in Melbourne for driven dads. Nervous system regulation, breathwork, identity workshops, and brotherhood circles. From $1,500. Quarterly. Apply now."
+        canonical="https://www.shauntucker.com.au/retreat"
+        jsonLd={retreatEventJsonLd}
+      />
     <div className="min-h-screen" style={{ background: "#09091F" }}>
       <Navigation />
 
@@ -667,5 +709,6 @@ export default function Retreat() {
 
       <Footer />
     </div>
+    </>
   );
 }

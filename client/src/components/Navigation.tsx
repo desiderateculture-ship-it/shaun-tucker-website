@@ -35,7 +35,7 @@ export default function Navigation() {
     >
       <div className="container flex items-center justify-between h-16 md:h-18">
         {/* Logo */}
-        <a href="#" className="flex flex-col leading-none">
+        <a href="/" className="flex flex-col leading-none" aria-label="Shaun Tucker — The Unforgettable, go to homepage">
           <span
             className="text-white font-bold"
             style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", letterSpacing: "-0.01em" }}
