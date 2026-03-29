@@ -192,12 +192,12 @@ export default function Retreat() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                href="mailto:shaun@shauntucker.com.au?subject=Retreat Application"
+              <button
+                onClick={() => setShowForm(true)}
                 className="btn-amber"
               >
                 Apply for The Retreat →
-              </a>
+              </button>
               <a href="#what-happens" className="btn-ghost">
                 See What Happens
               </a>
@@ -417,9 +417,9 @@ export default function Retreat() {
                   </div>
                 ))}
               </div>
-              <a href="mailto:shaun@shauntucker.com.au?subject=Retreat Application" className="btn-amber mt-8 w-full justify-center">
+              <button onClick={() => setShowForm(true)} className="btn-amber mt-8 w-full justify-center">
                 Apply for The Retreat
-              </a>
+              </button>
             </div>
           </div>
 
