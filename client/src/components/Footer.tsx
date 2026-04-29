@@ -4,7 +4,7 @@
  */
 
 const navLinks = [
-  { label: "About Shaun", href: "/#guide" },
+  { label: "About Shaun", href: "/about" },
   { label: "The Path", href: "/#plan" },
   { label: "The Retreat", href: "/retreat" },
   { label: "The Podcast", href: "/podcast" },

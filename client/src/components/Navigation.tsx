@@ -17,7 +17,7 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { label: "About", href: "/#guide" },
+    { label: "About", href: "/about" },
     { label: "The Path", href: "/#plan" },
     { label: "The Retreat", href: "/retreat" },
     { label: "Podcast", href: "/podcast" },
