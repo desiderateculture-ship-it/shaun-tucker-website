@@ -10,8 +10,8 @@ const truths = [
   {
     label: "The Truth About Your Body",
     icon: "⚡",
-    headline: "You're not weak. You're wired wrong.",
-    body: "Cold showers and 5am alarms don't fix a dysregulated nervous system. They just add more noise. The answer isn't more effort.",
+    headline: "You're not weak. You're dysregulated.",
+    body: "Cold showers and 5am alarms are just noise if your nervous system is stuck in survival mode. Performance is physiological before it is psychological.",
     color: "#6366F1",
     glow: "rgba(99,102,241,0.12)",
     border: "rgba(99,102,241,0.25)",
@@ -21,7 +21,7 @@ const truths = [
     label: "The Truth About Your Mind",
     icon: "🔥",
     headline: "You don't have an anger problem.",
-    body: "The snapping. The checking out. The guilt. That's not your character. That's a nervous system that was never taught to regulate. It's fixable.",
+    body: "The snapping. The checking out. The \"Dad Guilt.\" That's not your character; that's a system that was never taught to regulate. We don't fix your mind; we reset your state.",
     color: "#EC4899",
     glow: "rgba(236,72,153,0.12)",
     border: "rgba(236,72,153,0.25)",
@@ -31,7 +31,7 @@ const truths = [
     label: "The Truth About Fatherhood",
     icon: "⚔️",
     headline: "Your kids don't need a perfect dad.",
-    body: "They need a present one. One they run to, not away from. One they'll still talk about when they're 40.",
+    body: "They need a present one. One they run toward, not away from. One who has the energy to be the hero of their story, not a passenger in his own.",
     color: "#F59E0B",
     glow: "rgba(245,158,11,0.12)",
     border: "rgba(245,158,11,0.25)",
@@ -91,10 +91,9 @@ export default function ProblemSection() {
               lineHeight: 1.1,
             }}
           >
-            Your kids are growing up
-            right now.
+            Your kids are forming their memories of you right now.
             <br />
-            <span style={{ color: "#818CF8" }}>And you're not fully there.</span>
+            <span style={{ color: "#818CF8" }}>And you're physically there, but mentally miles away.</span>
           </h2>
           <p
             className="mx-auto leading-relaxed"
@@ -106,7 +105,7 @@ export default function ProblemSection() {
               lineHeight: 1.75,
             }}
           >
-            There is no second chance at your child's childhood. The man your family needs isn't somewhere in the future — he's locked inside the man you are right now.
+            There is no second chance at your child's childhood. The man your family needs isn't somewhere in the future—he's locked inside the reactive, stressed version of you right now.
           </p>
         </div>
 
@@ -135,7 +134,7 @@ export default function ProblemSection() {
           >
             The world told you to grind harder.
             <br />
-            <span style={{ color: "#818CF8" }}>Your family needed you to show up softer.</span>
+            <span style={{ color: "#818CF8" }}>I'm telling you to regulate better.</span>
           </h3>
           <p
             className="leading-relaxed"
@@ -147,7 +146,7 @@ export default function ProblemSection() {
               lineHeight: 1.75,
             }}
           >
-            Hustle culture sold you a lie. More discipline. More sacrifice. More proving yourself. But the men who are truly unforgettable aren't the ones who worked the hardest. They're the ones who were present when it counted.
+            Hustle culture sold you a lie. More discipline. More sacrifice. More proving yourself. But the men who are truly unforgettable are the ones who have mastered their own nervous system. They don't just survive the day; they architect the outcome.
           </p>
         </div>
 

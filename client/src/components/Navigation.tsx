@@ -35,7 +35,7 @@ export default function Navigation() {
     >
       <div className="container flex items-center justify-between h-16 md:h-18">
         {/* Logo */}
-        <a href="/" className="flex flex-col leading-none" aria-label="Shaun Tucker — The Unforgettable, go to homepage">
+        <a href="/" className="flex flex-col leading-none" aria-label="Shaun Tucker — Authority Architect, go to homepage">
           <span
             className="text-white font-bold"
             style={{ fontFamily: "var(--font-display)", fontSize: "1.05rem", letterSpacing: "-0.01em" }}
@@ -46,7 +46,7 @@ export default function Navigation() {
             className="text-xs tracking-[0.2em] uppercase"
             style={{ color: "#818CF8", fontFamily: "var(--font-body)", fontSize: "0.6rem" }}
           >
-            The Unforgettable
+            Authority Architect
           </span>
         </a>
 

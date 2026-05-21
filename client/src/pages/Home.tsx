@@ -103,7 +103,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Shaun Tucker — The Unforgettable"
+        title="Shaun Tucker — Authority Architect"
         description="Human Performance Scientist & Breathwork Facilitator helping driven dads in Melbourne build a strong body, regulated nervous system, and unstoppable mind. Men's retreats, group coaching, and breathwork sessions."
         canonical="https://www.shauntucker.com.au/"
         jsonLd={[personJsonLd, localBusinessJsonLd]}
