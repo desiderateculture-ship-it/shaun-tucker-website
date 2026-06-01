@@ -22,6 +22,7 @@ export default function Navigation() {
     { label: "The Retreat", href: "/retreat" },
     { label: "Podcast", href: "/podcast" },
     { label: "Community", href: "/community" },
+    { label: "Results", href: "/case-studies" },
   ];
 
   return (
