@@ -1,8 +1,10 @@
 [build]
-  publish = "."
+  publish = "dist/public"
   command = "echo 'Static site - no build needed'"
 
+# Don't redirect actual files (images, css, js, etc)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  conditions = { NOT = {path = ["/*.jpg", "/*.jpeg", "/*.png", "/*.gif", "/*.webp", "/*.svg", "/*.css", "/*.js", "/*.json"]} }
