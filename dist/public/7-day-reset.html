@@ -266,14 +266,37 @@ document.getElementById('resetForm').addEventListener('submit', async (e) => {
   
   const firstName = document.getElementById('firstName').value;
   const email = document.getElementById('email').value;
+  const btn = e.target.querySelector('button');
+  const originalText = btn.textContent;
   
-  // Replace this with your actual email service integration
-  // This could be Mailchimp, ConvertKit, Zapier, or your own backend
-  console.log('Form submitted:', { firstName, email });
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
   
-  // For now, show a success message
-  alert(`Thanks, ${firstName}! Check your email for Day 1 of your 7-Day Integrity Reset.`);
-  document.getElementById('resetForm').reset();
+  try {
+    const response = await fetch('/api/ghl-subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ firstName, email })
+    });
+    
+    if (response.ok) {
+      btn.textContent = '✓ Check your email!';
+      btn.style.background = '#10B981';
+      document.getElementById('resetForm').reset();
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        btn.style.background = 'var(--cyanish)';
+      }, 3000);
+    } else {
+      throw new Error('Subscription failed');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Something went wrong. Please try again or email shaun@shauntucker.com.au');
+    btn.disabled = false;
+    btn.textContent = originalText;
+  }
 });
 </script>
 

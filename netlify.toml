@@ -9,6 +9,12 @@
   to = "/.netlify/functions/rss-proxy"
   status = 200
 
+# GHL Subscribe endpoint
+[[redirects]]
+  from = "/api/ghl-subscribe"
+  to = "/.netlify/functions/ghl-subscribe"
+  status = 200
+
 # Don't redirect actual files (images, css, js, etc)
 [[redirects]]
   from = "/*"
