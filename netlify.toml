@@ -1,6 +1,13 @@
 [build]
   publish = "dist/public"
   command = "echo 'Static site - no build needed'"
+  functions = "netlify/functions"
+
+# RSS Proxy endpoint
+[[redirects]]
+  from = "/api/rss"
+  to = "/.netlify/functions/rss-proxy"
+  status = 200
 
 # Don't redirect actual files (images, css, js, etc)
 [[redirects]]
