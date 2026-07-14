@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    const { firstName, email } = JSON.parse(event.body);
+    const { firstName, email, marketingOptIn } = JSON.parse(event.body);
 
     // Validate inputs
     if (!firstName || !email) {
@@ -31,6 +31,11 @@ exports.handler = async (event, context) => {
     }
 
     // Create contact in GHL
+    const tags = ['7-day-reset', 'podcast-cta'];
+    if (marketingOptIn) {
+      tags.push('marketing-opted-in');
+    }
+    
     const ghlResponse = await fetch('https://rest.gohighlevel.com/v1/contacts/', {
       method: 'POST',
       headers: {
@@ -42,7 +47,7 @@ exports.handler = async (event, context) => {
         email: email,
         locationId: locationId,
         source: '7-Day Integrity Reset',
-        tags: ['7-day-reset', 'podcast-cta']
+        tags: tags
       })
     });
 

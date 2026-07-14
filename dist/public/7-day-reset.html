@@ -121,9 +121,16 @@
           <input type="email" id="email" name="email" required>
         </div>
         
+        <div class="form-group" style="margin-bottom:2rem">
+          <label style="display:flex;align-items:center;font-weight:400;cursor:pointer;gap:0.75rem">
+            <input type="checkbox" id="marketingOptIn" name="marketingOptIn" checked style="width:18px;height:18px;cursor:pointer">
+            <span>Yes, I'd like to receive occasional updates and insights from Shaun</span>
+          </label>
+        </div>
+        
         <button type="submit" class="btn">Send Me the Reset</button>
         
-        <p class="form-note">You'll receive one email per day for 7 days. This is a reply-based series — you only advance by taking action.</p>
+        <p class="form-note">You'll receive one email per day for 7 days. This is a reply-based series — you only advance by taking action. You can unsubscribe from marketing emails at any time.</p>
       </form>
     </div>
   </div>
@@ -255,6 +262,7 @@ document.getElementById('resetForm').addEventListener('submit', async (e) => {
   
   const firstName = document.getElementById('firstName').value;
   const email = document.getElementById('email').value;
+  const marketingOptIn = document.getElementById('marketingOptIn').checked;
   const btn = e.target.querySelector('button');
   const originalText = btn.textContent;
   
@@ -265,7 +273,7 @@ document.getElementById('resetForm').addEventListener('submit', async (e) => {
     const response = await fetch('/api/ghl-subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ firstName, email })
+      body: JSON.stringify({ firstName, email, marketingOptIn })
     });
     
     if (response.ok) {
