@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're In — 7-Day Integrity Reset</title>
+  <meta name="description" content="Your 7-Day Integrity Reset confirmation. Check your email for the welcome message.">
+  
+  <style>
+    :root {
+      --serif: 'Fraunces', serif;
+      --sans: 'Plus Jakarta Sans', sans-serif;
+      --mono: 'Courier New', monospace;
+      --d-bg: #09091F;
+      --d-text: #E2E8F0;
+      --d-sub: #94A3B8;
+      --cyanish: #22D3EE;
+      --accent: #6366F1;
+      --success: #10B981;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; }
+    body { font-family: var(--sans); background: var(--d-bg); color: var(--d-text); line-height: 1.6; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+    
+    a { color: var(--cyanish); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    
+    .container { max-width: 700px; width: 100%; text-align: center; }
+    
+    /* ============ CHECKMARK ANIMATION ============ */
+    .checkmark-container { margin-bottom: 3rem; }
+    .checkmark { width: 80px; height: 80px; margin: 0 auto; border-radius: 50%; background: var(--success); display: flex; align-items: center; justify-content: center; animation: scaleIn 0.6s ease-out; }
+    .checkmark svg { width: 50px; height: 50px; stroke: white; stroke-width: 3; fill: none; animation: checkDraw 0.6s ease-out 0.2s both; }
+    
+    @keyframes scaleIn {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    
+    @keyframes checkDraw {
+      from { stroke-dasharray: 50; stroke-dashoffset: 50; }
+      to { stroke-dasharray: 50; stroke-dashoffset: 0; }
+    }
+    
+    /* ============ CONTENT ============ */
+    h1 { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; margin-bottom: 1rem; line-height: 1.1; }
+    h1 em { color: var(--cyanish); font-style: italic; }
+    
+    .subtitle { font-size: 1.2rem; color: var(--d-sub); margin-bottom: 3rem; line-height: 1.7; }
+    
+    /* ============ STEPS ============ */
+    .steps { background: rgba(34,211,238,0.05); border: 1px solid rgba(34,211,238,0.2); border-radius: 3px; padding: 2.5rem; margin-bottom: 3rem; text-align: left; }
+    .steps h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; margin-bottom: 2rem; text-align: center; }
+    .steps h2 em { color: var(--cyanish); font-style: italic; }
+    
+    .step-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; }
+    .step-item:last-child { margin-bottom: 0; }
+    
+    .step-num { flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--accent); font-weight: 700; color: white; font-size: 1rem; }
+    
+    .step-content h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; margin-bottom: 0.5rem; color: var(--d-text); }
+    .step-content p { color: var(--d-sub); line-height: 1.7; margin-bottom: 0.5rem; }
+    .step-content .highlight { color: var(--cyanish); font-weight: 600; }
+    
+    /* ============ TIMER ============ */
+    .timer { background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.3); border-radius: 3px; padding: 1.5rem; margin-bottom: 3rem; }
+    .timer p { color: var(--d-sub); margin-bottom: 0.5rem; }
+    .timer .time { font-family: var(--mono); font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+    
+    /* ============ CTA ============ */
+    .cta-section { margin-bottom: 2rem; }
+    .btn { display: inline-block; padding: 1rem 2rem; border: none; border-radius: 3px; background: var(--cyanish); color: var(--d-bg); font-family: var(--sans); font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; text-decoration: none; }
+    .btn:hover { background: #06B6D4; }
+    
+    .btn-secondary { background: transparent; border: 1px solid rgba(34,211,238,0.3); color: var(--cyanish); margin-left: 1rem; }
+    .btn-secondary:hover { background: rgba(34,211,238,0.1); }
+    
+    /* ============ FOOTER ============ */
+    .footer-text { color: var(--d-sub); font-size: 0.9rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(34,211,238,0.1); }
+    .footer-text a { color: var(--cyanish); }
+    
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .subtitle { font-size: 1rem; }
+      .steps { padding: 1.5rem; }
+      .btn { display: block; margin-bottom: 1rem; }
+      .btn-secondary { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- ============ CHECKMARK ============ -->
+  <div class="checkmark-container">
+    <div class="checkmark">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+  </div>
+  
+  <!-- ============ HEADER ============ -->
+  <h1>You're <em>In.</em></h1>
+  <p class="subtitle">Congratulations. You've taken the first step. Now comes the real work — proving to yourself that you can change your state on purpose.</p>
+  
+  <!-- ============ NEXT STEPS ============ -->
+  <div class="steps">
+    <h2>What Happens <em>Next.</em></h2>
+    
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Check Your Email</h3>
+        <p>Look for an email from Shaun within <span class="highlight">2 minutes</span>. It's your welcome message. Check your spam folder if you don't see it.</p>
+      </div>
+    </div>
+    
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Reply "I'm In"</h3>
+        <p>Reply to that email with <span class="highlight">"I'm in"</span> to confirm your commitment. You have <span class="highlight">30 minutes</span> from when you received it.</p>
+        <p style="font-size:0.9rem;color:var(--accent)">This is your first act of integrity. It filters for people who are serious.</p>
+      </div>
+    </div>
+    
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Your 7-Day Journey Begins</h3>
+        <p>Once you reply, you'll receive Day 1 of your reset. One email per day for 7 days. Each with a tool you can use immediately.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ============ TIMER ============ -->
+  <div class="timer">
+    <p>⏱ Your 30-minute commitment window starts now</p>
+    <p class="time" id="timer">30:00</p>
+    <p style="font-size:0.85rem;margin-top:0.5rem">Reply "I'm in" before this timer runs out</p>
+  </div>
+  
+  <!-- ============ CTA ============ -->
+  <div class="cta-section">
+    <a href="/" class="btn">Back to Home</a>
+    <a href="/podcast" class="btn btn-secondary">Listen to Podcast</a>
+  </div>
+  
+  <!-- ============ FOOTER ============ -->
+  <div class="footer-text">
+    <p>Didn't receive the email? Check your spam folder or <a href="mailto:shaun@shauntucker.com.au">contact Shaun</a>.</p>
+  </div>
+  
+</div>
+
+<script>
+// Timer countdown
+function startTimer() {
+  let timeLeft = 30 * 60; // 30 minutes in seconds
+  const timerElement = document.getElementById('timer');
+  
+  const interval = setInterval(() => {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    
+    if (timeLeft <= 0) {
+      clearInterval(interval);
+      timerElement.textContent = 'Time\'s up';
+      timerElement.style.color = '#EF4444';
+    }
+    
+    timeLeft--;
+  }, 1000);
+}
+
+// Start timer when page loads
+window.addEventListener('load', startTimer);
+</script>
+
+</body>
+</html>

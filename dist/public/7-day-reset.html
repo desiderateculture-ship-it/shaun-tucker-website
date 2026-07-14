@@ -277,14 +277,8 @@ document.getElementById('resetForm').addEventListener('submit', async (e) => {
     });
     
     if (response.ok) {
-      btn.textContent = '✓ Check your email!';
-      btn.style.background = '#10B981';
-      document.getElementById('resetForm').reset();
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.textContent = originalText;
-        btn.style.background = 'var(--cyanish)';
-      }, 3000);
+      // Redirect to confirmation page
+      window.location.href = '/7-day-reset-confirm';
     } else {
       throw new Error('Subscription failed');
     }
