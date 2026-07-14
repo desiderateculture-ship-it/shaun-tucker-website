@@ -110,28 +110,27 @@
       <h2>Get Your Reset</h2>
       <p>Fill in your details below and we'll send you the welcome email. Reply to confirm you're in, and your 7-day journey begins.</p>
       
-      <form id="resetForm">
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group" style="margin-bottom:2rem">
-          <label style="display:flex;align-items:center;font-weight:400;cursor:pointer;gap:0.75rem">
-            <input type="checkbox" id="marketingOptIn" name="marketingOptIn" checked style="width:18px;height:18px;cursor:pointer">
-            <span>Yes, I'd like to receive occasional updates and insights from Shaun</span>
-          </label>
-        </div>
-        
-        <button type="submit" class="btn">Send Me the Reset</button>
-        
-        <p class="form-note">You'll receive one email per day for 7 days. This is a reply-based series — you only advance by taking action. You can unsubscribe from marketing emails at any time.</p>
-      </form>
+      <div id="ghl-form-container">
+        <iframe
+          src="https://links.aitechadvisory.com/widget/form/xHGklU7muCrSnB1sSNjK"
+          style="width:100%;height:auto;border:none;border-radius:8px"
+          id="inline-xHGklU7muCrSnB1sSNjK" 
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="leadCollected"
+          data-deactivation-value=""
+          data-form-name="7-Day-Reset Opt-in"
+          data-layout-iframe-id="inline-xHGklU7muCrSnB1sSNjK"
+          data-form-id="xHGklU7muCrSnB1sSNjK"
+          title="7-Day-Reset Opt-in"
+        ></iframe>
+        <script src="https://links.aitechadvisory.com/js/form_embed.js"></script>
+      </div>
+      
+      <p class="form-note" style="margin-top:2rem">You'll receive one email per day for 7 days. This is a reply-based series — you only advance by taking action. You can unsubscribe from marketing emails at any time.</p>
     </div>
   </div>
 </section>
@@ -257,38 +256,28 @@
 </footer>
 
 <script>
-document.getElementById('resetForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const firstName = document.getElementById('firstName').value;
-  const email = document.getElementById('email').value;
-  const marketingOptIn = document.getElementById('marketingOptIn').checked;
-  const btn = e.target.querySelector('button');
-  const originalText = btn.textContent;
-  
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-  
-  try {
-    const response = await fetch('/api/ghl-subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ firstName, email, marketingOptIn })
-    });
-    
-    if (response.ok) {
-      // Redirect to confirmation page
+// Monitor GHL form submission and redirect to confirmation page
+window.addEventListener('message', function(event) {
+  if (event.data && event.data.type === 'formSubmitted') {
+    setTimeout(() => {
       window.location.href = '/7-day-reset-confirm';
-    } else {
-      throw new Error('Subscription failed');
-    }
-  } catch (error) {
-    console.error('Error:', error);
-    alert('Something went wrong. Please try again or email shaun@shauntucker.com.au');
-    btn.disabled = false;
-    btn.textContent = originalText;
+    }, 500);
   }
 });
+
+// Monitor for form submission completion
+const checkFormSubmission = setInterval(() => {
+  const iframe = document.getElementById('inline-xHGklU7muCrSnB1sSNjK');
+  if (iframe && iframe.style.display === 'none') {
+    clearInterval(checkFormSubmission);
+    setTimeout(() => {
+      window.location.href = '/7-day-reset-confirm';
+    }, 1000);
+  }
+}, 500);
+
+// Clear interval after 5 minutes
+setTimeout(() => clearInterval(checkFormSubmission), 300000);
 </script>
 
 </body>
