@@ -54,29 +54,28 @@
     
     .form-note { font-size: 0.8rem; color: var(--d-sub); margin-top: 1rem; text-align: center; }
     
-    /* ============ WHAT YOU GET ============ */
-    .benefits { padding: 80px 0; background: rgba(34,211,238,0.03); border-top: 1px solid rgba(34,211,238,0.1); border-bottom: 1px solid rgba(34,211,238,0.1); }
-    .benefits h2 { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; text-align: center; margin-bottom: 3rem; }
-    .benefits h2 em { color: var(--cyanish); font-style: italic; }
+    /* ============ HOW IT WORKS ============ */
+    .how-it-works { padding: 80px 0; background: rgba(34,211,238,0.03); border-top: 1px solid rgba(34,211,238,0.1); border-bottom: 1px solid rgba(34,211,238,0.1); }
+    .how-it-works h2 { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; text-align: center; margin-bottom: 3rem; }
+    .how-it-works h2 em { color: var(--cyanish); font-style: italic; }
     
-    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-    .benefit-card { border: 1px solid rgba(34,211,238,0.2); border-radius: 3px; padding: 2rem; background: rgba(34,211,238,0.05); }
-    .benefit-card h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 1rem; }
-    .benefit-card p { color: var(--d-sub); line-height: 1.7; }
-    .benefit-card .day { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .steps { max-width: 800px; margin: 0 auto; }
+    .step { display: flex; gap: 2rem; margin-bottom: 2.5rem; }
+    .step-num { flex-shrink: 0; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--accent); font-weight: 700; font-size: 1.2rem; color: white; }
+    .step-content h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.5rem; }
+    .step-content p { color: var(--d-sub); line-height: 1.8; }
     
-    /* ============ DAILY BREAKDOWN ============ */
-    .breakdown { padding: 80px 0; }
-    .breakdown h2 { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; text-align: center; margin-bottom: 3rem; }
-    .breakdown h2 em { color: var(--cyanish); font-style: italic; }
+    /* ============ KEY POINTS ============ */
+    .key-points { padding: 80px 0; }
+    .key-points h2 { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; text-align: center; margin-bottom: 3rem; }
+    .key-points h2 em { color: var(--cyanish); font-style: italic; }
     
-    .day-item { margin-bottom: 3rem; padding: 2rem; border-left: 3px solid var(--accent); background: rgba(34,211,238,0.05); border-radius: 3px; }
-    .day-item .day-num { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyanish); margin-bottom: 0.5rem; }
-    .day-item h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem; }
-    .day-item p { color: var(--d-sub); line-height: 1.8; margin-bottom: 1rem; }
-    .day-item .tool { font-weight: 600; color: var(--cyanish); }
+    .points-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .point-card { border: 1px solid rgba(34,211,238,0.2); border-radius: 3px; padding: 2rem; background: rgba(34,211,238,0.05); }
+    .point-card h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; margin-bottom: 1rem; color: var(--cyanish); }
+    .point-card p { color: var(--d-sub); line-height: 1.7; }
     
-    /* ============ CTA ============ */
+    /* ============ FINAL CTA ============ */
     .final-cta { padding: 80px 0; text-align: center; }
     .final-cta h2 { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; margin-bottom: 1.5rem; }
     .final-cta h2 em { color: var(--cyanish); font-style: italic; }
@@ -89,8 +88,8 @@
     
     @media (max-width: 768px) {
       .hero { padding: 60px 0; }
-      .benefits, .breakdown, .final-cta { padding: 60px 0; }
-      .day-item { padding: 1.5rem; }
+      .how-it-works, .key-points, .final-cta { padding: 60px 0; }
+      .step { gap: 1.5rem; }
     }
   </style>
 </head>
@@ -100,7 +99,7 @@
 <section class="hero">
   <div class="wrap">
     <h1>7-Day Integrity <em>Reset.</em></h1>
-    <p class="sub">A daily email sequence with breathwork, nutrition, and state-change tools. Regulate your nervous system. Show up as the dad and leader you want to be.</p>
+    <p class="sub">A daily email sequence that teaches you to regulate your nervous system and show up as the dad and leader you want to be. One email per day. One action per day. Seven days to prove you can change your state.</p>
   </div>
 </section>
 
@@ -109,7 +108,7 @@
   <div class="wrap">
     <div class="form-container">
       <h2>Get Your Reset</h2>
-      <p>One email per day for seven days. Each with a tool you can use immediately. No fluff. No upsell.</p>
+      <p>Fill in your details below and we'll send you the welcome email. Reply to confirm you're in, and your 7-day journey begins.</p>
       
       <form id="resetForm">
         <div class="form-group">
@@ -124,122 +123,112 @@
         
         <button type="submit" class="btn">Send Me the Reset</button>
         
-        <p class="form-note">You'll receive one email per day for 7 days, then occasional updates from Shaun. Unsubscribe anytime.</p>
+        <p class="form-note">You'll receive one email per day for 7 days. This is a reply-based sequence — you only advance by taking action.</p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ============ WHAT YOU GET ============ -->
-<section class="benefits">
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how-it-works">
   <div class="wrap">
-    <h2>What You'll <em>Receive.</em></h2>
+    <h2>How It <em>Works.</em></h2>
     
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="day">Day 1</div>
-        <h3>Balancing Breathwork</h3>
-        <p>The foundational tool that resets your nervous system. Use it to drop from chaos into clarity in under 3 minutes.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>You Opt In</h3>
+          <p>Fill the form and submit. You'll receive a welcome email immediately.</p>
+        </div>
       </div>
       
-      <div class="benefit-card">
-        <div class="day">Day 2</div>
-        <h3>Spinal Reflex Workout</h3>
-        <p>A 7-minute movement sequence that wakes up your nervous system and primes your body for the day ahead.</p>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>You Commit</h3>
+          <p>Reply to the welcome email with "I'm in" to confirm you're committed. You have 30 minutes. This is your first act of integrity.</p>
+        </div>
       </div>
       
-      <div class="benefit-card">
-        <div class="day">Day 3</div>
-        <h3>Nutrition Protocol</h3>
-        <p>The exact eating strategy that stabilizes your blood sugar and keeps your nervous system regulated all day.</p>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Daily Emails Arrive</h3>
+          <p>For 7 days, you receive one email per day. Each contains a tool designed to regulate your nervous system and help you show up present.</p>
+        </div>
       </div>
       
-      <div class="benefit-card">
-        <div class="day">Day 4</div>
-        <h3>Energizing Breathwork</h3>
-        <p>When you hit the 3pm dip, this tool shifts you from fatigue into sustained energy without the crash.</p>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>You Take Action</h3>
+          <p>After you complete each day's work, reply "COMPLETE" to unlock the next day. No reply, no progress.</p>
+        </div>
       </div>
       
-      <div class="benefit-card">
-        <div class="day">Day 5</div>
-        <h3>Wind-Down Breathwork</h3>
-        <p>The evening reset that flips you from stress into rest-and-digest, so you actually sleep instead of ruminate.</p>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h3>If You Miss a Day</h3>
+          <p>Reply "MISSED" and you'll restart from Day 1. No judgment. The tools are designed to compound, so restarting is part of the process.</p>
+        </div>
       </div>
       
-      <div class="benefit-card">
-        <div class="day">Day 6</div>
-        <h3>Pre-Meeting Reset</h3>
-        <p>Ten minutes before anything that matters — a pitch, a hard conversation, a high-stakes meeting. Walk in regulated.</p>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <h3>You Complete All 7 Days</h3>
+          <p>After finishing Day 7, you've proven to yourself that you can consciously change your state. You've earned a respectfully earned conversation about the next steps.</p>
+        </div>
       </div>
       
-      <div class="benefit-card">
-        <div class="day">Day 7</div>
-        <h3>Integration Plan</h3>
-        <p>Build your personal state-change toolkit. Lock in which tools become your daily non-negotiables for the next 30 days.</p>
+      <div class="step">
+        <div class="step-num">7</div>
+        <div class="step-content">
+          <h3>The Conversation</h3>
+          <p>Reply "Let's chat" and you'll receive access to my booking calendar. We'll discuss what comes next based on where you are in your journey.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ DAILY BREAKDOWN ============ -->
-<section class="breakdown">
+<!-- ============ KEY POINTS ============ -->
+<section class="key-points">
   <div class="wrap">
-    <h2>The Seven <em>Days.</em></h2>
+    <h2>What You Need to <em>Know.</em></h2>
     
-    <div class="day-item">
-      <div class="day-num">Day 1</div>
-      <h3>The Balancing Shift</h3>
-      <p>You're running on fumes. Your nervous system is stuck in 'on' — always ready, never resting. The first tool isn't complicated. It's the reset button.</p>
-      <p><span class="tool">Today's tool:</span> The Balancing Breathwork. Three minutes. Box breathing: inhale for 4, hold for 4, exhale for 4, hold for 4. That's it. Your vagus nerve responds immediately. Your heart rate drops. Your mind clears.</p>
-      <p>Do this first thing in the morning, before coffee, before your phone. Notice the difference.</p>
-    </div>
-    
-    <div class="day-item">
-      <div class="day-num">Day 2</div>
-      <h3>The Movement Shift</h3>
-      <p>Breathing alone isn't enough. Your body needs to move. Not to burn calories or look a certain way — to wake up your nervous system and tell it you're safe.</p>
-      <p><span class="tool">Today's tool:</span> The 7-Minute Spinal Reflex Workout. A movement sequence that activates your parasympathetic nervous system through gentle spinal articulation. You'll feel the shift immediately.</p>
-      <p>Do this after your morning breathwork. Your body will thank you. Your presence will be different.</p>
-    </div>
-    
-    <div class="day-item">
-      <div class="day-num">Day 3</div>
-      <h3>The Nutrition Shift</h3>
-      <p>You can regulate your breath and move your body, but if your blood sugar is crashing, your nervous system will stay dysregulated. Nutrition isn't about calories. It's about stability.</p>
-      <p><span class="tool">Today's tool:</span> The Regulated Eating Protocol. Protein + fat + fiber at every meal. No processed carbs. No sugar crashes. Your nervous system will stay steady all day instead of spiking and crashing.</p>
-      <p>This one compounds. By day 7, you'll notice you don't have the 3pm crash anymore.</p>
-    </div>
-    
-    <div class="day-item">
-      <div class="day-num">Day 4</div>
-      <h3>The Energy Shift</h3>
-      <p>The 3pm dip is real. Most people reach for coffee or sugar. That's a band-aid. The real move is a nervous system reset.</p>
-      <p><span class="tool">Today's tool:</span> The Energizing Breathwork. A 2-minute activation breath that shifts you from fatigue into sustained energy. Use it at 3pm, or whenever you feel the dip coming.</p>
-      <p>This is the tool you'll use forever. It works every time.</p>
-    </div>
-    
-    <div class="day-item">
-      <div class="day-num">Day 5</div>
-      <h3>The Recovery Shift</h3>
-      <p>You can do everything right all day and undo it in the last hour before bed — scrolling, ruminating, lying there with a nervous system still stuck in 'on.' Deep sleep isn't about more hours. It's about the quality of the state you carry into them.</p>
-      <p><span class="tool">Today's tool:</span> The Wind-Down Breathwork. The breath that flips you into rest-and-digest. Do this in bed, lights low, phone across the room. It's the last thing you do before sleep.</p>
-      <p>Lengthening the exhale raises vagal tone, slows your heart, and primes your brain for deep sleep. Better nights compound into a completely different man by the weekend.</p>
-    </div>
-    
-    <div class="day-item">
-      <div class="day-num">Day 6</div>
-      <h3>The Command Shift</h3>
-      <p>Anyone can be calm on a quiet morning. The test is the high-stakes moment — the pitch, the hard conversation, the meeting that matters. Presence there isn't a personality trait. It's a physiological state you can set on purpose.</p>
-      <p><span class="tool">Today's tool:</span> The Pre-Meeting Breathwork. Under 10 minutes. Use it before your most important interaction to lower your heart rate, centre your nervous system, and step in with authority instead of adrenaline.</p>
-      <p>Apply it to something real today — a meeting, a call, even a charged conversation at home. Do the breath first, then walk in and notice the difference.</p>
-    </div>
-    
-    <div class="day-item">
-      <div class="day-num">Day 7</div>
-      <h3>The Integration Shift</h3>
-      <p>You made it — a full, clean week. Stop and register that. You didn't just collect seven tools. You proved to yourself that you follow through — that you can consciously change your state instead of being run by it.</p>
-      <p><span class="tool">Today's task:</span> Integration. Answer these questions and write them down: Which tool moved you most? Match each tool to a trigger moment. Name the state you want to be known for. Choose your one non-negotiable tool for the next 30 days.</p>
-      <p>This is where the real work begins. Consistency turns tools into identity.</p>
+    <div class="points-grid">
+      <div class="point-card">
+        <h3>Reply-Based</h3>
+        <p>This isn't a passive email sequence. You only advance by replying. It's designed to filter for people who are serious about change.</p>
+      </div>
+      
+      <div class="point-card">
+        <h3>Action Over Consumption</h3>
+        <p>Reading the email isn't enough. You have to do the work, then reply to confirm. That's where the real change happens.</p>
+      </div>
+      
+      <div class="point-card">
+        <h3>Commitment Matters</h3>
+        <p>If you don't reply "I'm in" within 30 minutes, the sequence ends. This filters for people who are ready to commit.</p>
+      </div>
+      
+      <div class="point-card">
+        <h3>Restart Anytime</h3>
+        <p>If you miss a day, reply "MISSED" and start over from Day 1. The tools compound, so restarting is part of the journey.</p>
+      </div>
+      
+      <div class="point-card">
+        <h3>Seven Days to Prove It</h3>
+        <p>By Day 7, you'll have proof that you can regulate your nervous system on purpose. That's the foundation for everything that follows.</p>
+      </div>
+      
+      <div class="point-card">
+        <h3>Earned Conversation</h3>
+        <p>Completing all 7 days earns you a conversation about the next steps. No pitch. Just a respectful discussion about what's possible for you.</p>
+      </div>
     </div>
   </div>
 </section>
