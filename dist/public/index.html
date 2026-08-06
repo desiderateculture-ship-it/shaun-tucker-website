@@ -1,785 +1,524 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaun Tucker — Human Performance Scientist · Authority Architect</title>
-<meta name="description" content="Two disciplines. One standard: clarity under pressure. Human performance science for driven dads. Authority architecture for service-based business owners.">
-<link rel="icon" type="image/png" href="/favicon.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shaun Tucker — Health Scientist &amp; Breathing Performance Trainer | Melbourne</title>
+<meta name="description" content="Pain that keeps coming back isn't a mystery. Shaun Tucker is a health scientist in Melbourne who works out why the same thing keeps going, and teaches you to read what your body is telling you.">
+<link rel="canonical" href="https://shauntucker.com.au/">
+<meta name="theme-color" content="#0A0B0C">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon.png" sizes="512x512">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:title" content="Shaun Tucker — Health Scientist &amp; Breathing Performance Trainer">
+<meta property="og:description" content="Your body has been trying to tell you something. I measure what's happening, then teach you to read it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shauntucker.com.au/">
+<meta property="og:locale" content="en_AU">
+<meta property="og:site_name" content="Shaun Tucker">
+<meta property="og:image" content="https://shauntucker.com.au/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Your body has been trying to tell you something. Shaun Tucker, health scientist and breathing performance trainer.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shaun Tucker — Health Scientist &amp; Breathing Performance Trainer">
+<meta name="twitter:description" content="Your body has been trying to tell you something. I measure what's happening, then teach you to read it.">
+<meta name="twitter:image" content="https://shauntucker.com.au/og-image.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Shaun Tucker",
+  "jobTitle":"Health Scientist & Breathing Performance Trainer",
+  "url":"https://shauntucker.com.au",
+  "image":"https://shauntucker.com.au/og-image.jpg",
+  "email":"shaun@shauntucker.com.au",
+  "address":{"@type":"PostalAddress","addressLocality":"Melbourne","addressRegion":"VIC","addressCountry":"AU"},
+  "alumniOf":{"@type":"CollegeOrUniversity","name":"Swinburne University of Technology"},
+  "knowsAbout":["Breathing performance","Nervous system regulation","Recurring pain","Combat sports performance","Muscle testing","Massage therapy"],
+  "sameAs":[
+    "https://www.instagram.com/theshauntucker",
+    "https://www.youtube.com/@theshauntucker",
+    "https://www.facebook.com/theshauntucker",
+    "https://au.linkedin.com/in/theshauntucker",
+    "https://open.spotify.com/show/5UGmVcLqkr75dePECxDC3C",
+    "https://podcasts.apple.com/au/podcast/man-in-your-corner-with-shaun-tucker/id1852353417"
+  ]
+}
+</script>
+
 <style>
 :root{
-  --bg:#F5F1E8; --bg-2:#EDE7DA; --ink:#141210; --ink-soft:#3A362F; --sub:#787061;
-  --line:rgba(20,18,16,.14); --line-strong:rgba(20,18,16,.55);
-  --bronze:#9A6B2F; --gold:#B98A44; --slate:#33505E;
-  --dark:#0E1216; --dark-2:#131A20; --d-text:#EDE8DC; --d-sub:#8B958F; --d-line:rgba(237,232,220,.12);
-  --cyanish:#7FB4C7;
-  --serif:'Fraunces',serif; --sans:'Plus Jakarta Sans',sans-serif; --mono:'JetBrains Mono',monospace;
+  --carbon:#0A0B0C; --pitch:#141618; --blood:#8C2B22; --blood-lt:#B4382C;
+  --canvas:#E7E2D8; --bone:#B8B3A9; --steel:#7C8186; --cobalt:#2B5F82;
+  --disp:'Archivo',sans-serif; --mono:'IBM Plex Mono',monospace;
+  --gut:clamp(1.4rem,5vw,3rem);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-html.lenis{scroll-behavior:auto}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--carbon);color:var(--canvas);font-family:var(--disp);
+     font-weight:400;line-height:1.6;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.055;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%;height:auto}  /* height:auto or the width/height attrs stretch the image */
 a{color:inherit;text-decoration:none}
-img{display:block}
-::selection{background:var(--ink);color:var(--bg)}
-.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(1.4rem,4vw,3rem)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.3em;font-weight:500}
 
-/* ============ GRAIN ============ */
-body::after{content:"";position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:9998;opacity:.05;
-background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
-animation:grain 8s steps(10) infinite}
-@keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-5%,-8%)}30%{transform:translate(3%,-15%)}50%{transform:translate(-10%,7%)}70%{transform:translate(9%,4%)}90%{transform:translate(-4%,12%)}}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blood-lt);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;z-index:300;font-family:var(--mono);font-size:.66rem;
+      letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:.85rem 1.5rem;
+      background:var(--blood);color:var(--canvas)}
+.skip:focus{left:var(--gut);top:.6rem}
 
-/* ============ PRELOADER ============ */
-#loader{position:fixed;inset:0;z-index:10000;background:var(--ink);color:var(--bg);display:flex;flex-direction:column;justify-content:space-between;padding:2.4rem 3rem;transition:transform 1s cubic-bezier(.76,0,.24,1)}
-#loader.done{transform:translateY(-101%)}
-#loader .top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.55}
-#loader .mid{font-family:var(--serif);font-weight:300;font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.2}
-#loader .mid em{font-style:italic;color:var(--gold)}
-#loader .bottom{display:flex;justify-content:space-between;align-items:flex-end}
-#loader .pct{font-family:var(--serif);font-weight:200;font-size:clamp(4rem,10vw,8rem);line-height:1;font-variant-numeric:tabular-nums}
-#loader .bar{flex:1;height:1px;background:rgba(245,241,232,.18);margin:0 2rem 1.6rem;position:relative}
-#loader .bar i{position:absolute;left:0;top:0;bottom:0;width:0%;background:var(--gold)}
+/* ---------- top bar + nav ---------- */
+.topbar{position:fixed;top:0;left:0;right:0;height:6px;background:var(--blood);z-index:120}
+.nav{position:fixed;top:6px;left:0;right:0;z-index:110;transition:background .3s,border-color .3s;
+     border-bottom:1px solid transparent}
+.nav.on{background:rgba(10,11,12,.94);backdrop-filter:blur(12px);border-bottom-color:rgba(231,226,216,.12)}
+.nav .in{max-width:1180px;margin:0 auto;padding:.9rem var(--gut);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand svg{flex:none}
+.brand .n{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;line-height:1.35}
+.brand .n b{display:block;font-weight:600}
+.brand .n span{color:var(--steel);font-size:.9em}
+.nav .links{display:flex;gap:1.9rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bone)}
+.nav .links a:hover{color:var(--canvas)}
+@media(max-width:900px){.nav .links{display:none}}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.66rem;
+     letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:.85rem 1.5rem;
+     border:1px solid var(--blood);background:var(--blood);color:var(--canvas);transition:all .25s;white-space:nowrap}
+.btn:hover{background:transparent;color:var(--blood-lt);border-color:var(--blood-lt)}
+.btn.ghost{background:transparent;border-color:rgba(231,226,216,.35);color:var(--canvas)}
+.btn.ghost:hover{border-color:var(--canvas);background:var(--canvas);color:var(--carbon)}
+.btn.sm{padding:.6rem 1.1rem;font-size:.6rem}
 
-/* ============ CURSOR ============ */
-.cursor,.cursor2{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transform:translate(-50%,-50%);opacity:0}
-body.cursor-on .cursor,body.cursor-on .cursor2{opacity:1}
-.cursor{width:6px;height:6px;background:var(--bronze)}
-.cursor2{width:38px;height:38px;border:1px solid rgba(154,107,47,.45);transition:width .3s,height .3s,border-color .3s,background .3s}
-.cursor2.hov{width:64px;height:64px;border-color:rgba(154,107,47,.9);background:rgba(154,107,47,.07)}
-@media(hover:none){.cursor,.cursor2{display:none}}
+/* ---------- shared ---------- */
+section{padding:clamp(4.5rem,10vw,8rem) 0;position:relative}
+.kicker{font-family:var(--mono);font-size:.64rem;letter-spacing:.32em;text-transform:uppercase;
+        color:var(--blood-lt);display:flex;align-items:center;gap:.9rem;margin-bottom:1.4rem}
+.kicker::before{content:"";width:26px;height:1px;background:var(--blood)}
+.kicker.ctr{justify-content:center}
+.kicker.ctr span{margin-right:-.32em}   /* kill trailing tracking so it centres true */
+h2{font-weight:800;text-transform:uppercase;letter-spacing:-.035em;line-height:.94;
+   font-size:clamp(2rem,5.6vw,4.2rem)}
+h2 em{font-style:normal;color:var(--blood-lt)}
+h3{font-weight:700;text-transform:uppercase;letter-spacing:-.02em;font-size:clamp(1.15rem,2.3vw,1.55rem);line-height:1.1}
+p.lede{color:var(--bone);font-size:clamp(1rem,1.5vw,1.16rem);max-width:60ch;margin-top:1.4rem}
+.trace{display:block;width:100%;height:34px}
 
-/* ============ NAV ============ */
-.nav{position:fixed;top:0;left:0;right:0;z-index:900;transition:transform .5s cubic-bezier(.4,0,.2,1),background .3s,border-color .3s;border-bottom:1px solid transparent;color:var(--d-text)}
-.nav .links a{color:var(--d-sub)}
-.nav .links a:hover{color:var(--d-text)}
-.nav .cta{border-color:rgba(237,232,220,.5)}
-.nav .cta:hover{color:var(--dark)}
-.nav .cta i{background:var(--bg)}
-.nav.hidden{transform:translateY(-100%)}
-.nav.scrolled{background:rgba(245,241,232,.85);backdrop-filter:blur(14px);border-bottom-color:var(--line);color:var(--ink)}
-.nav.scrolled .links a{color:var(--sub)}
-.nav.scrolled .links a:hover{color:var(--ink)}
-.nav.scrolled .cta{border-color:var(--ink)}
-.nav.scrolled .cta:hover{color:var(--bg)}
-.nav.scrolled .cta i{background:var(--ink)}
-.nav .in{max-width:1240px;margin:0 auto;padding:1.15rem clamp(1.4rem,4vw,3rem);display:flex;align-items:center;justify-content:space-between}
-.nav .brand{display:flex;align-items:center;gap:.85rem}
-.nav .brand .mark{flex:none}
-.nav .brand .mark .arc-l{stroke:var(--cyanish)}
-.nav .brand .mark .arc-r{stroke:var(--gold)}
-.nav .brand .mark text{font-family:var(--serif);font-weight:500;font-size:15px;fill:currentColor;letter-spacing:.5px}
-.nav .brand .word{font-family:var(--serif);font-weight:500;font-size:.92rem;letter-spacing:.24em;text-transform:uppercase;line-height:1.1}
-.nav .brand .word small{display:block;font-family:var(--mono);font-size:.5rem;letter-spacing:.3em;color:var(--d-sub);margin-top:.25rem;text-transform:uppercase}
-.nav.scrolled .brand .word small{color:var(--sub)}
-.nav .links{display:flex;gap:2.2rem;font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
-.nav .links a{color:var(--sub);position:relative;padding:.2rem 0;transition:color .25s}
-.nav .links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--bronze);transition:width .3s}
-.nav .links a:hover{color:var(--ink)}
-.nav .links a:hover::after{width:100%}
-.nav .cta{position:relative;overflow:hidden;border:1px solid var(--ink);padding:.6rem 1.4rem;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:color .35s}
-.nav .cta i{position:absolute;inset:0;background:var(--ink);transform:translateY(101%);transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:-1;font-style:normal}
-.nav .cta:hover{color:var(--bg)}
-.nav .cta:hover i{transform:translateY(0)}
-@media(max-width:920px){.nav .links{display:none}}
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:flex-end;padding:9rem 0 clamp(3rem,7vw,5rem);overflow:hidden}
+.hero .bg{position:absolute;inset:0;z-index:0}
+.hero .bg picture{display:block;width:100%;height:100%}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:56% 22%}
+.hero .veil{position:absolute;inset:0;z-index:1;background:
+  linear-gradient(to top,var(--carbon) 12%,rgba(10,11,12,.82) 44%,rgba(10,11,12,.5) 72%,rgba(10,11,12,.78) 100%),
+  linear-gradient(to right,var(--carbon) 4%,rgba(10,11,12,.6) 42%,rgba(10,11,12,.1) 78%)}
+.hero .in{position:relative;z-index:2;width:100%}
+.hero h1{font-weight:800;text-transform:uppercase;letter-spacing:-.042em;line-height:.87;
+         font-size:clamp(2.6rem,8.2vw,6.8rem);max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--blood-lt)}
+.hero .sub{color:var(--bone);font-size:clamp(1rem,1.6vw,1.24rem);max-width:52ch;margin:1.8rem 0 2.4rem}
+.hero .cta{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center}
+.hero .tr{max-width:640px;margin-bottom:1.6rem}
+.scrollnote{margin-top:3rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.3em;
+            text-transform:uppercase;color:var(--steel)}
 
-/* ============ HERO (full-bleed cinematic) ============ */
-.hero{position:relative;min-height:100vh;background:var(--dark);color:var(--d-text);display:flex;align-items:center;overflow:hidden;padding:8rem 0 6rem}
-.hero-img{position:absolute;top:0;right:0;bottom:0;width:min(58vw,820px);z-index:1}
-.hero-img img{width:100%;height:112%;object-fit:cover;object-position:50% 14%;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 34%);
-  mask-image:linear-gradient(to right,transparent 0%,#000 34%)}
-.hero-img::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(to top,var(--dark) 0%,rgba(14,18,22,.35) 26%,transparent 55%),
-             radial-gradient(90% 70% at 70% 35%,transparent 40%,rgba(14,18,22,.5) 100%)}
-.hero-inner{position:relative;z-index:2;width:100%}
-.hero .roles{display:flex;gap:1.3rem;align-items:center;margin-bottom:2.6rem;flex-wrap:wrap}
-.hero .roles .r{font-family:var(--mono);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase}
-.hero .roles .r.a{color:var(--cyanish)}
-.hero .roles .r.b{color:var(--gold)}
-.hero .roles .dia{color:var(--gold);font-size:.5rem;line-height:1}
-.hero h1{font-family:var(--serif);font-weight:250;font-size:clamp(3.4rem,9vw,8rem);line-height:.96;letter-spacing:-.025em;max-width:12ch}
-.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
-.hero h1 .ln span{display:block}
-.hero h1 em{font-style:italic;font-weight:300;color:var(--gold)}
-.hero .sub{margin-top:2.6rem;max-width:44ch;color:var(--d-sub);font-size:1.08rem;line-height:1.8}
-.hero .actions{margin-top:3.2rem;display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center}
-.hero .btn-solid{color:var(--dark)}
-.hero .btn-solid i{background:var(--bg)}
-.hero .btn-solid::after{background:var(--gold)}
-.hero .btn-ghost{border-color:rgba(237,232,220,.35);color:var(--d-text)}
-.hero .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.hero-big{position:absolute;bottom:-.14em;left:0;right:0;z-index:1;font-family:var(--serif);font-weight:250;font-size:clamp(5rem,15.5vw,15rem);line-height:1;letter-spacing:.02em;white-space:nowrap;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(237,232,220,.14);pointer-events:none;user-select:none}
-.hero-meta{position:absolute;top:50%;right:2rem;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font-family:var(--mono);font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(237,232,220,.4);z-index:3}
-@media(max-width:920px){
-  .hero{padding-top:7rem;align-items:flex-end}
-  .hero-img{width:100vw;opacity:.45}
-  .hero h1{max-width:none}
-  .hero-meta{display:none}
-}
-.btn{position:relative;display:inline-flex;align-items:center;gap:.7rem;padding:1.05rem 2.2rem;border-radius:999px;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;overflow:hidden;transition:color .4s}
-.btn i{position:absolute;inset:0;z-index:-1;transition:transform .45s cubic-bezier(.65,0,.35,1);font-style:normal}
-.btn-solid{color:var(--bg)}
-.btn-solid i{background:var(--ink)}
-.btn-solid::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--bronze);transform:translateY(101%);transition:transform .45s cubic-bezier(.65,0,.35,1)}
-.btn-solid:hover::after{transform:translateY(0)}
-.btn-ghost{border:1px solid var(--line-strong);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--bronze);color:var(--bronze)}
-.hero .scroll-hint{position:absolute;bottom:2.2rem;left:clamp(1.4rem,4vw,3rem);display:flex;align-items:center;gap:.8rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--d-sub);z-index:3}
-.hero .scroll-hint .tick{width:1px;height:34px;background:rgba(237,232,220,.3);position:relative;overflow:hidden}
-.hero .scroll-hint .tick::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:var(--gold);animation:drop 1.8s cubic-bezier(.76,0,.24,1) infinite}
-@keyframes drop{0%{top:-100%}55%{top:0}100%{top:100%}}
-/* split-tint portrait (used in Operator chapter) */
-.folio{position:relative;width:min(100%,440px);margin-bottom:2.6rem}
-.folio .frame{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:2px;box-shadow:0 40px 80px -30px rgba(20,18,16,.35)}
-.folio img{width:100%;height:118%;object-fit:cover;object-position:50% 18%;transform:scaleX(-1)}
-.folio .h{position:absolute;inset:0;overflow:hidden}
-.folio .h-l{clip-path:inset(0 50% 0 0)}
-.folio .h-l img{filter:grayscale(1) contrast(1.1) brightness(.9) sepia(.4) hue-rotate(158deg) saturate(1)}
-.folio .h-r{clip-path:inset(0 0 0 50%)}
-.folio .h-r img{filter:grayscale(1) contrast(1.04) brightness(1.05) sepia(.5) hue-rotate(-8deg) saturate(.9)}
-.folio .seam{position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(245,241,232,.7),transparent)}
-.folio .cap{display:flex;justify-content:space-between;margin-top:.9rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sub)}
-.folio::before{content:"";position:absolute;top:1.4rem;right:-1.4rem;bottom:-1.4rem;left:1.4rem;border:1px solid var(--line);z-index:-1}
-.folio .badge{position:absolute;top:-1.5rem;left:-1.5rem;width:104px;height:104px;animation:spin 14s linear infinite;z-index:2}
-@keyframes spin{to{transform:rotate(360deg)}}
-.folio .badge text{font-family:var(--mono);font-size:8.4px;letter-spacing:.32em;text-transform:uppercase;fill:var(--bronze)}
-@media(max-width:920px){.folio{margin-left:auto;margin-right:auto}}
+/* ---------- misdiagnosis ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:3rem}
+.two>div{background:var(--pitch);padding:clamp(1.6rem,3.2vw,2.4rem);border-top:3px solid var(--steel)}
+.two>div.right{border-top-color:var(--blood)}
+.two .tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--steel)}
+.two .right .tag{color:var(--blood-lt)}
+.two h3{margin:.8rem 0 .9rem}
+.two p{color:var(--bone);font-size:.98rem}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.pull{font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:1;
+      font-size:clamp(1.5rem,4vw,2.8rem);margin-top:3rem;padding-left:1.6rem;border-left:4px solid var(--blood)}
 
-/* ============ MARQUEE ============ */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:1.3rem 0;background:var(--bg)}
-.marquee .track{display:flex;gap:3.4rem;width:max-content;animation:mq 30s linear infinite;white-space:nowrap}
-.marquee span{font-family:var(--serif);font-weight:300;font-size:1.15rem;letter-spacing:.04em;display:flex;align-items:center;gap:3.4rem}
-.marquee em{font-style:italic;color:var(--bronze)}
-.marquee .diamond{font-size:.55rem;color:var(--bronze)}
-@keyframes mq{to{transform:translateX(-50%)}}
+/* ---------- method ---------- */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.ph{background:var(--pitch);padding:clamp(1.6rem,3vw,2.2rem);position:relative;overflow:hidden}
+.ph .num{font-weight:800;font-size:3.4rem;line-height:1;color:rgba(231,226,216,.12);letter-spacing:-.04em}
+.ph.c3 .num{color:rgba(140,43,34,.55)}
+.ph .nm{font-family:var(--mono);font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;
+        color:var(--canvas);margin:.9rem 0 .5rem;font-weight:600}
+.ph.c3 .nm{color:var(--blood-lt)}
+.ph .pl{font-weight:700;font-size:1.12rem;margin-bottom:.7rem;text-transform:uppercase;letter-spacing:-.01em}
+.ph p{color:var(--bone);font-size:.93rem}
+@media(max-width:860px){.phases{grid-template-columns:1fr}}
 
-/* ============ CHAPTERS ============ */
-section.ch{padding:clamp(5.5rem,10vw,9rem) 0;position:relative}
-section.ch+section.ch{border-top:1px solid var(--line)}
-.ch-head{display:grid;grid-template-columns:150px 1fr;gap:2rem;margin-bottom:clamp(2.6rem,6vw,4.6rem);align-items:start}
-.chapter-no{font-family:var(--mono);font-size:.8rem;color:var(--sub);letter-spacing:.12em;position:sticky;top:7rem}
-.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze);display:flex;align-items:center;gap:.9rem}
-.eyebrow::before{content:"";width:34px;height:1px;background:var(--bronze)}
-h2.display{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,5.4vw,4.4rem);line-height:1.02;letter-spacing:-.015em;margin-top:.9rem}
-h2.display em{font-style:italic;color:var(--bronze)}
-.lede{color:var(--sub);font-size:1.05rem;max-width:58ch;margin-top:1.3rem;line-height:1.75}
-.ghost-no{position:absolute;top:2rem;right:-1rem;font-family:var(--serif);font-weight:200;font-size:clamp(8rem,22vw,20rem);line-height:1;color:transparent;-webkit-text-stroke:1px var(--line);pointer-events:none;user-select:none;z-index:0}
-@media(max-width:760px){.ch-head{grid-template-columns:1fr;gap:.7rem}.chapter-no{position:static}}
+/* ---------- who ---------- */
+.who{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.6rem}
+.wl{border:1px solid rgba(231,226,216,.14);padding:clamp(1.5rem,3vw,2.2rem)}
+.wl h4{font-family:var(--mono);font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;margin-bottom:1.1rem}
+.wl.yes h4{color:var(--blood-lt)}
+.wl.no h4{color:var(--steel)}
+.wl li{list-style:none;font-size:.96rem;color:var(--bone);padding:.5rem 0 .5rem 1.4rem;position:relative;
+       border-bottom:1px solid rgba(231,226,216,.07)}
+.wl li:last-child{border-bottom:none}
+.wl.yes li::before{content:"";position:absolute;left:0;top:1.05em;width:8px;height:8px;background:var(--blood)}
+.wl.no li::before{content:"";position:absolute;left:0;top:1.15em;width:8px;height:1px;background:var(--steel)}
+@media(max-width:800px){.who{grid-template-columns:1fr}}
 
-/* ============ DEPARTURES ============ */
-.dep-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sub);padding-bottom:1rem}
-.dep-meta .live{display:flex;align-items:center;gap:.6rem}
-.dep-meta .pulse{width:7px;height:7px;border-radius:50%;background:#3E7C4F;animation:pulse 1.6s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(62,124,79,.5)}50%{box-shadow:0 0 0 7px rgba(62,124,79,0)}}
-.board{border-top:1px solid var(--ink);position:relative;z-index:1}
-.b-row{display:grid;grid-template-columns:.7fr 2.2fr 1fr 1fr auto;gap:1.4rem;align-items:center;padding:1.9rem .6rem;border-bottom:1px solid var(--line);position:relative;overflow:hidden;transition:padding .35s}
-.b-row::before{content:"";position:absolute;inset:0;background:var(--ink);transform:scaleY(0);transform-origin:bottom;transition:transform .4s cubic-bezier(.65,0,.35,1);z-index:-1}
-.b-row:hover::before{transform:scaleY(1)}
-.b-row:hover{color:var(--bg);padding-left:1.4rem}
-.b-row:hover .no,.b-row:hover .st,.b-row:hover .name small{color:rgba(245,241,232,.55)}
-.b-row .no{font-family:var(--mono);font-size:.76rem;color:var(--sub);transition:color .3s}
-.b-row .name{font-family:var(--serif);font-weight:400;font-size:clamp(1.3rem,2.4vw,1.8rem);letter-spacing:-.01em}
-.b-row .name small{display:block;font-family:var(--sans);font-weight:400;font-size:.8rem;color:var(--sub);margin-top:.3rem;letter-spacing:0;transition:color .3s}
-.b-row .world{font-family:var(--mono);font-size:.64rem;letter-spacing:.2em}
-.b-row .world.perf{color:var(--cyanish)}
-.b-row .world.auth{color:var(--gold)}
-.b-row .st{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;color:var(--sub);transition:color .3s}
-.b-row .go{font-size:1.5rem;font-weight:300;transition:transform .35s}
-.b-row:hover .go{transform:translateX(8px)}
-@media(max-width:760px){.b-row{grid-template-columns:1fr auto}.b-row .no,.b-row .world,.b-row .st{display:none}}
-
-/* ============ DARK WORLD (Performance) ============ */
-.dark-world{background:var(--dark);color:var(--d-text);position:relative;overflow:hidden}
-.dark-world::before{content:"";position:absolute;top:-30%;left:-15%;width:70%;height:120%;background:radial-gradient(ellipse at center,rgba(127,180,199,.08),transparent 65%);pointer-events:none}
-.dark-world .chapter-no{color:var(--d-sub)}
-.dark-world .eyebrow{color:var(--cyanish)}
-.dark-world .eyebrow::before{background:var(--cyanish)}
-.dark-world h2.display em{color:var(--cyanish)}
-.dark-world .lede{color:var(--d-sub)}
-.dark-world section.ch+section.ch{border-color:var(--d-line)}
-.dw-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.4rem,5vw,4.5rem);align-items:start;position:relative;z-index:1}
-.dw-grid .quote{font-family:var(--serif);font-weight:300;font-size:clamp(1.5rem,2.9vw,2.2rem);line-height:1.3;letter-spacing:-.01em}
-.dw-grid .quote em{font-style:italic;color:var(--cyanish)}
-.dw-grid .body{color:var(--d-sub);margin-top:1.6rem;max-width:52ch}
-.offer-card{display:block;border:1px solid var(--d-line);border-radius:3px;padding:2rem 2.2rem;margin-bottom:1.2rem;position:relative;overflow:hidden;transition:border-color .3s}
-.offer-card::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--cyanish);transform:scaleY(0);transform-origin:top;transition:transform .4s}
-.offer-card:hover{border-color:rgba(127,180,199,.5)}
-.offer-card:hover::after{transform:scaleY(1)}
-.offer-card .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cyanish)}
-.offer-card h4{font-family:var(--serif);font-weight:400;font-size:1.5rem;margin:.6rem 0 .5rem}
-.offer-card p{font-size:.9rem;color:var(--d-sub)}
-.offer-card .lnk{display:inline-flex;gap:.5rem;margin-top:1.1rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--d-text)}
-.offer-card .lnk b{transition:transform .3s;font-weight:400}
-.offer-card:hover .lnk b{transform:translateX(5px)}
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--d-line);margin-top:clamp(3rem,6vw,5rem);position:relative;z-index:1}
-.stats>div{padding:2.4rem 1.4rem 0;border-left:1px solid var(--d-line)}
+/* ---------- proof ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(231,226,216,.16);margin-top:3rem}
+.stats>div{padding:2rem 1.2rem 0;border-left:1px solid rgba(231,226,216,.12)}
 .stats>div:first-child{border-left:none;padding-left:0}
-.stats .num{font-family:var(--serif);font-weight:200;font-size:clamp(2.6rem,5.5vw,4.2rem);line-height:1;color:var(--d-text)}
-.stats .num sup{font-size:.45em;color:var(--cyanish)}
-.stats .lab{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--d-sub);margin-top:.7rem}
-@media(max-width:820px){.dw-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stats>div{padding:1.6rem 1rem 0}}
+.stats .n{font-weight:800;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1;letter-spacing:-.04em}
+.stats .n sup{font-size:.42em;color:var(--blood-lt);top:-.6em;position:relative}
+.stats .l{font-family:var(--mono);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--steel);margin-top:.7rem}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr;gap:0}.stats>div{padding:1.6rem 1rem 0;border-left:none}}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.q{background:var(--pitch);padding:clamp(1.5rem,3vw,2.1rem);display:flex;flex-direction:column;gap:1.1rem}
+.q blockquote{font-size:1.02rem;line-height:1.55;flex:1}
+.q .who2{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+.q .who2 b{display:block;color:var(--canvas);font-size:1.05em;margin-bottom:.25rem;font-weight:600}
+@media(max-width:900px){.quotes{grid-template-columns:1fr}}
 
-/* ============ AUTHORITY WORLD ============ */
-.auth-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2.4rem,5vw,4.5rem);align-items:start}
-.auth-grid .quote{font-family:var(--serif);font-weight:300;font-size:clamp(1.5rem,2.9vw,2.2rem);line-height:1.3}
-.auth-grid .quote em{font-style:italic;color:var(--bronze)}
-.auth-grid .body{color:var(--sub);margin-top:1.6rem;max-width:52ch}
-.a-card{display:block;background:#FBF9F4;border:1px solid var(--line);border-radius:3px;padding:2.2rem 2.4rem;margin-bottom:1.3rem;position:relative;overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s}
-.a-card:hover{transform:translateY(-4px);box-shadow:0 26px 50px -24px rgba(20,18,16,.28);border-color:var(--bronze)}
-.a-card .row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
-.a-card h4{font-family:var(--serif);font-weight:400;font-size:1.65rem}
-.a-card .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);border:1px solid rgba(154,107,47,.35);border-radius:999px;padding:.3rem .8rem;white-space:nowrap}
-.a-card p{font-size:.92rem;color:var(--sub);margin-top:.8rem;max-width:46ch}
-.a-card .lnk{display:inline-flex;gap:.5rem;margin-top:1.2rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase}
-.a-card .lnk b{transition:transform .3s;font-weight:400}
-.a-card:hover .lnk b{transform:translateX(5px)}
-@media(max-width:820px){.auth-grid{grid-template-columns:1fr}}
+/* ---------- the guide ---------- */
+.guide{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.4rem,6vw,5rem);align-items:center}
+.guide .copy p{color:var(--bone);font-size:clamp(1rem,1.5vw,1.19rem);line-height:1.6;max-width:54ch}
+.guide .copy p+p{margin-top:1.15rem}
+.guide .copy strong{color:var(--canvas);font-weight:600}
+.gphoto{position:relative}
+.gphoto picture{display:block}
+.gphoto img{width:100%}  /* grade is baked into the file — do not add a CSS filter */
+.gphoto::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 90px 30px var(--carbon);pointer-events:none}
+.gphoto .cap{position:absolute;left:0;bottom:-30px;font-family:var(--mono);font-weight:500;font-size:.68rem;
+             letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+.gphoto .cm{position:absolute;top:-14px;left:-14px;z-index:2}
+.gstats{display:flex;gap:clamp(2rem,5vw,3.5rem);margin-top:2.8rem;flex-wrap:wrap}
+.gstat b{display:block;font-weight:800;font-size:clamp(2.2rem,4.4vw,3.25rem);letter-spacing:-.03em;
+         color:var(--canvas);line-height:1}
+.gstat b i{font-style:normal;font-size:.5em;color:var(--blood-lt)}
+.gstat span{display:block;margin-top:.55rem;font-family:var(--mono);font-weight:500;font-size:.62rem;
+            letter-spacing:.22em;text-transform:uppercase;color:var(--steel)}
+.gtrace{display:block;width:340px;max-width:100%;height:22px;margin-top:2.6rem}
+.gtrace path{fill:none;stroke:var(--blood-lt);stroke-width:3;stroke-linejoin:miter;stroke-linecap:butt}
+.creds{margin-top:2rem;border-top:1px solid rgba(231,226,216,.16)}
+.creds div{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;padding:.85rem 0;
+           border-bottom:1px solid rgba(231,226,216,.08);font-size:.95rem}
+.creds div span{font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);white-space:nowrap}
+@media(max-width:860px){.guide{grid-template-columns:1fr}.gphoto{order:-1}.gphoto .cap{position:static;margin-top:.9rem}}
 
-/* ============ SIGNS ============ */
-.signs{border-top:1px solid var(--ink);position:relative;z-index:1}
-.sign{display:grid;grid-template-columns:120px 1fr;gap:2rem;align-items:center;padding:2.1rem .4rem;border-bottom:1px solid var(--line);transition:padding .3s}
-.sign:hover{padding-left:1.2rem}
-.sign .who{font-family:var(--mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase}
-.sign .who.perf{color:var(--slate)}
-.sign .who.auth{color:var(--bronze)}
-.sign p{font-family:var(--serif);font-weight:300;font-size:clamp(1.25rem,2.5vw,1.85rem);line-height:1.35;letter-spacing:-.01em}
-.sign p em{font-style:italic;color:var(--bronze)}
-@media(max-width:700px){.sign{grid-template-columns:1fr;gap:.5rem}}
+/* ---------- podcast + workshop ---------- */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:3rem}
+.card{background:var(--pitch);padding:clamp(1.7rem,3.4vw,2.6rem);display:flex;flex-direction:column;gap:1rem;
+      border-left:3px solid var(--blood);transition:background .25s}
+.card:hover{background:#191c1e}
+.card .t{font-family:var(--mono);font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--blood-lt)}
+.card p{color:var(--bone);font-size:.98rem;flex:1}
+@media(max-width:800px){.duo{grid-template-columns:1fr}}
 
-/* ============ OPERATOR ============ */
-.about{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(2.6rem,6vw,5rem);align-items:start}
-.exp{border-top:1px solid var(--ink)}
-.exp>div{padding:1.15rem .3rem;border-bottom:1px solid var(--line);font-family:var(--serif);font-weight:300;font-size:clamp(1.2rem,2.2vw,1.6rem);display:flex;justify-content:space-between;align-items:baseline;gap:1rem;transition:padding .3s}
-.exp>div:hover{padding-left:.9rem}
-.exp>div span{font-family:var(--mono);font-size:.62rem;color:var(--sub);letter-spacing:.16em;white-space:nowrap}
-.story p{margin-bottom:1.3rem;color:var(--sub);font-size:1.02rem;line-height:1.8}
-.story p strong{color:var(--ink);font-weight:600}
-.story .pull{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.35;color:var(--ink);border-left:2px solid var(--bronze);padding-left:1.6rem;margin:2.2rem 0}
-@media(max-width:820px){.about{grid-template-columns:1fr}}
+/* ---------- final ---------- */
+.final{text-align:center;border-top:1px solid rgba(231,226,216,.14)}
+.final h2{max-width:22ch;margin:0 auto}
+.final p{color:var(--bone);max-width:52ch;margin:1.6rem auto 2.4rem}
+.final .tr{max-width:560px;margin:2.4rem auto 0}
 
-/* ============ TESTIMONIALS ============ */
-.testis{position:relative;z-index:1}
-.t-track{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.t-card{background:#FBF9F4;border:1px solid var(--line);border-radius:3px;padding:2.4rem;display:flex;flex-direction:column;gap:1.4rem;transition:transform .35s,box-shadow .35s}
-.t-card:hover{transform:translateY(-5px);box-shadow:0 26px 50px -26px rgba(20,18,16,.25)}
-.t-card .stars{color:var(--bronze);font-size:.8rem;letter-spacing:.3em}
-.t-card blockquote{font-family:var(--serif);font-weight:300;font-size:1.12rem;line-height:1.55;flex:1}
-.t-card .who{font-size:.8rem;color:var(--sub)}
-.t-card .who b{display:block;color:var(--ink);font-size:.88rem;font-family:var(--sans);font-weight:700;letter-spacing:.02em}
-.proof-band{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;margin-top:3.4rem;padding-top:2.4rem;border-top:1px solid var(--line);font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sub)}
-.proof-band b{color:var(--ink);font-weight:500}
-@media(max-width:860px){.t-track{grid-template-columns:1fr}}
+footer{background:#070809;padding:3rem 0 2.4rem;border-top:1px solid rgba(231,226,216,.1)}
+footer .in{display:flex;justify-content:space-between;gap:1.6rem;flex-wrap:wrap;align-items:flex-start}
+footer .fl{display:flex;gap:1.6rem;flex-wrap:wrap;font-family:var(--mono);font-size:.6rem;
+           letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+footer .fl a:hover{color:var(--canvas)}
+footer .fine{width:100%;margin-top:2.4rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;
+             text-transform:uppercase;color:var(--steel);line-height:1.9}
 
-/* ============ RULES ============ */
-.rules{counter-reset:rule;border-top:1px solid var(--ink)}
-.rule{display:grid;grid-template-columns:110px 1fr 1.2fr;gap:2rem;padding:2.6rem .4rem;border-bottom:1px solid var(--line);align-items:start;transition:padding .3s}
-.rule:hover{padding-left:1.2rem}
-.rule .n{font-family:var(--serif);font-weight:200;font-size:3rem;line-height:1;color:var(--bronze)}
-.rule h4{font-family:var(--serif);font-weight:400;font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.2}
-.rule p{color:var(--sub);font-size:.95rem;line-height:1.75}
-@media(max-width:760px){.rule{grid-template-columns:1fr;gap:.7rem}}
-
-/* ============ FINAL ============ */
-.final{background:var(--dark);color:var(--d-text);padding:clamp(6rem,12vw,10rem) 0;text-align:center;position:relative;overflow:hidden}
-.final::before{content:"";position:absolute;bottom:-40%;left:50%;transform:translateX(-50%);width:80%;height:90%;background:radial-gradient(ellipse at center,rgba(185,138,68,.12),transparent 65%);pointer-events:none}
-.final .eyebrow{justify-content:center;color:var(--gold)}
-.final .eyebrow::before{background:var(--gold)}
-.final h2{font-family:var(--serif);font-weight:250;font-size:clamp(2.8rem,7vw,6rem);line-height:1.02;letter-spacing:-.015em;margin-top:1.4rem}
-.final h2 em{font-style:italic;color:var(--gold)}
-.final p{margin:1.8rem auto 3rem;max-width:52ch;color:var(--d-sub);position:relative;z-index:1}
-.final .btn-solid{color:var(--dark)}
-.final .btn-solid i{background:var(--bg)}
-.final .btn-solid::after{background:var(--gold)}
-.final .mail{display:block;margin-top:1.6rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;color:var(--d-sub)}
-.final .mail:hover{color:var(--gold)}
-
-/* ============ FOOTER ============ */
-footer{background:var(--dark);color:var(--d-sub);border-top:1px solid var(--d-line);overflow:hidden}
-footer .in{max-width:1240px;margin:0 auto;padding:3rem clamp(1.4rem,4vw,3rem) 2rem}
-footer .top{display:flex;justify-content:space-between;gap:1.6rem;flex-wrap:wrap;font-size:.8rem;padding-bottom:2.6rem}
-footer .top a:hover{color:var(--d-text)}
-footer .socials{display:flex;gap:1.8rem}
-footer .wordmark{font-family:var(--serif);font-weight:250;font-size:clamp(3.4rem,11vw,10rem);line-height:.95;letter-spacing:-.02em;color:rgba(237,232,220,.09);white-space:nowrap;text-align:center;user-select:none}
-footer .fine{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;padding-top:1.6rem;color:rgba(139,149,143,.6)}
-
-/* reveal base (JS adds motion) */
-.rv{will-change:transform,opacity}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}
+  .btn,.card{transition:none}}
 </style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 
-<!-- ============ PRELOADER ============ -->
-<div id="loader">
-  <div class="top"><span>Shaun Tucker</span><span>EST. Melbourne, AUS</span></div>
-  <div class="mid">Two disciplines.<br>One standard: <em>clarity under pressure.</em></div>
-  <div class="bottom">
-    <div class="pct" id="pct">00</div>
-    <div class="bar"><i id="bar"></i></div>
-    <div class="top" style="opacity:.55">MMXXVI</div>
-  </div>
-</div>
-
-<div class="cursor" id="cur"></div>
-<div class="cursor2" id="cur2"></div>
-
-<!-- ============ NAV ============ -->
+<a class="skip" href="#problem">Skip to content</a>
+<div class="topbar"></div>
 <nav class="nav" id="nav">
   <div class="in">
-    <a class="brand" href="#top" aria-label="Shaun Tucker — home">
-      <svg class="mark" width="38" height="38" viewBox="0 0 44 44" aria-hidden="true">
-        <path class="arc-l" d="M22 3.5 A18.5 18.5 0 0 0 22 40.5" fill="none" stroke-width="1.4"/>
-        <path class="arc-r" d="M22 3.5 A18.5 18.5 0 0 1 22 40.5" fill="none" stroke-width="1.4" stroke-dasharray="3.5 3.2"/>
-        <text x="22" y="27.5" text-anchor="middle">ST</text>
+    <a class="brand" href="#top" aria-label="Shaun Tucker, home">
+      <svg width="34" height="34" viewBox="0 0 190 190" aria-hidden="true">
+        <path d="M8 62 L8 8 L62 8" fill="none" stroke="#8C2B22" stroke-width="12"/>
+        <path d="M182 128 L182 182 L128 182" fill="none" stroke="#E7E2D8" stroke-width="12"/>
+        <text x="95" y="114" text-anchor="middle" font-family="Archivo" font-size="70" font-weight="800" fill="#E7E2D8">ST</text>
       </svg>
-      <span class="word">Shaun Tucker<small>Scientist · Architect</small></span>
+      <span class="n"><b>Shaun Tucker</b><span>Health Scientist</span></span>
     </a>
     <div class="links">
-      <a href="#terminal">The Work</a>
-      <a href="#performance">Performance</a>
-      <a href="#authority">Authority</a>
-      <a href="#operator">The Operator</a>
+      <a href="#problem">The Problem</a>
+      <a href="#method">The Method</a>
       <a href="#proof">Proof</a>
+      <a href="#about">About</a>
     </div>
-    <a class="cta" href="mailto:shaun@shauntucker.com.au"><i></i>Start a conversation</a>
+    <a class="btn sm" href="#book" data-cta="nav">Book an assessment</a>
   </div>
 </nav>
 
-<!-- ============ HERO ============ -->
+<main id="main">
+
+<!-- ================= HERO ================= -->
 <header class="hero" id="top">
-  <figure class="hero-img" id="heroImg"><img src="shaun-hero.jpg" alt="Shaun Tucker"></figure>
-  <div class="hero-inner wrap">
-    <div class="roles rv" data-rv>
-      <span class="r a">Human Performance Scientist</span>
-      <span class="dia">◆</span>
-      <span class="r b">Authority Architect</span>
-    </div>
-    <h1 id="heroTitle">
-      <span class="ln"><span>Two disciplines.</span></span>
-      <span class="ln"><span>One standard:</span></span>
-      <span class="ln"><span><em>clarity under</em></span></span>
-      <span class="ln"><span><em>pressure.</em></span></span>
-    </h1>
-    <p class="sub rv" data-rv>I help driven dads regulate the man underneath the performance — and service-based business owners make their offer so clear a stranger gets it in ten seconds. Different rooms. Same work.</p>
-    <div class="actions rv" data-rv>
-      <a class="btn btn-solid" href="mailto:shaun@shauntucker.com.au"><i></i>Start a conversation</a>
-      <a class="btn btn-ghost" href="#terminal">Explore the work</a>
-    </div>
+  <div class="bg">
+    <picture>
+      <source srcset="/hero.webp" type="image/webp">
+      <img src="/hero.jpg" alt="" width="1365" height="2048" fetchpriority="high">
+    </picture>
   </div>
-  <div class="hero-big" id="heroBig">SHAUN&nbsp;TUCKER</div>
-  <div class="hero-meta">EST. MELBOURNE — MMXXVI</div>
-  <div class="scroll-hint"><span class="tick"></span>Scroll</div>
+  <div class="veil"></div>
+  <div class="in wrap">
+    <div class="mono" style="font-size:.62rem;color:var(--blood-lt);margin-bottom:1.4rem">Health Scientist · Breathing Performance Trainer · Melbourne</div>
+    <h1>Your body has been trying to <em>tell you something.</em></h1>
+    <p class="sub">The back that keeps going. The shoulder that never quite clears. Gassing out when you're fit. You've been told to push through it. I work out what's actually going on, then teach you to read it yourself.</p>
+    <svg class="trace tr" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 17 L380 17 L400 17 L416 4 L432 31 L448 11 L464 17 L800 17 L820 17 L836 4 L852 31 L868 11 L884 17 L1200 17"
+            fill="none" stroke="#8C2B22" stroke-width="3"/></svg>
+    <div class="cta">
+      <a class="btn" href="#book" data-cta="hero">Book an assessment</a>
+      <a class="btn ghost" href="#problem">What I actually do</a>
+    </div>
+    <div class="scrollnote">Scroll</div>
+  </div>
 </header>
 
-<!-- ============ MARQUEE ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="track">
-    <span>Clarity under pressure <b class="diamond">◆</b> The Reset Podcast <b class="diamond">◆</b> Sunday Workouts <b class="diamond">◆</b> <em>Message Made Clear</em> <b class="diamond">◆</b> The Authority Build <b class="diamond">◆</b></span>
-    <span>Clarity under pressure <b class="diamond">◆</b> The Reset Podcast <b class="diamond">◆</b> Sunday Workouts <b class="diamond">◆</b> <em>Message Made Clear</em> <b class="diamond">◆</b> The Authority Build <b class="diamond">◆</b></span>
-  </div>
-</div>
-
-<!-- ============ 01 · DEPARTURES ============ -->
-<section class="ch" id="terminal">
-  <div class="ghost-no">01</div>
+<!-- ================= PROBLEM ================= -->
+<section id="problem">
   <div class="wrap">
-    <div class="ch-head">
-      <span class="chapter-no">( 01 )</span>
-      <div>
-        <div class="eyebrow rv" data-rv>Everything departs from here</div>
-        <h2 class="display rv" data-rv>All <em>departures.</em></h2>
-        <p class="lede rv" data-rv>This page is the terminal. Four destinations across two worlds. Some are free and open to anyone willing to show up. Some are by application only — and that's exactly the point.</p>
+    <div class="kicker rv">The bit nobody looks at</div>
+    <h2 class="rv">It keeps coming back<br>and nobody can <em>tell you why.</em></h2>
+    <p class="lede rv">You've had it looked at. It got better. Six weeks later it was back. That's not your physio failing. They fixed the injury properly. It's that nobody asked the other question.</p>
+
+    <div class="two">
+      <div class="rv">
+        <div class="tag">What gets treated</div>
+        <h3>The injury</h3>
+        <p>The tissue, the joint, the thing that hurts. Physios and chiros are genuinely good at this, and you should keep seeing them. But treating the injury doesn't change whatever keeps producing it.</p>
+      </div>
+      <div class="right rv">
+        <div class="tag">What I work on</div>
+        <h3>Why it keeps coming back</h3>
+        <p>How you move under load. How you breathe when you're tired. Whether your system ever properly recovers, or just carries yesterday into today. Different failure, different question.</p>
       </div>
     </div>
 
-    <div class="dep-meta rv" data-rv>
-      <span class="live"><span class="pulse"></span>Board live</span>
-      <span id="melb-clock">MELBOURNE — --:--</span>
+    <div class="pull rv">You're not training too hard. Your recovery can't keep up.</div>
+  </div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section id="method" style="background:#0C0D0F">
+  <div class="wrap">
+    <div class="kicker rv">The Tucker Method</div>
+    <h2 class="rv">Look. Fix. <em>Then teach.</em></h2>
+    <p class="lede rv">Three phases. Measured at the start, measured again at the end, so you're never guessing whether it worked.</p>
+
+    <div class="phases">
+      <div class="ph rv">
+        <div class="num">01</div>
+        <div class="nm">Decompress</div>
+        <div class="pl">Take the pressure off</div>
+        <p>Assessment and hands-on work. I find what your body is actually doing under load and release what it's been carrying. This is the session where most men feel something change in the room.</p>
+      </div>
+      <div class="ph rv">
+        <div class="num">02</div>
+        <div class="nm">Restore</div>
+        <div class="pl">Get the breathing working</div>
+        <p>Breathing retrained as a skill you can run on command, not a reflex you hope holds. Measured: how fast your heart settles, how you breathe when you're tired, how long before panic sets in.</p>
+      </div>
+      <div class="ph c3 rv">
+        <div class="num">03</div>
+        <div class="nm">Rebuild</div>
+        <div class="pl">Put load back on</div>
+        <p>Load returns to a body that can handle it now. You leave knowing what your own signals mean, which is the difference between fixing it once and never needing me again.</p>
+      </div>
     </div>
-    <div class="board">
-      <a class="b-row rv" data-rv href="/podcast">
-        <span class="no">D—01</span>
-        <span class="name">The Reset Podcast<small>Short daily episodes on performance, presence &amp; fatherhood</small></span>
-        <span class="world perf">PERFORMANCE</span>
-        <span class="st">BOARDING DAILY</span>
-        <span class="go">→</span>
-      </a>
-      <a class="b-row rv" data-rv href="/community">
-        <span class="no">D—02</span>
-        <span class="name">Sunday Workouts<small>No ego, no performance. Just dads who show up.</small></span>
-        <span class="world perf">PERFORMANCE</span>
-        <span class="st">FREE · SUN AM</span>
-        <span class="go">→</span>
-      </a>
-      <a class="b-row rv" data-rv href="https://messagemadeclear.com" target="_blank" rel="noopener">
-        <span class="no">L—01</span>
-        <span class="name">Message Made Clear<small>Get clear on your offer and who it's for</small></span>
-        <span class="world auth">AUTHORITY</span>
-        <span class="st">NOW BOARDING</span>
-        <span class="go">→</span>
-      </a>
-      <a class="b-row rv" data-rv href="#authority">
-        <span class="no">L—02</span>
-        <span class="name">The Authority Build<small>Done-for-you message, offer &amp; website</small></span>
-        <span class="world auth">AUTHORITY</span>
-        <span class="st">BY APPLICATION</span>
-        <span class="go">→</span>
-      </a>
+
+    <div class="pull rv" style="border-color:var(--steel)">If it can be measured, it can be changed.</div>
+  </div>
+</section>
+
+<!-- ================= WHO ================= -->
+<section id="who">
+  <div class="wrap">
+    <div class="kicker rv">Fit</div>
+    <h2 class="rv">Who this is <em>actually for.</em></h2>
+    <div class="who">
+      <div class="wl yes rv">
+        <h4>This is you</h4>
+        <ul>
+          <li>The same injury has come back more than twice</li>
+          <li>You're fit, and you still gas out under pressure</li>
+          <li>You train hard and wake up feeling like you didn't sleep</li>
+          <li>Fighters who look sharp in the room and lose it under lights</li>
+          <li>You've been told to rest, and resting didn't fix it</li>
+        </ul>
+      </div>
+      <div class="wl no rv">
+        <h4>This isn't</h4>
+        <ul>
+          <li>An acute injury that happened this week. See a physio first</li>
+          <li>Anyone after a diagnosis. I don't diagnose and I don't treat conditions</li>
+          <li>Someone looking for a relaxing hour</li>
+          <li>Blokes who want it done to them rather than taught to them</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 02 · DARK WORLD ============ -->
-<div class="dark-world" id="performance">
-<section class="ch">
+<!-- ================= PROOF ================= -->
+<section id="proof" style="background:#0C0D0F">
   <div class="wrap">
-    <div class="ch-head">
-      <span class="chapter-no">( 02 )</span>
-      <div>
-        <div class="eyebrow rv" data-rv>World one — the dark side</div>
-        <h2 class="display rv" data-rv>The Human Performance <em>Scientist.</em></h2>
-      </div>
-    </div>
-
-    <div class="dw-grid">
-      <div>
-        <p class="quote rv" data-rv>Cold showers and 5am alarms don't fix a dysregulated nervous system. The men who change most aren't the ones who grind harder — <em>they're the ones who regulate better.</em></p>
-        <p class="body rv" data-rv>You work hard. You provide. You show up. But your kids are forming their memories of you right now — and the clock doesn't pause while you think about it. This world exists for driven dads who are in the room, but not really there.</p>
-      </div>
-      <div>
-        <a class="offer-card rv" data-rv href="/podcast">
-          <span class="k">Podcast — Daily</span>
-          <h4>The Reset</h4>
-          <p>Short daily episodes on nervous system regulation, presence, and being the dad your kids run to — not away from. Built for men without an hour to spare.</p>
-          <span class="lnk">Listen now <b>→</b></span>
-        </a>
-        <a class="offer-card rv" data-rv href="/community">
-          <span class="k">Community — Free, always</span>
-          <h4>Sunday Workouts</h4>
-          <p>Every Sunday morning in Mulgrave. No ego, no performance. Just dads who are done sleepwalking through fatherhood, training together. Costs nothing but your presence.</p>
-          <span class="lnk">Show up Sunday <b>→</b></span>
-        </a>
-      </div>
-    </div>
+    <div class="kicker rv">Proof, not promises</div>
+    <h2 class="rv">What happens when<br>the work <em>works.</em></h2>
 
     <div class="stats">
-      <div class="rv" data-rv><div class="num"><span data-count="100">0</span><sup>+</sup></div><div class="lab">Men coached</div></div>
-      <div class="rv" data-rv><div class="num"><span data-count="365">0</span></div><div class="lab">Episodes a year</div></div>
-      <div class="rv" data-rv><div class="num"><span data-count="15">0</span><sup>yrs</sup></div><div class="lab">Human case study</div></div>
-      <div class="rv" data-rv><div class="num"><span data-count="0">0</span></div><div class="lab">Shortcuts. Ever.</div></div>
-    </div>
-  </div>
-</section>
-</div>
-
-<!-- ============ 03 · AUTHORITY ============ -->
-<section class="ch" id="authority">
-  <div class="ghost-no">03</div>
-  <div class="wrap">
-    <div class="ch-head">
-      <span class="chapter-no">( 03 )</span>
-      <div>
-        <div class="eyebrow rv" data-rv>World two — the light side</div>
-        <h2 class="display rv" data-rv>The Authority <em>Architect.</em></h2>
-      </div>
+      <div class="rv"><div class="n">100<sup>+</sup></div><div class="l">Men coached</div></div>
+      <div class="rv"><div class="n">5.0<sup>★</sup></div><div class="l">Google · 21 reviews</div></div>
+      <div class="rv"><div class="n">15<sup>yrs</sup></div><div class="l">In this work</div></div>
+      <div class="rv"><div class="n">16<sup>sec</sup></div><div class="l">My own MMA record</div></div>
     </div>
 
-    <div class="auth-grid">
-      <div>
-        <p class="quote rv" data-rv>Most service businesses don't have a traffic problem. They have a clarity problem. <em>Nobody can buy what they can't understand.</em></p>
-        <p class="body rv" data-rv>Your work is real. Your referrals prove it. But your website doesn't sound like you, and your offer takes three paragraphs to explain. I help you say it clearly — then build the website that makes your business real on the internet.</p>
+    <div class="quotes">
+      <div class="q rv">
+        <blockquote>"Sick and tired of being sick and tired. Cracking a wine every night just to de-stress. Lost 10kg in three weeks, and found a guide through a serious mental health breakdown."</blockquote>
+        <div class="who2"><b>Tim Beanland</b>Founder, Bean Filming</div>
       </div>
-      <div>
-        <a class="a-card rv" data-rv href="https://messagemadeclear.com" target="_blank" rel="noopener">
-          <div class="row"><h4>Message Made Clear</h4><span class="k">Flagship</span></div>
-          <p>A focused process that forces two answers: what exactly you offer, and who exactly it's for. Walk out with a message a stranger understands in ten seconds.</p>
-          <span class="lnk">messagemadeclear.com <b>→</b></span>
-        </a>
-        <a class="a-card rv" data-rv href="mailto:shaun@shauntucker.com.au?subject=The Authority Build — Application">
-          <div class="row"><h4>The Authority Build</h4><span class="k">By application</span></div>
-          <p>Message, offer and website — built for you, end to end. For established service-business owners who want their business to look as real online as it is in the room. Limited spots.</p>
-          <span class="lnk">Apply for a build <b>→</b></span>
-        </a>
+      <div class="q rv">
+        <blockquote>"Deep within the business, unable to make conscious decisions. My diet and mindset were a mess. Now I make quick, wise decisions as a CEO."</blockquote>
+        <div class="who2"><b>Sridhar Sumalapalli</b>Owner &amp; Director, Affluence Financials</div>
+      </div>
+      <div class="q rv">
+        <blockquote>"Thirty years of binge eating and adult acne. I thought this was just who I was. Lost 22kg and my skin cleared up."</blockquote>
+        <div class="who2"><b>Ed</b>Business owner</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 04 · SIGNS ============ -->
-<section class="ch">
-  <div class="ghost-no">04</div>
+<!-- ================= STORY ================= -->
+<section id="about">
   <div class="wrap">
-    <div class="ch-head">
-      <span class="chapter-no">( 04 )</span>
-      <div>
-        <div class="eyebrow rv" data-rv>Recognising yourself</div>
-        <h2 class="display rv" data-rv>Signs you're in the <em>right place.</em></h2>
-      </div>
-    </div>
-    <div class="signs">
-      <div class="sign rv" data-rv><span class="who perf">The dad</span><p>You're snapping at the people you love — and the guilt afterwards is worse than the anger.</p></div>
-      <div class="sign rv" data-rv><span class="who auth">The owner</span><p>You've rewritten your homepage five times and it <em>still</em> doesn't sound like you.</p></div>
-      <div class="sign rv" data-rv><span class="who perf">The dad</span><p>You've done the programs, the challenges, the 5am club. You're still not present.</p></div>
-      <div class="sign rv" data-rv><span class="who auth">The owner</span><p>Referrals love you — but strangers can't work out what you actually do.</p></div>
-      <div class="sign rv" data-rv><span class="who perf">The dad</span><p>Your kids don't need a perfect dad. They need one they <em>run to,</em> not away from.</p></div>
-      <div class="sign rv" data-rv><span class="who auth">The owner</span><p>Your business is real everywhere — except the internet.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 05 · OPERATOR ============ -->
-<section class="ch" id="operator">
-  <div class="ghost-no">05</div>
-  <div class="wrap">
-    <div class="ch-head">
-      <span class="chapter-no">( 05 )</span>
-      <div>
-        <div class="eyebrow rv" data-rv>The operator</div>
-        <h2 class="display rv" data-rv>Why one man runs <em>both worlds.</em></h2>
-      </div>
-    </div>
-    <div class="about">
-      <div>
-      <div class="folio rv" data-rv>
-        <svg class="badge" viewBox="0 0 100 100">
-          <defs><path id="circ" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"/></defs>
-          <text><textPath href="#circ">CLARITY UNDER PRESSURE · EST. MELBOURNE ·&#160;</textPath></text>
-        </svg>
-        <div class="frame">
-          <div class="h h-l"><img src="shaun-portrait.jpg" alt="Shaun Tucker" data-plx-img></div>
-          <div class="h h-r"><img src="shaun-portrait.jpg" alt="" data-plx-img></div>
-          <div class="seam"></div>
+    <div class="guide">
+      <div class="rv">
+        <div class="kicker">The Guide</div>
+        <h2>I&rsquo;ve literally been<br>in the <em>red corner</em></h2>
+        <div class="copy" style="margin-top:1.9rem">
+          <p>My first MMA fight lasted <strong>sixteen seconds</strong>. I lost. The video of it has been watched more than <strong>2.8 million times</strong>.</p>
+          <p>That&rsquo;s me walking in, before I knew what was coming. I know what it costs to step in under pressure, and what it takes to walk back in after losing in front of everyone. That&rsquo;s the corner I work from.</p>
         </div>
-        <div class="cap"><span>The Scientist</span><span>The Architect</span></div>
+        <div class="gstats">
+          <div class="gstat"><b>16<i>s</i></b><span>Fight duration</span></div>
+          <div class="gstat"><b>2.8M<i>+</i></b><span>Views of the loss</span></div>
+          <div class="gstat"><b>1</b><span>Walk back in</span></div>
+        </div>
+        <svg class="gtrace" viewBox="0 0 340 22" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 11 L110 11 L121 6 L130 11 L138 19 L149 2 L159 15 L168 11 L340 11"/>
+        </svg>
       </div>
-      <div class="exp rv" data-rv>
-        <div>BSc Health Science <span>SWINBURNE</span></div>
-        <div>Breathwork Facilitator <span>CERTIFIED</span></div>
-        <div>100+ Men Coached <span>SINCE 2019</span></div>
-        <div>Daily Podcast Host <span>THE RESET</span></div>
-        <div>Six-Figure PT Business <span>BUILT &amp; RUN</span></div>
-        <div>Amateur MMA Fighter <span>16 SECONDS</span></div>
-        <div>World Resiliency Day <span>AMBASSADOR</span></div>
+      <div class="gphoto rv">
+        <svg class="cm" width="60" height="60" aria-hidden="true"><path d="M0 42 L0 0 L42 0" fill="none" stroke="#8C2B22" stroke-width="7"/></svg>
+        <picture>
+          <source srcset="/red-corner-fight-bw.webp" type="image/webp">
+          <img src="/red-corner-fight-bw.jpg" width="1560" height="1654" loading="lazy" decoding="async" alt="Shaun Tucker in the cage before his first MMA fight, Brawl Hall">
+        </picture>
+        <div class="cap">Brawl Hall &middot; First fight &middot; Red corner</div>
       </div>
-      </div>
-      <div class="story">
-        <p class="rv" data-rv>I have a degree in Health Science. But my real education came from breaking myself down and trying to put the pieces back together.</p>
-        <p class="rv" data-rv>I trained harder than anyone I knew. Built a six-figure business on coffee, sugar and stress. Stepped into an MMA cage after 20 weeks of training and <strong>lost in sixteen seconds, in front of millions.</strong> My ego wanted a rematch. For the first time in my life, I chose differently.</p>
-        <div class="pull rv" data-rv>"Regulating a nervous system and clarifying a business message are the same skill: strip the noise, find what's true, say it without flinching."</div>
-        <p class="rv" data-rv>I teach it to dads on Sunday mornings and to business owners on Tuesday afternoons. Both worlds run on the same standard — <strong>clarity under pressure.</strong></p>
-      </div>
+    </div>
+
+    <div class="creds rv" style="margin-top:clamp(3.5rem,7vw,5rem)">
+      <div>BSc Health Science <span>Swinburne</span></div>
+      <div>Certified Breathwork Facilitator <span>Nervous system</span></div>
+      <div>Muscle Testing <span>Assessment</span></div>
+      <div>Massage Therapist <span>Hands on</span></div>
+      <div>Personal Trainer <span>Load &amp; movement</span></div>
+      <div>Host, Man In Your Corner <span>Daily podcast</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ 06 · PROOF ============ -->
-<section class="ch testis" id="proof">
-  <div class="ghost-no">06</div>
+<!-- ================= PODCAST + WORKSHOP ================= -->
+<section style="background:#0C0D0F">
   <div class="wrap">
-    <div class="ch-head">
-      <span class="chapter-no">( 06 )</span>
-      <div>
-        <div class="eyebrow rv" data-rv>Proof, not promises</div>
-        <h2 class="display rv" data-rv>What happens when <em>the work works.</em></h2>
-      </div>
-    </div>
-    <div class="t-track">
-      <div class="t-card rv" data-rv>
-        <span class="stars">★★★★★</span>
-        <blockquote>"I came in thinking I needed a better training program. I left understanding I needed to regulate my nervous system first. It changed the way I show up for my kids every single day."</blockquote>
-        <div class="who"><b>Rama</b>Father of 2 · Melbourne</div>
-      </div>
-      <div class="t-card rv" data-rv>
-        <span class="stars">★★★★★</span>
-        <blockquote>"I've done 75 Hard. I've done every program. Nothing came close. Shaun doesn't just coach you — he shows you who you actually are."</blockquote>
-        <div class="who"><b>Paul</b>Father of 3 · Sydney</div>
-      </div>
-      <div class="t-card rv" data-rv>
-        <span class="stars">★★★★★</span>
-        <blockquote>"Deep within the business, unable to make conscious decisions. Shaun fixed the diet, the fitness, the mindset — now I make quick, wise decisions as a CEO."</blockquote>
-        <div class="who"><b>Sridhar</b>Owner &amp; Director, Affluence Financials</div>
-      </div>
-    </div>
-    <div class="proof-band rv" data-rv>
-      <span><b>5.0★</b> Google Business</span>
-      <span><b>21</b> verified reviews</span>
-      <span><b>15+</b> LinkedIn recommendations</span>
-      <span><b>7</b> video case studies</span>
+    <div class="kicker rv">Two free ways in</div>
+    <h2 class="rv">Have a look at me first.</h2>
+    <div class="duo">
+      <a class="card rv" id="podcast-link" href="https://open.spotify.com/show/5UGmVcLqkr75dePECxDC3C" target="_blank" rel="noopener">
+        <div class="t">Podcast · Daily</div>
+        <h3>Man In Your Corner</h3>
+        <p>Short daily episodes on what your body is telling you and what to do about it. Every fighter gets sixty seconds and a man in his corner. Most blokes never get one at all.</p>
+        <span class="mono" style="font-size:.6rem;color:var(--blood-lt)">Listen →</span>
+      </a>
+      <a class="card rv" href="#book" data-cta="workshop">
+        <div class="t">Workshop · Free</div>
+        <h3>Come and watch</h3>
+        <p>I run free workshops where I work on someone live in the room. You'll see exactly what this is in about ten minutes, without anyone selling you anything. Message me for the next date.</p>
+        <span class="mono" style="font-size:.6rem;color:var(--blood-lt)">Get the next date →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ============ 07 · RULES ============ -->
-<section class="ch">
-  <div class="ghost-no">07</div>
+<!-- ================= BOOK ================= -->
+<section class="final" id="book">
   <div class="wrap">
-    <div class="ch-head">
-      <span class="chapter-no">( 07 )</span>
-      <div>
-        <div class="eyebrow rv" data-rv>How I work</div>
-        <h2 class="display rv" data-rv>The rules <em>we play by.</em></h2>
-      </div>
+    <div class="kicker ctr rv"><span>Your move</span></div>
+    <h2 class="rv">Thirty minutes. I'll tell you what<br>your body <em>is saying.</em></h2>
+    <p class="rv">Bring the thing that keeps coming back. I'll assess how you move, how you breathe and how you recover, and you'll leave knowing what's actually going on, whether or not we work together after that.</p>
+    <div class="rv" style="display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn" href="mailto:shaun@shauntucker.com.au?subject=Assessment" data-cta="final">Book an assessment</a>
+      <a class="btn ghost" href="mailto:shaun@shauntucker.com.au?subject=Question" data-cta="question">Ask me a question first</a>
     </div>
-    <div class="rules">
-      <div class="rule rv" data-rv>
-        <span class="n">01</span>
-        <h4>Presence over scale</h4>
-        <p>A deliberately small number of clients at any one time — men or businesses. When you need me, you get me. Not an assistant, not a funnel, not a course login.</p>
-      </div>
-      <div class="rule rv" data-rv>
-        <span class="n">02</span>
-        <h4>Partnership without dependency</h4>
-        <p>My job is not to keep you in coaching or on retainer forever. It's to leave you with a regulated system and a message so clear they outlast our work together.</p>
-      </div>
-      <div class="rule rv" data-rv>
-        <span class="n">03</span>
-        <h4>Truth from experience</h4>
-        <p>Everything I teach, I've lived — the burnout, the public loss, the rebuild. I coach from scar tissue, not theory. I'll tell you the truth even when it's uncomfortable.</p>
-      </div>
-    </div>
+    <svg class="trace tr rv" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 17 L380 17 L400 17 L416 4 L432 31 L448 11 L464 17 L800 17 L820 17 L836 4 L852 31 L868 11 L884 17 L1200 17"
+            fill="none" stroke="#8C2B22" stroke-width="3"/></svg>
   </div>
 </section>
 
-<!-- ============ FINAL ============ -->
-<section class="final" id="contact">
-  <div class="wrap">
-    <div class="eyebrow rv" data-rv>Your move</div>
-    <h2 class="rv" data-rv>Start where you are.<br><em>Arrive somewhere new.</em></h2>
-    <p class="rv" data-rv>One real conversation — no pitch, no fluff. Whether it's your nervous system or your message that needs the work, we'll know within the hour. You'll leave with clarity either way.</p>
-    <div class="rv" data-rv>
-      <a class="btn btn-solid" href="mailto:shaun@shauntucker.com.au"><i></i>Start the conversation</a>
-      <a class="mail" href="mailto:shaun@shauntucker.com.au">shaun@shauntucker.com.au</a>
-    </div>
-  </div>
-</section>
+</main>
 
 <footer>
-  <div class="in">
-    <div class="top">
-      <span>© 2026 Shaun Tucker — shauntucker.com.au</span>
-      <div class="socials">
-        <a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a>
-        <a href="mailto:shaun@shauntucker.com.au">Email</a>
-      </div>
+  <div class="wrap in">
+    <a class="brand" href="#top">
+      <svg width="30" height="30" viewBox="0 0 190 190" aria-hidden="true">
+        <path d="M8 62 L8 8 L62 8" fill="none" stroke="#8C2B22" stroke-width="12"/>
+        <path d="M182 128 L182 182 L128 182" fill="none" stroke="#E7E2D8" stroke-width="12"/>
+        <text x="95" y="114" text-anchor="middle" font-family="Archivo" font-size="70" font-weight="800" fill="#E7E2D8">ST</text>
+      </svg>
+      <span class="n"><b>Shaun Tucker</b><span>Melbourne</span></span>
+    </a>
+    <div class="fl">
+      <a href="mailto:shaun@shauntucker.com.au">Email</a>
+      <a href="https://open.spotify.com/show/5UGmVcLqkr75dePECxDC3C" target="_blank" rel="noopener">Podcast</a>
+      <a href="https://www.instagram.com/theshauntucker" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@theshauntucker" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.facebook.com/theshauntucker" target="_blank" rel="noopener">Facebook</a>
     </div>
-    <div class="wordmark">SHAUN TUCKER</div>
     <div class="fine">
-      <span>Human Performance Scientist</span>
-      <span>This terminal never closes</span>
-      <span>Authority Architect</span>
+      © 2026 Shaun Tucker · Health Scientist &amp; Breathing Performance Trainer · Melbourne, Australia<br>
+      I am not a medical practitioner. I do not diagnose or treat medical conditions. If you have an acute injury or a health concern, see your GP or physiotherapist.
     </div>
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script>
-/* ---------- Preloader ---------- */
 (function(){
-  const loader=document.getElementById('loader'),pct=document.getElementById('pct'),bar=document.getElementById('bar');
-  let n=0;
-  const t=setInterval(()=>{
-    n+=Math.max(1,Math.round((100-n)/14))+Math.floor(Math.random()*3);
-    if(n>=100){n=100;clearInterval(t);setTimeout(()=>loader.classList.add('done'),350);setTimeout(()=>loader.remove(),1500)}
-    pct.textContent=String(n).padStart(2,'0');bar.style.width=n+'%';
-  },55);
-  setTimeout(()=>{if(document.body.contains(loader)){loader.classList.add('done');setTimeout(()=>loader.remove(),1200)}},5000);
-})();
-
-/* ---------- Custom cursor ---------- */
-(function(){
-  const c=document.getElementById('cur'),c2=document.getElementById('cur2');
-  let x=0,y=0,x2=0,y2=0;
-  addEventListener('mousemove',e=>{document.body.classList.add('cursor-on');x=e.clientX;y=e.clientY;c.style.transform=`translate(${x}px,${y}px) translate(-50%,-50%)`});
-  (function loop(){x2+=(x-x2)*.13;y2+=(y-y2)*.13;c2.style.transform=`translate(${x2}px,${y2}px) translate(-50%,-50%)`;requestAnimationFrame(loop)})();
-  document.querySelectorAll('a,button,.b-row').forEach(el=>{
-    el.addEventListener('mouseenter',()=>c2.classList.add('hov'));
-    el.addEventListener('mouseleave',()=>c2.classList.remove('hov'));
-  });
-})();
-
-/* ---------- Nav hide/show ---------- */
-(function(){
-  const nav=document.getElementById('nav');let last=0;
-  addEventListener('scroll',()=>{
-    const y=scrollY;
-    nav.classList.toggle('scrolled',y>60);
-    nav.classList.toggle('hidden',y>500&&y>last);
-    last=y;
-  },{passive:true});
-})();
-
-/* ---------- Melbourne clock ---------- */
-(function(){
-  const el=document.getElementById('melb-clock');
-  function tick(){
-    try{
-      const t=new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Melbourne',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date());
-      el.textContent='MELBOURNE — '+t;
-    }catch(e){el.textContent='MELBOURNE'}
-  }
-  tick();setInterval(tick,1000);
-})();
-
-/* ---------- Counters ---------- */
-(function(){
-  const io=new IntersectionObserver(es=>es.forEach(e=>{
-    if(!e.isIntersecting)return;io.unobserve(e.target);
-    const el=e.target,end=+el.dataset.count,dur=1400,t0=performance.now();
-    (function step(t){
-      const p=Math.min(1,(t-t0)/dur),ease=1-Math.pow(1-p,3);
-      el.textContent=Math.round(end*ease);
-      if(p<1)requestAnimationFrame(step);
-    })(t0);
-  }),{threshold:.6});
-  document.querySelectorAll('[data-count]').forEach(el=>io.observe(el));
-})();
-
-/* ---------- GSAP motion (graceful if CDN blocked) ---------- */
-(function(){
-  if(typeof gsap==='undefined'){return}
-  gsap.registerPlugin(ScrollTrigger);
-
-  /* hero entrance */
-  gsap.from('#heroImg',{opacity:0,scale:1.06,duration:1.8,ease:'power2.out',delay:.95});
-  gsap.from('#heroTitle .ln span',{yPercent:110,duration:1.15,ease:'power4.out',stagger:.11,delay:1.15});
-  gsap.from('.hero .roles, .hero .sub, .hero .actions',{opacity:0,y:26,duration:1,ease:'power3.out',stagger:.12,delay:1.5});
-  gsap.from('#heroBig',{opacity:0,yPercent:30,duration:1.4,ease:'power3.out',delay:1.6});
-
-  /* hero scroll choreography */
-  gsap.to('#heroImg img',{yPercent:-8,ease:'none',
-    scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
-  gsap.to('#heroBig',{xPercent:-6,ease:'none',
-    scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
-  gsap.to('.hero-inner',{yPercent:10,opacity:.35,ease:'none',
-    scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
-
-  /* generic reveals */
-  document.querySelectorAll('[data-rv]').forEach(el=>{
-    if(el.closest('.hero'))return;
-    gsap.from(el,{opacity:0,y:34,duration:1,ease:'power3.out',
-      scrollTrigger:{trigger:el,start:'top 88%',once:true}});
-  });
-
-  /* operator portrait parallax */
-  document.querySelectorAll('[data-plx-img]').forEach(img=>{
-    gsap.to(img,{yPercent:-10,ease:'none',
-      scrollTrigger:{trigger:'.folio',start:'top bottom',end:'bottom top',scrub:true}});
-  });
-
-  /* ghost numbers drift */
-  document.querySelectorAll('.ghost-no').forEach(g=>{
-    gsap.fromTo(g,{yPercent:18},{yPercent:-18,ease:'none',
-      scrollTrigger:{trigger:g.parentElement,start:'top bottom',end:'bottom top',scrub:true}});
-  });
-
-  /* dark world background shift */
-  gsap.fromTo('.dark-world',{backgroundColor:'#0E1216'},{backgroundColor:'#131A20',ease:'none',
-    scrollTrigger:{trigger:'.dark-world',start:'top center',end:'bottom top',scrub:true}});
+  var nav=document.getElementById('nav');
+  addEventListener('scroll',function(){nav.classList.toggle('on',scrollY>40)},{passive:true});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 })();
 </script>
 </body>
